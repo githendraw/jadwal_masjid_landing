@@ -62,9 +62,9 @@ export function Header() {
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
-          className="md:hidden bg-[#0A192F] border-t border-slate-800"
+          className="md:hidden bg-[#0A192F] border-t border-slate-800 overflow-hidden"
         >
-          <nav className="px-4 py-4 space-y-3">
+          <nav className="px-4 py-4 space-y-3 max-w-7xl mx-auto">
             {navItems.map((item) => (
               <a
                 key={item.label}
