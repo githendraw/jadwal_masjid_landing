@@ -44,7 +44,7 @@ const advantages = [
 
 export function BentoGrid() {
   return (
-    <section id="fitur" className="bg-[#0A192F] py-24">
+    <section id="fitur" className="bg-green-50 py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,11 +52,11 @@ export function BentoGrid() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-green-900 mb-4">
             5 Alasan DKM Pindah ke{" "}
-            <span className="text-amber-400">Waktu Sholat</span>
+            <span className="text-green-400">Waktu Sholat</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
+          <p className="text-green-700 max-w-2xl mx-auto">
             Dirancang khusus untuk kebutuhan masjid di Indonesia
           </p>
         </motion.div>
@@ -68,7 +68,7 @@ export function BentoGrid() {
             viewport={{ once: true }}
             className="md:col-span-2 md:row-span-1"
           >
-            <Card className="bg-slate-800/50 border-slate-700 h-full">
+            <Card className="bg-white border-slate-700 h-full">
               <CardContent className="p-6">
                 <PlaceholderImage
                   width={800}
@@ -78,14 +78,14 @@ export function BentoGrid() {
                   className="mb-4"
                 />
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-amber-500/20 rounded-lg">
-                    <Globe className="w-6 h-6 text-amber-400" />
+                  <div className="p-3 bg-green-500/20 rounded-lg">
+                    <Globe className="w-6 h-6 text-green-400" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold text-lg mb-2">
+                    <h3 className="text-green-900 font-semibold text-lg mb-2">
                       {advantages[0].title}
                     </h3>
-                    <p className="text-slate-400 text-sm">
+                    <p className="text-green-700 text-sm">
                       {advantages[0].description}
                     </p>
                   </div>
@@ -101,7 +101,7 @@ export function BentoGrid() {
             transition={{ delay: 0.1 }}
             className="md:col-span-2"
           >
-            <Card className="bg-slate-800/50 border-slate-700 h-full">
+            <Card className="bg-white border-slate-700 h-full">
               <CardContent className="p-6">
                 <PlaceholderImage
                   width={800}
@@ -111,14 +111,14 @@ export function BentoGrid() {
                   className="mb-4"
                 />
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-amber-500/20 rounded-lg">
-                    <Smartphone className="w-6 h-6 text-amber-400" />
+                  <div className="p-3 bg-green-500/20 rounded-lg">
+                    <Smartphone className="w-6 h-6 text-green-400" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold text-lg mb-2">
+                    <h3 className="text-green-900 font-semibold text-lg mb-2">
                       {advantages[1].title}
                     </h3>
-                    <p className="text-slate-400 text-sm">
+                    <p className="text-green-700 text-sm">
                       {advantages[1].description}
                     </p>
                   </div>
@@ -135,17 +135,17 @@ export function BentoGrid() {
               viewport={{ once: true }}
               transition={{ delay: (index + 2) * 0.1 }}
             >
-              <Card className="bg-slate-800/50 border-slate-700 h-full">
+              <Card className="bg-white border-slate-700 h-full">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-amber-500/20 rounded-lg">
-                      <adv.icon className="w-6 h-6 text-amber-400" />
+                    <div className="p-3 bg-green-500/20 rounded-lg">
+                      <adv.icon className="w-6 h-6 text-green-400" />
                     </div>
                     <div>
-                      <h3 className="text-white font-semibold text-lg mb-2">
+                      <h3 className="text-green-900 font-semibold text-lg mb-2">
                         {adv.title}
                       </h3>
-                      <p className="text-slate-400 text-sm">{adv.description}</p>
+                      <p className="text-green-700 text-sm">{adv.description}</p>
                     </div>
                   </div>
                 </CardContent>

@@ -26,12 +26,12 @@ export function PrayerClock({ className = "" }: { className?: string }) {
       <svg viewBox="0 0 200 200" className="w-full h-full drop-shadow-2xl">
         <defs>
           <linearGradient id="clockFace" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#0A192F" />
-            <stop offset="100%" stopColor="#1e3a5f" />
+            <stop offset="0%" stopColor="#F8FBF8" />
+            <stop offset="100%" stopColor="#E8F5E9" />
           </linearGradient>
           <linearGradient id="handGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#D4AF37" />
-            <stop offset="100%" stopColor="#B8942E" />
+            <stop offset="0%" stopColor="#009739" />
+            <stop offset="100%" stopColor="#006633" />
           </linearGradient>
           <filter id="glow">
             <feGaussianBlur stdDeviation="2" result="coloredBlur" />
@@ -51,7 +51,7 @@ export function PrayerClock({ className = "" }: { className?: string }) {
           strokeWidth="3"
         />
 
-        <circle cx="100" cy="100" r="85" fill="none" stroke="#1e3a5f" strokeWidth="1" />
+        <circle cx="100" cy="100" r="85" fill="none" stroke="#C8E6C9" strokeWidth="1" />
 
         {[...Array(12)].map((_, i) => {
           const angle = (i * 30 - 90) * (Math.PI / 180);
@@ -78,7 +78,7 @@ export function PrayerClock({ className = "" }: { className?: string }) {
           y1="100"
           x2={Number((100 + 50 * Math.sin((hourDeg * Math.PI) / 180)).toFixed(2))}
           y2={Number((100 - 50 * Math.cos((hourDeg * Math.PI) / 180)).toFixed(2))}
-          stroke="#F1F5F9"
+          stroke="#1B5E20"
           strokeWidth="4"
           strokeLinecap="round"
           filter="url(#glow)"
@@ -98,13 +98,13 @@ export function PrayerClock({ className = "" }: { className?: string }) {
           y1="100"
           x2={Number((100 + 70 * Math.sin((secondDeg * Math.PI) / 180)).toFixed(2))}
           y2={Number((100 - 70 * Math.cos((secondDeg * Math.PI) / 180)).toFixed(2))}
-          stroke="#F59E0B"
+          stroke="#D4AF37"
           strokeWidth="2"
           strokeLinecap="round"
         />
 
         <circle cx="100" cy="100" r="6" fill="#D4AF37" filter="url(#glow)" />
-        <circle cx="100" cy="100" r="3" fill="#0A192F" />
+        <circle cx="100" cy="100" r="3" fill="#F8FBF8" />
 
         <text
           x="100"
@@ -121,7 +121,7 @@ export function PrayerClock({ className = "" }: { className?: string }) {
 
       {time && (
         <div className="absolute bottom-0 left-0 right-0 text-center">
-          <span className="text-2xl font-mono font-bold text-amber-400">
+          <span className="text-2xl font-mono font-bold text-green-400">
             {formatTime(hours)}:{formatTime(minutes)}:{formatTime(seconds)}
           </span>
         </div>

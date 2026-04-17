@@ -99,7 +99,7 @@ const features = [
 
 export function Features() {
   return (
-    <section className="bg-slate-950 py-24">
+    <section className="bg-white py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -107,11 +107,11 @@ export function Features() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-green-900 mb-4">
             Fitur{" "}
-            <span className="text-amber-400">Lengkap</span>
+            <span className="text-green-400">Lengkap</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
+          <p className="text-green-700 max-w-2xl mx-auto">
             Semua yang kamu butuhkan untuk display jadwal sholat yang profesional
           </p>
         </motion.div>
@@ -126,19 +126,19 @@ export function Features() {
               <AccordionItem
                 key={feature.title}
                 value={feature.title}
-                className="bg-slate-900/50 border-slate-800 rounded-lg px-6"
+                className="bg-green-50/50 border-green-200 rounded-lg px-6"
               >
                 <AccordionTrigger className="hover:no-underline">
                   <div className="flex items-center gap-4">
-                    <div className="p-2 bg-amber-500/20 rounded-lg">
-                      <feature.icon className="w-5 h-5 text-amber-400" />
+                    <div className="p-2 bg-green-500/20 rounded-lg">
+                      <feature.icon className="w-5 h-5 text-green-400" />
                     </div>
-                    <span className="text-white font-medium">
+                    <span className="text-green-900 font-medium">
                       {feature.title}
                     </span>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="text-slate-400 pb-4 pl-12">
+                <AccordionContent className="text-green-700 pb-4 pl-12">
                   {feature.description}
                 </AccordionContent>
               </AccordionItem>
