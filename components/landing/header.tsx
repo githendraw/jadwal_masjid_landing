@@ -23,9 +23,9 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a href="#" className="flex items-center gap-2 flex-shrink-0">
-            <Clock className="w-6 h-6 sm:w-7 sm:h-7 text-emerald-400" />
-            <span className="text-base sm:text-xl font-bold text-white truncate max-w-[120px] sm:max-w-none">
+          <a href="#" className="flex items-center gap-2">
+            <Clock className="w-6 h-6 sm:w-7 sm:h-7 text-emerald-400 flex-shrink-0" />
+            <span className="text-base sm:text-xl font-bold text-white hidden xs:inline">
               Waktu Sholat
             </span>
           </a>
