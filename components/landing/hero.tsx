@@ -69,9 +69,9 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative overflow-hidden"
+            className="relative"
           >
-            <div className="relative z-10 max-w-full overflow-hidden">
+            <div className="relative z-10 overflow-hidden">
               <PlaceholderImage
                 width={1200}
                 height={750}
@@ -81,9 +81,9 @@ export function Hero() {
               />
             </div>
 
-            <div className="absolute -bottom-10 -left-4 sm:-left-10 z-20">
-              <div className="bg-[#0A192F] p-2 sm:p-4 rounded-xl border border-slate-700 shadow-xl">
-                <PrayerClock className="w-24 h-24 sm:w-32 sm:h-32" />
+            <div className="absolute -bottom-6 -left-1 sm:-left-4 z-20">
+              <div className="bg-[#0A192F] p-1 sm:p-2 rounded-xl border border-slate-700 shadow-xl">
+                <PrayerClock className="w-16 h-16 sm:w-28 sm:h-28" />
               </div>
             </div>
 
