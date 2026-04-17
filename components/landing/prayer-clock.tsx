@@ -3,16 +3,17 @@
 import { useEffect, useState } from "react";
 
 export function PrayerClock({ className = "" }: { className?: string }) {
-  const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState<Date | null>(null);
 
   useEffect(() => {
+    setTime(new Date());
     const timer = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
 
-  const hours = time.getHours();
-  const minutes = time.getMinutes();
-  const seconds = time.getSeconds();
+  const hours = time?.getHours() ?? 0;
+  const minutes = time?.getMinutes() ?? 0;
+  const seconds = time?.getSeconds() ?? 0;
 
   const hourDeg = (hours % 12) * 30 + minutes * 0.5;
   const minuteDeg = minutes * 6;
@@ -54,10 +55,10 @@ export function PrayerClock({ className = "" }: { className?: string }) {
 
         {[...Array(12)].map((_, i) => {
           const angle = (i * 30 - 90) * (Math.PI / 180);
-          const x1 = 100 + 75 * Math.cos(angle);
-          const y1 = 100 + 75 * Math.sin(angle);
-          const x2 = 100 + 85 * Math.cos(angle);
-          const y2 = 100 + 85 * Math.sin(angle);
+          const x1 = Number((100 + 75 * Math.cos(angle)).toFixed(2));
+          const y1 = Number((100 + 75 * Math.sin(angle)).toFixed(2));
+          const x2 = Number((100 + 85 * Math.cos(angle)).toFixed(2));
+          const y2 = Number((100 + 85 * Math.sin(angle)).toFixed(2));
           return (
             <line
               key={i}
@@ -75,8 +76,8 @@ export function PrayerClock({ className = "" }: { className?: string }) {
         <line
           x1="100"
           y1="100"
-          x2={100 + 50 * Math.sin((hourDeg * Math.PI) / 180)}
-          y2={100 - 50 * Math.cos((hourDeg * Math.PI) / 180)}
+          x2={Number((100 + 50 * Math.sin((hourDeg * Math.PI) / 180)).toFixed(2))}
+          y2={Number((100 - 50 * Math.cos((hourDeg * Math.PI) / 180)).toFixed(2))}
           stroke="#F1F5F9"
           strokeWidth="4"
           strokeLinecap="round"
@@ -85,8 +86,8 @@ export function PrayerClock({ className = "" }: { className?: string }) {
         <line
           x1="100"
           y1="100"
-          x2={100 + 65 * Math.sin((minuteDeg * Math.PI) / 180)}
-          y2={100 - 65 * Math.cos((minuteDeg * Math.PI) / 180)}
+          x2={Number((100 + 65 * Math.sin((minuteDeg * Math.PI) / 180)).toFixed(2))}
+          y2={Number((100 - 65 * Math.cos((minuteDeg * Math.PI) / 180)).toFixed(2))}
           stroke="#10B981"
           strokeWidth="3"
           strokeLinecap="round"
@@ -95,8 +96,8 @@ export function PrayerClock({ className = "" }: { className?: string }) {
         <line
           x1="100"
           y1="100"
-          x2={100 + 70 * Math.sin((secondDeg * Math.PI) / 180)}
-          y2={100 - 70 * Math.cos((secondDeg * Math.PI) / 180)}
+          x2={Number((100 + 70 * Math.sin((secondDeg * Math.PI) / 180)).toFixed(2))}
+          y2={Number((100 - 70 * Math.cos((secondDeg * Math.PI) / 180)).toFixed(2))}
           stroke="#F59E0B"
           strokeWidth="2"
           strokeLinecap="round"
@@ -118,11 +119,13 @@ export function PrayerClock({ className = "" }: { className?: string }) {
         </text>
       </svg>
 
-      <div className="absolute bottom-0 left-0 right-0 text-center">
-        <span className="text-2xl font-mono font-bold text-emerald-400">
-          {formatTime(hours)}:{formatTime(minutes)}:{formatTime(seconds)}
-        </span>
-      </div>
+      {time && (
+        <div className="absolute bottom-0 left-0 right-0 text-center">
+          <span className="text-2xl font-mono font-bold text-emerald-400">
+            {formatTime(hours)}:{formatTime(minutes)}:{formatTime(seconds)}
+          </span>
+        </div>
+      )}
     </div>
   );
 }
