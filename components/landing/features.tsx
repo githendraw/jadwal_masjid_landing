@@ -109,7 +109,7 @@ export function Features() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Fitur{" "}
-            <span className="text-emerald-400">Lengkap</span>
+            <span className="text-amber-400">Lengkap</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
             Semua yang kamu butuhkan untuk display jadwal sholat yang profesional
@@ -130,8 +130,8 @@ export function Features() {
               >
                 <AccordionTrigger className="hover:no-underline">
                   <div className="flex items-center gap-4">
-                    <div className="p-2 bg-emerald-500/20 rounded-lg">
-                      <feature.icon className="w-5 h-5 text-emerald-400" />
+                    <div className="p-2 bg-amber-500/20 rounded-lg">
+                      <feature.icon className="w-5 h-5 text-amber-400" />
                     </div>
                     <span className="text-white font-medium">
                       {feature.title}

@@ -16,7 +16,7 @@ export function TabShowcase() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Tampilan{" "}
-            <span className="text-emerald-400">Profesional</span>
+            <span className="text-amber-400">Profesional</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
             Cocok untuk TV mosque ukuran besar. Tampilan jelas dan mudah dibaca

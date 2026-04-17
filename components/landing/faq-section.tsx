@@ -53,7 +53,7 @@ export function FaqSection() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Pertanyaan{" "}
-            <span className="text-emerald-400">Umum</span>
+            <span className="text-amber-400">Umum</span>
           </h2>
           <p className="text-slate-400">
             Ada pertanyaan lain? Hubungi kami via WhatsApp

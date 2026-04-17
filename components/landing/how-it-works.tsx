@@ -36,7 +36,7 @@ export function HowItWorks() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Cara Pakai{" "}
-            <span className="text-emerald-400">3 Langkah</span>
+            <span className="text-amber-400">3 Langkah</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
             Simpel dan cepat. Dalam 5 menit, TV masjid sudah bisa menampilkan
@@ -56,10 +56,10 @@ export function HowItWorks() {
             >
               <div className="flex flex-col items-center text-center">
                 <div className="relative mb-6">
-                  <div className="w-20 h-20 bg-emerald-500/20 rounded-2xl flex items-center justify-center">
-                    <step.icon className="w-10 h-10 text-emerald-400" />
+                  <div className="w-20 h-20 bg-amber-500/20 rounded-2xl flex items-center justify-center">
+                    <step.icon className="w-10 h-10 text-amber-400" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
                     {index + 1}
                   </div>
                 </div>
@@ -70,7 +70,7 @@ export function HowItWorks() {
               </div>
 
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-emerald-500/50 to-transparent" />
+                <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-amber-500/50 to-transparent" />
               )}
             </motion.div>
           ))}

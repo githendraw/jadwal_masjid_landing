@@ -19,7 +19,7 @@ export function MihrabCard({
     <div
       className={cn(
         "relative bg-gradient-to-b from-slate-900 to-slate-800 rounded-2xl overflow-hidden transition-all duration-300",
-        active && "ring-2 ring-emerald-500 shadow-lg shadow-emerald-500/20",
+        active && "ring-2 ring-amber-500 shadow-lg shadow-amber-500/20",
         className
       )}
       style={{
@@ -30,13 +30,13 @@ export function MihrabCard({
       <div
         className={cn(
           "absolute inset-0 opacity-50",
-          active ? "bg-emerald-500/10" : "bg-slate-700/30"
+          active ? "bg-amber-500/10" : "bg-slate-700/30"
         )}
       />
 
       {active && prayerName && prayerTime && (
         <div className="absolute top-4 right-4 flex flex-col items-end">
-          <span className="text-xs text-emerald-400 uppercase tracking-wider">
+          <span className="text-xs text-amber-400 uppercase tracking-wider">
             {prayerName}
           </span>
           <span className="text-2xl font-mono font-bold text-white">
@@ -50,7 +50,7 @@ export function MihrabCard({
       <div
         className={cn(
           "absolute bottom-0 left-0 right-0 h-1",
-          active ? "bg-emerald-500" : "bg-slate-600"
+          active ? "bg-amber-500" : "bg-slate-600"
         )}
       />
     </div>
@@ -66,7 +66,7 @@ export function MihrabBadge({ children, className }: MihrabBadgeProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/20 text-emerald-400 border border-emerald-500/30",
+        "inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-500/20 text-amber-400 border border-amber-500/30",
         className
       )}
     >

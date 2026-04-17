@@ -7,7 +7,7 @@ import { PlaceholderImage } from "@/components/placeholder-image";
 
 export function CtaSection() {
   return (
-    <section id="demo" className="bg-gradient-to-br from-emerald-600 to-emerald-800 py-24">
+    <section id="demo" className="bg-gradient-to-br from-amber-600 to-amber-800 py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -20,7 +20,7 @@ export function CtaSection() {
               <br />
               Profesionalitas Masjid?
             </h2>
-            <p className="text-emerald-100 text-lg mb-8 max-w-lg">
+            <p className="text-amber-100 text-lg mb-8 max-w-lg">
               Jadwal sholat digital yang akurat, mudah dikelola, dan tampilan
               menarik. Bikin ibadah semakin nyaman untuk jamaah.
             </p>
@@ -28,7 +28,7 @@ export function CtaSection() {
               <Button
                 size="lg"
                 variant="secondary"
-                className="bg-white text-emerald-700 hover:bg-emerald-50"
+                className="bg-white text-amber-700 hover:bg-amber-50"
               >
                 Buka Demo
                 <ArrowRight className="w-4 h-4 ml-2" />
