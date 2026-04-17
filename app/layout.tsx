@@ -60,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="id" className="scroll-smooth">
       <body
-        className={`${sora.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} font-jakarta antialiased bg-[#0A192F]`}
+        className={`${sora.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} font-jakarta antialiased bg-[#0A192F] overflow-x-hidden`}
       >
         {children}
       </body>

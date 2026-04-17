@@ -19,8 +19,8 @@ export function PlaceholderImage({
 
   return (
     <div
-      className={`bg-slate-800 border-2 border-dashed border-slate-600 rounded-lg flex items-center justify-center ${className}`}
-      style={{ aspectRatio: aspectRatio.toFixed(2) }}
+      className={`bg-slate-800 border-2 border-dashed border-slate-600 rounded-lg flex items-center justify-center overflow-hidden ${className}`}
+      style={{ aspectRatio: aspectRatio.toFixed(2), maxWidth: "100%" }}
     >
       <div className="text-center p-8">
         <Image className="w-12 h-12 mx-auto mb-4 text-slate-500" />

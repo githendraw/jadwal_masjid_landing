@@ -75,7 +75,7 @@ export function BentoGrid() {
                   height={400}
                   label="Fitur 1: Screenshot Setting Metode"
                   note="Screenshot HP bagian Manajemen Masjid > Pilih metode Kemenag/MWL. Crop 800x400, fokus ke dropdown"
-                  className="mb-4"
+                  className="mb-4 max-w-full overflow-hidden"
                 />
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-emerald-500/20 rounded-lg">
@@ -108,7 +108,7 @@ export function BentoGrid() {
                   height={400}
                   label="Fitur 2: Ilustrasi HP ke Banyak TV"
                   note="Ilustrasi flat design. 1 HP di tengah, panah ke 3-4 TV. Background transparent PNG 800x400"
-                  className="mb-4"
+                  className="mb-4 max-w-full overflow-hidden"
                 />
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-emerald-500/20 rounded-lg">

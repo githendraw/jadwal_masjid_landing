@@ -36,23 +36,23 @@ export function TabShowcase() {
               <TabsTrigger value="hp">Aplikasi HP</TabsTrigger>
             </TabsList>
 
-            <TabsContent value="beranda" className="mt-8">
+            <TabsContent value="beranda" className="mt-8 overflow-hidden">
               <PlaceholderImage
                 width={1920}
                 height={1080}
                 label="Showcase: Tampilan Beranda TV Full"
                 note="Screenshot 16:9 1920x1080. UI full: BG Kabah blur, header putih, 7 card, bar hitam, bar pink running text. Jam 18:04"
-                className="rounded-xl"
+                className="rounded-xl max-w-full"
               />
             </TabsContent>
 
-            <TabsContent value="iqomah" className="mt-8">
+            <TabsContent value="iqomah" className="mt-8 overflow-hidden">
               <PlaceholderImage
                 width={1920}
                 height={1080}
                 label="Showcase: Mode Iqomah Countdown"
                 note="Screenshot 16:9. BG sama tapi scrim 80%. Tengah text 'IQOMAH' 60px, 'MAGHRIB' pink, '09:58' gede 180px"
-                className="rounded-xl"
+                className="rounded-xl max-w-full"
               />
             </TabsContent>
 

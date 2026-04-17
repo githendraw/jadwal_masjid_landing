@@ -69,25 +69,25 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
+            className="relative overflow-hidden"
           >
-            <div className="relative z-10">
+            <div className="relative z-10 max-w-full overflow-hidden">
               <PlaceholderImage
                 width={1200}
                 height={750}
                 label="Hero: Mockup TV 65 Inch Angle"
                 note="PNG transparan. TV miring 15deg. Layar isi UI Beranda: header putih 'MASJID AL-IKHLAS', 7 card, jam 18:04, Maghrib 18:08 aktif. Ada glow emerald di belakang. Ukuran 1200x750 biar ringan"
-                className="rounded-2xl"
+                className="rounded-2xl max-w-full"
               />
             </div>
 
-            <div className="absolute -bottom-10 -left-10 z-20">
-              <div className="bg-[#0A192F] p-4 rounded-xl border border-slate-700 shadow-xl">
-                <PrayerClock className="w-32 h-32" />
+            <div className="absolute -bottom-10 -left-4 sm:-left-10 z-20">
+              <div className="bg-[#0A192F] p-2 sm:p-4 rounded-xl border border-slate-700 shadow-xl">
+                <PrayerClock className="w-24 h-24 sm:w-32 sm:h-32" />
               </div>
             </div>
 
-            <div className="absolute -top-4 -right-4 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl" />
+            <div className="absolute -top-4 -right-4 w-48 h-48 sm:w-72 sm:h-72 bg-emerald-500/20 rounded-full blur-3xl" />
           </motion.div>
         </div>
       </div>
