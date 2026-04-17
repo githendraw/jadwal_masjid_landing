@@ -43,7 +43,7 @@ const faqs = [
 
 export function FaqSection() {
   return (
-    <section id="faq" className="bg-white py-24">
+    <section id="faq" className="bg-[#0A192F] py-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,11 +51,11 @@ export function FaqSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-green-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Pertanyaan{" "}
-            <span className="text-green-400">Umum</span>
+            <span className="text-amber-400">Umum</span>
           </h2>
-          <p className="text-green-700">
+          <p className="text-slate-400">
             Ada pertanyaan lain? Hubungi kami via WhatsApp
           </p>
         </motion.div>
@@ -70,12 +70,12 @@ export function FaqSection() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-white border-green-200 rounded-lg px-6"
+                className="bg-slate-800/50 border-slate-700 rounded-lg px-6"
               >
                 <AccordionTrigger className="hover:no-underline text-left">
-                  <span className="text-green-900 font-medium">{faq.question}</span>
+                  <span className="text-white font-medium">{faq.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="text-green-700 pb-4">
+                <AccordionContent className="text-slate-400 pb-4">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

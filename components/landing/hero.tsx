@@ -9,8 +9,8 @@ import { PrayerClock } from "./prayer-clock";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen bg-green-50 overflow-hidden pt-16">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-green-500/10 via-transparent to-transparent" />
+    <section className="relative min-h-screen bg-[#0A192F] overflow-hidden pt-16">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent" />
       <div
         className="absolute inset-0 opacity-20"
         style={{
@@ -27,16 +27,16 @@ export function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Badge className="bg-green-500/20 text-green-400 border-green-500/30 mb-6">
+            <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/30 mb-6">
               v2.0 Sudah Tersedia
             </Badge>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-green-900 leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Jadwal Sholat Digital
-              <span className="text-green-400"> untuk TV Masjid</span>
+              <span className="text-amber-400"> untuk TV Masjid</span>
             </h1>
 
-            <p className="text-lg text-green-700 mb-8 max-w-xl">
+            <p className="text-lg text-slate-400 mb-8 max-w-xl">
               Tampilkan jadwal sholat akurat di TV masjid dengan mudah. Satu
               HP mengelola banyak TV, otomatis update setiap hari tanpa
               ribet.
@@ -45,7 +45,7 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button
                 size="lg"
-                className="bg-green-500 hover:bg-green-600 text-green-900"
+                className="bg-amber-500 hover:bg-amber-600 text-white"
               >
                 Buka Demo
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -53,14 +53,14 @@ export function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-green-500 text-green-400 hover:bg-green-500/10"
+                className="border-amber-500 text-amber-400 hover:bg-amber-500/10"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Unduh APK
               </Button>
             </div>
 
-            <p className="text-sm text-green-600">
+            <p className="text-sm text-slate-500">
               Gratis untuk Masjid. Tersedia di Android.
             </p>
           </motion.div>
@@ -82,12 +82,12 @@ export function Hero() {
             </div>
 
             <div className="absolute -bottom-10 -left-10 z-20">
-              <div className="bg-green-50 p-4 rounded-xl border border-green-200 shadow-xl">
+              <div className="bg-[#0A192F] p-4 rounded-xl border border-slate-700 shadow-xl">
                 <PrayerClock className="w-32 h-32" />
               </div>
             </div>
 
-            <div className="absolute -top-4 -right-4 w-72 h-72 bg-green-500/20 rounded-full blur-3xl" />
+            <div className="absolute -top-4 -right-4 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl" />
           </motion.div>
         </div>
       </div>

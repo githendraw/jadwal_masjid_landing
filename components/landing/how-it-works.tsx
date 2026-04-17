@@ -26,7 +26,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="cara-pakai" className="bg-white py-24">
+    <section id="cara-pakai" className="bg-[#0A192F] py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -34,11 +34,11 @@ export function HowItWorks() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-green-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Cara Pakai{" "}
-            <span className="text-green-400">3 Langkah</span>
+            <span className="text-amber-400">3 Langkah</span>
           </h2>
-          <p className="text-green-700 max-w-2xl mx-auto">
+          <p className="text-slate-400 max-w-2xl mx-auto">
             Simpel dan cepat. Dalam 5 menit, TV masjid sudah bisa menampilkan
             jadwal sholat.
           </p>
@@ -56,21 +56,21 @@ export function HowItWorks() {
             >
               <div className="flex flex-col items-center text-center">
                 <div className="relative mb-6">
-                  <div className="w-20 h-20 bg-green-500/20 rounded-2xl flex items-center justify-center">
-                    <step.icon className="w-10 h-10 text-green-400" />
+                  <div className="w-20 h-20 bg-amber-500/20 rounded-2xl flex items-center justify-center">
+                    <step.icon className="w-10 h-10 text-amber-400" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-green-900 font-bold text-sm">
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
                     {index + 1}
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-green-900 mb-3">
+                <h3 className="text-xl font-semibold text-white mb-3">
                   {step.title}
                 </h3>
-                <p className="text-green-700">{step.description}</p>
+                <p className="text-slate-400">{step.description}</p>
               </div>
 
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-green-500/50 to-transparent" />
+                <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-amber-500/50 to-transparent" />
               )}
             </motion.div>
           ))}

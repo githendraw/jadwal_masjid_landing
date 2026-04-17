@@ -7,7 +7,7 @@ import { PlaceholderImage } from "@/components/placeholder-image";
 
 export function CtaSection() {
   return (
-    <section id="demo" className="bg-gradient-to-br from-green-600 to-green-800 py-24">
+    <section id="demo" className="bg-gradient-to-br from-amber-600 to-amber-800 py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -15,12 +15,12 @@ export function CtaSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-green-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
               Siap Tingkatkan
               <br />
               Profesionalitas Masjid?
             </h2>
-            <p className="text-green-100 text-lg mb-8 max-w-lg">
+            <p className="text-amber-100 text-lg mb-8 max-w-lg">
               Jadwal sholat digital yang akurat, mudah dikelola, dan tampilan
               menarik. Bikin ibadah semakin nyaman untuk jamaah.
             </p>
@@ -28,7 +28,7 @@ export function CtaSection() {
               <Button
                 size="lg"
                 variant="secondary"
-                className="bg-white text-green-700 hover:bg-green-50"
+                className="bg-white text-amber-700 hover:bg-amber-50"
               >
                 Buka Demo
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -36,7 +36,7 @@ export function CtaSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-green-900 hover:bg-white/10"
+                className="border-white text-white hover:bg-white/10"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Unduh APK
