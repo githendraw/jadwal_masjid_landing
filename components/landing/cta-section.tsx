@@ -49,14 +49,14 @@ export function CtaSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="flex justify-center"
+            className="flex justify-center items-center"
           >
             <PlaceholderImage
-              width={500}
-              height={1000}
+              width={400}
+              height={600}
               label="CTA: Mockup HP Angle"
               note="PNG transparan. Mockup HP miring, layar nunjukin halaman Pengumuman. Ukuran 500x1000"
-              className="max-w-xs"
+              className="max-w-[200px] sm:max-w-xs"
             />
           </motion.div>
         </div>

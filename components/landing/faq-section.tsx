@@ -10,9 +10,9 @@ import {
 
 const faqs = [
   {
-    question: "Apakah gratis untuk masjid?",
+    question: "Apakah berbayar?",
     answer:
-      "Ya, aplikasi dasar sepenuhnya gratis untuk semua masjid. Kamu bisa download APK dan install tanpa bayar sepeserpun.",
+      "Bukan gratis. Bayar sekali, pakai selamanya. Tanpa biaya bulanan atau tersembunyi.",
   },
   {
     question: "Bagaimana cara konek ke TV?",

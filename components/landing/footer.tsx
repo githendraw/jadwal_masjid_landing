@@ -33,7 +33,7 @@ export function Footer() {
               <span className="text-lg font-bold text-white">Waktu Sholat</span>
             </a>
             <p className="text-slate-400 text-sm">
-              Jadwal sholat digital untuk TV masjid. Akurat, mudah, dan gratis.
+              Jadwal sholat digital untuk TV masjid. Akurat, mudah, bayar sekali pakai selamanya.
             </p>
           </div>
 
