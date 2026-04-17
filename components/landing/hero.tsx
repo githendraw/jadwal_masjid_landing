@@ -9,7 +9,7 @@ import { PrayerClock } from "./prayer-clock";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen bg-[#0A192F] overflow-hidden pt-16">
+    <section className="relative min-h-[80vh] bg-[#0A192F] overflow-hidden pt-20 sm:pt-16">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent" />
       <div
         className="absolute inset-0 opacity-20"

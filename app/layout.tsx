@@ -59,8 +59,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/favicon.ico?v=3" type="image/x-icon" />
+      </head>
       <body
-        className={`${sora.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} font-jakarta antialiased bg-[#0A192F] overflow-x-hidden`}
+        className={`${sora.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} font-jakarta antialiased bg-[#0A192F] overflow-x-hidden max-w-screen`}
       >
         {children}
       </body>

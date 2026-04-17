@@ -1,6 +1,7 @@
 "use client";
 
 import { Clock } from "lucide-react";
+import Image from "next/image";
 
 const footerLinks = {
   product: [
@@ -29,7 +30,14 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-2 md:col-span-1">
             <a href="#" className="flex items-center gap-2 mb-4">
-              <Clock className="w-6 h-6 text-emerald-400" />
+              <div className="relative w-8 h-8">
+                <Image
+                  src="/logo.png"
+                  alt="Waktu Sholat"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               <span className="text-lg font-bold text-white">Waktu Sholat</span>
             </a>
             <p className="text-slate-400 text-sm">

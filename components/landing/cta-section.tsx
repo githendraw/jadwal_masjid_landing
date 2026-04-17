@@ -7,9 +7,9 @@ import { PlaceholderImage } from "@/components/placeholder-image";
 
 export function CtaSection() {
   return (
-    <section id="demo" className="bg-gradient-to-br from-emerald-600 to-emerald-800 py-24">
+    <section id="demo" className="bg-gradient-to-br from-emerald-600 to-emerald-800 py-16 sm:py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -56,7 +56,7 @@ export function CtaSection() {
               height={600}
               label="CTA: Mockup HP Angle"
               note="PNG transparan. Mockup HP miring, layar nunjukin halaman Pengumuman. Ukuran 500x1000"
-              className="max-w-[200px] sm:max-w-xs"
+              className="max-w-[160px] sm:max-w-xs w-full"
             />
           </motion.div>
         </div>
