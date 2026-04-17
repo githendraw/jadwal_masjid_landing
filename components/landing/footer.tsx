@@ -8,7 +8,7 @@ const footerLinks = {
     { label: "Fitur", href: "#fitur" },
     { label: "Tampilan", href: "#tampilan" },
     { label: "Cara Pakai", href: "#cara-pakai" },
-    { label: "Unduh", href: "#demo" },
+    { label: "Hubungi Kami", href: "#" },
   ],
   support: [
     { label: "FAQ", href: "#faq" },

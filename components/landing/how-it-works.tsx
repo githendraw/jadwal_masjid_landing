@@ -1,14 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Download, SlidersHorizontal, QrCode } from "lucide-react";
+import { MessageSquare, SlidersHorizontal, QrCode } from "lucide-react";
 
 const steps = [
   {
-    icon: Download,
-    title: "Unduh Aplikasi",
+    icon: MessageSquare,
+    title: "Hubungi Kami",
     description:
-      "Download aplikasi Waktu Sholat dari website atau Play Store. Install di smartphone.",
+      "Hubungi kami untuk pemasangan aplikasi Waktu Sholat. Kami akan bantu proses instalasi.",
   },
   {
     icon: SlidersHorizontal,

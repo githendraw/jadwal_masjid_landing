@@ -52,9 +52,6 @@ export function Header() {
             <Button variant="outline" className="border-emerald-500 text-emerald-400 hover:bg-emerald-500/10">
               Buka Demo
             </Button>
-            <Button className="bg-emerald-500 hover:bg-emerald-600 text-white">
-              Unduh APK
-            </Button>
           </div>
 
           <button
@@ -83,9 +80,6 @@ export function Header() {
             <div className="pt-4 space-y-2">
               <Button variant="outline" className="w-full border-emerald-500 text-emerald-400">
                 Buka Demo
-              </Button>
-              <Button className="w-full bg-emerald-500 hover:bg-emerald-600">
-                Unduh APK
               </Button>
             </div>
           </nav>

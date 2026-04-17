@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { PlaceholderImage } from "@/components/placeholder-image";
@@ -55,13 +55,13 @@ export function Hero() {
                 variant="outline"
                 className="border-emerald-500 text-emerald-400 hover:bg-emerald-500/10"
               >
-                <Download className="w-4 h-4 mr-2" />
-                Unduh APK
+                <Phone className="w-4 h-4 mr-2" />
+                Hubungi Kami
               </Button>
             </div>
 
             <p className="text-sm text-slate-500 mb-4 sm:mb-0">
-              Bayar sekali, pakai selamanya. Tersedia di Android.
+              Hubungi kami untuk pemasangan. Bayar sekali, pakai selamanya.
             </p>
 
             <div className="flex justify-center sm:hidden">

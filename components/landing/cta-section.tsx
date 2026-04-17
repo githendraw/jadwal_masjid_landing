@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PlaceholderImage } from "@/components/placeholder-image";
 
@@ -38,8 +38,8 @@ export function CtaSection() {
                 variant="outline"
                 className="border-white text-white hover:bg-white/10"
               >
-                <Download className="w-4 h-4 mr-2" />
-                Unduh APK
+                <Phone className="w-4 h-4 mr-2" />
+                Hubungi Kami
               </Button>
             </div>
           </motion.div>

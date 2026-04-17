@@ -29,6 +29,35 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Production with Docker Compose
+
+```bash
+docker compose up -d --build
+```
+
+| Command | Description |
+| - | - |
+| `docker compose logs -f` | View logs |
+| `docker compose restart` | Restart app |
+| `docker compose down` | Stop and remove containers |
+
+## Production with PM2
+
+```bash
+npm install -g pm2
+npm run build
+pm2 start ecosystem.config.js
+pm2 save
+pm2 startup
+```
+
+| Command | Description |
+| - | - |
+| `pm2 status` | Check running processes |
+| `pm2 logs waktu_sholat` | View logs |
+| `pm2 restart waktu_sholat` | Restart app |
+| `pm2 stop waktu_sholat` | Stop app |
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
