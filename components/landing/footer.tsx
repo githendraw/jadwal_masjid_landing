@@ -29,7 +29,7 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-2 md:col-span-1">
             <a href="#" className="flex items-center gap-2 mb-4">
-              <Clock className="w-6 h-6 text-amber-400" />
+              <Clock className="w-6 h-6 text-emerald-400" />
               <span className="text-lg font-bold text-white">Waktu Sholat</span>
             </a>
             <p className="text-slate-400 text-sm">
@@ -44,7 +44,7 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-slate-400 hover:text-amber-400 text-sm transition-colors"
+                    className="text-slate-400 hover:text-emerald-400 text-sm transition-colors"
                   >
                     {link.label}
                   </a>
@@ -60,7 +60,7 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-slate-400 hover:text-amber-400 text-sm transition-colors"
+                    className="text-slate-400 hover:text-emerald-400 text-sm transition-colors"
                   >
                     {link.label}
                   </a>
@@ -76,7 +76,7 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-slate-400 hover:text-amber-400 text-sm transition-colors"
+                    className="text-slate-400 hover:text-emerald-400 text-sm transition-colors"
                   >
                     {link.label}
                   </a>
@@ -91,13 +91,13 @@ export function Footer() {
             &copy; 2026 Waktu Sholat. Dibuat dengan ❤️ untuk umat Islam.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-slate-400 hover:text-amber-400 text-sm">
+            <a href="#" className="text-slate-400 hover:text-emerald-400 text-sm">
               Twitter
             </a>
-            <a href="#" className="text-slate-400 hover:text-amber-400 text-sm">
+            <a href="#" className="text-slate-400 hover:text-emerald-400 text-sm">
               Instagram
             </a>
-            <a href="#" className="text-slate-400 hover:text-amber-400 text-sm">
+            <a href="#" className="text-slate-400 hover:text-emerald-400 text-sm">
               YouTube
             </a>
           </div>

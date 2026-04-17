@@ -10,7 +10,7 @@ import { PrayerClock } from "./prayer-clock";
 export function Hero() {
   return (
     <section className="relative min-h-screen bg-[#0A192F] overflow-hidden pt-16">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent" />
       <div
         className="absolute inset-0 opacity-20"
         style={{
@@ -27,13 +27,13 @@ export function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/30 mb-6">
+            <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30 mb-6">
               v2.0 Sudah Tersedia
             </Badge>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Jadwal Sholat Digital
-              <span className="text-amber-400"> untuk TV Masjid</span>
+              <span className="text-emerald-400"> untuk TV Masjid</span>
             </h1>
 
             <p className="text-lg text-slate-400 mb-8 max-w-xl">
@@ -45,7 +45,7 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button
                 size="lg"
-                className="bg-amber-500 hover:bg-amber-600 text-white"
+                className="bg-emerald-500 hover:bg-emerald-600 text-white"
               >
                 Buka Demo
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -53,7 +53,7 @@ export function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-amber-500 text-amber-400 hover:bg-amber-500/10"
+                className="border-emerald-500 text-emerald-400 hover:bg-emerald-500/10"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Unduh APK
@@ -87,7 +87,7 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="absolute -top-4 -right-4 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl" />
+            <div className="absolute -top-4 -right-4 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl" />
           </motion.div>
         </div>
       </div>

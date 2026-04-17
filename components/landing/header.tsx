@@ -24,7 +24,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a href="#" className="flex items-center gap-2">
-            <Clock className="w-7 h-7 text-amber-400" />
+            <Clock className="w-7 h-7 text-emerald-400" />
             <span className="text-xl font-bold text-white">Waktu Sholat</span>
           </a>
 
@@ -33,7 +33,7 @@ export function Header() {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-slate-300 hover:text-amber-400 transition-colors"
+                className="text-slate-300 hover:text-emerald-400 transition-colors"
               >
                 {item.label}
               </a>
@@ -41,10 +41,10 @@ export function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="outline" className="border-amber-500 text-amber-400 hover:bg-amber-500/10">
+            <Button variant="outline" className="border-emerald-500 text-emerald-400 hover:bg-emerald-500/10">
               Buka Demo
             </Button>
-            <Button className="bg-amber-500 hover:bg-amber-600 text-white">
+            <Button className="bg-emerald-500 hover:bg-emerald-600 text-white">
               Unduh APK
             </Button>
           </div>
@@ -69,16 +69,16 @@ export function Header() {
               <a
                 key={item.label}
                 href={item.href}
-                className="block text-slate-300 hover:text-amber-400 py-2"
+                className="block text-slate-300 hover:text-emerald-400 py-2"
               >
                 {item.label}
               </a>
             ))}
             <div className="pt-4 space-y-2">
-              <Button variant="outline" className="w-full border-amber-500 text-amber-400">
+              <Button variant="outline" className="w-full border-emerald-500 text-emerald-400">
                 Buka Demo
               </Button>
-              <Button className="w-full bg-amber-500 hover:bg-amber-600">
+              <Button className="w-full bg-emerald-500 hover:bg-emerald-600">
                 Unduh APK
               </Button>
             </div>

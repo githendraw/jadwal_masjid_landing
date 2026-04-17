@@ -30,8 +30,8 @@ export function PrayerClock({ className = "" }: { className?: string }) {
             <stop offset="100%" stopColor="#1e3a5f" />
           </linearGradient>
           <linearGradient id="handGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#D4AF37" />
-            <stop offset="100%" stopColor="#B8942E" />
+            <stop offset="0%" stopColor="#10B981" />
+            <stop offset="100%" stopColor="#059669" />
           </linearGradient>
           <filter id="glow">
             <feGaussianBlur stdDeviation="2" result="coloredBlur" />
@@ -47,7 +47,7 @@ export function PrayerClock({ className = "" }: { className?: string }) {
           cy="100"
           r="95"
           fill="url(#clockFace)"
-          stroke="#D4AF37"
+          stroke="#10B981"
           strokeWidth="3"
         />
 
@@ -66,7 +66,7 @@ export function PrayerClock({ className = "" }: { className?: string }) {
               y1={y1}
               x2={x2}
               y2={y2}
-              stroke="#D4AF37"
+              stroke="#10B981"
               strokeWidth={i % 3 === 0 ? 3 : 1}
               strokeLinecap="round"
             />
@@ -88,7 +88,7 @@ export function PrayerClock({ className = "" }: { className?: string }) {
           y1="100"
           x2={Number((100 + 65 * Math.sin((minuteDeg * Math.PI) / 180)).toFixed(2))}
           y2={Number((100 - 65 * Math.cos((minuteDeg * Math.PI) / 180)).toFixed(2))}
-          stroke="#D4AF37"
+          stroke="#10B981"
           strokeWidth="3"
           strokeLinecap="round"
           filter="url(#glow)"
@@ -103,14 +103,14 @@ export function PrayerClock({ className = "" }: { className?: string }) {
           strokeLinecap="round"
         />
 
-        <circle cx="100" cy="100" r="6" fill="#D4AF37" filter="url(#glow)" />
+        <circle cx="100" cy="100" r="6" fill="#10B981" filter="url(#glow)" />
         <circle cx="100" cy="100" r="3" fill="#0A192F" />
 
         <text
           x="100"
           y="40"
           textAnchor="middle"
-          fill="#D4AF37"
+          fill="#10B981"
           fontSize="10"
           fontFamily="monospace"
           fontWeight="bold"
@@ -121,7 +121,7 @@ export function PrayerClock({ className = "" }: { className?: string }) {
 
       {time && (
         <div className="absolute bottom-0 left-0 right-0 text-center">
-          <span className="text-2xl font-mono font-bold text-amber-400">
+          <span className="text-2xl font-mono font-bold text-emerald-400">
             {formatTime(hours)}:{formatTime(minutes)}:{formatTime(seconds)}
           </span>
         </div>

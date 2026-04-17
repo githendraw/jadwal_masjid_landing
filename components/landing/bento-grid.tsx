@@ -54,7 +54,7 @@ export function BentoGrid() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             5 Alasan DKM Pindah ke{" "}
-            <span className="text-amber-400">Waktu Sholat</span>
+            <span className="text-emerald-400">Waktu Sholat</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
             Dirancang khusus untuk kebutuhan masjid di Indonesia
@@ -78,8 +78,8 @@ export function BentoGrid() {
                   className="mb-4"
                 />
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-amber-500/20 rounded-lg">
-                    <Globe className="w-6 h-6 text-amber-400" />
+                  <div className="p-3 bg-emerald-500/20 rounded-lg">
+                    <Globe className="w-6 h-6 text-emerald-400" />
                   </div>
                   <div>
                     <h3 className="text-white font-semibold text-lg mb-2">
@@ -111,8 +111,8 @@ export function BentoGrid() {
                   className="mb-4"
                 />
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-amber-500/20 rounded-lg">
-                    <Smartphone className="w-6 h-6 text-amber-400" />
+                  <div className="p-3 bg-emerald-500/20 rounded-lg">
+                    <Smartphone className="w-6 h-6 text-emerald-400" />
                   </div>
                   <div>
                     <h3 className="text-white font-semibold text-lg mb-2">
@@ -138,8 +138,8 @@ export function BentoGrid() {
               <Card className="bg-slate-800/50 border-slate-700 h-full">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-amber-500/20 rounded-lg">
-                      <adv.icon className="w-6 h-6 text-amber-400" />
+                    <div className="p-3 bg-emerald-500/20 rounded-lg">
+                      <adv.icon className="w-6 h-6 text-emerald-400" />
                     </div>
                     <div>
                       <h3 className="text-white font-semibold text-lg mb-2">
