@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PlaceholderImage } from "@/components/placeholder-image";
 
 const WHATSAPP_LINK = "https://wa.me/6281234567890?text=Halo%20Waktu%20Sholat";
 
@@ -51,21 +51,27 @@ export function CTASection() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex justify-center items-center"
-          >
-            <PlaceholderImage
-              width={400}
-              height={600}
-              label="CTA: Mockup HP Angle"
-              note="PNG transparan. Mockup HP miring, layar nunjukin halaman Pengumuman. Ukuran 500x1000"
-              className="max-w-[160px] sm:max-w-xs w-full"
-            />
-          </motion.div>
+     <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="flex justify-center items-center group"
+            >
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              className="relative rounded-xl border border-white/10 overflow-hidden"
+            >
+              <Image
+                src="/showcase.png"
+                alt="Mockup HP Angle - Jadwal Sholat Digital"
+                width={800}
+                height={500}
+                className="rounded-xl max-w-full object-contain"
+              />
+              <div className="absolute inset-0 bg-black/20 rounded-xl" />
+            </motion.div>
+            </motion.div>
         </div>
       </div>
     </section>

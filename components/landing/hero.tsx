@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { PlaceholderImage } from "@/components/placeholder-image";
 import { PrayerClock } from "./prayer-clock";
 const WHATSAPP_LINK = "https://wa.me/6281234567890?text=Halo%20Waktu%20Sholat";
 
@@ -29,9 +29,27 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30 mb-6">
-              v2.0 Sudah Tersedia
-            </Badge>
+           <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/30 rounded-full px-4 py-2 mb-4"
+            >
+              <motion.div
+                className="w-2 h-2 rounded-full bg-emerald-400"
+                animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              />
+              <span className="text-emerald-400 text-sm font-medium">
+                Jadwal Real-time
+              </span>
+            </motion.div>
+
+            <div className="mb-6">
+              <div className="w-fit bg-[#0A192F] p-4 rounded-xl border border-slate-700 shadow-xl">
+                <PrayerClock className="w-24 h-24" />
+              </div>
+            </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Jadwal Sholat Digital
@@ -70,12 +88,7 @@ export function Hero() {
               Hubungi kami untuk pemasangan. Bayar sekali, pakai selamanya.
             </p>
 
-            <div className="flex justify-center sm:hidden">
-              <div className="bg-[#0A192F] p-3 rounded-xl border border-slate-700 shadow-xl">
-                <PrayerClock className="w-28 h-28" />
-              </div>
-            </div>
-          </motion.div>
+           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -84,19 +97,13 @@ export function Hero() {
             className="relative hidden sm:block"
           >
             <div className="relative z-10 overflow-hidden">
-              <PlaceholderImage
+              <Image
+                src="/hero.png"
+                alt="Mockup TV 65 Inch Angle - Jadwal Sholat Digital"
                 width={1200}
                 height={750}
-                label="Hero: Mockup TV 65 Inch Angle"
-                note="PNG transparan. TV miring 15deg. Layar isi UI Beranda: header putih 'MASJID AL-IKHLAS', 7 card, jam 18:04, Maghrib 18:08 aktif. Ada glow emerald di belakang. Ukuran 1200x750 biar ringan"
-                className="rounded-2xl max-w-full"
+                className="rounded-2xl max-w-full object-contain"
               />
-            </div>
-
-            <div className="absolute -bottom-8 -left-4 z-20">
-              <div className="bg-[#0A192F] p-4 rounded-xl border border-slate-700 shadow-xl">
-                <PrayerClock className="w-32 h-32" />
-              </div>
             </div>
 
             <div className="absolute -top-4 -right-4 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl" />
@@ -109,12 +116,12 @@ export function Hero() {
             className="relative sm:hidden -mt-5"
           >
             <div className="relative z-10 overflow-hidden">
-              <PlaceholderImage
+              <Image
+                src="/hero.png"
+                alt="Mockup TV 65 Inch Angle - Jadwal Sholat Digital"
                 width={800}
                 height={500}
-                label="Hero: Mockup TV 65 Inch Angle"
-                note="PNG transparan. TV miring 15deg. Layar isi UI Beranda: header putih 'MASJID AL-IKHLAS', 7 card, jam 18:04, Maghrib 18:08 aktif. Ada glow emerald di belakang."
-                className="rounded-2xl max-w-full"
+                className="rounded-2xl max-w-full object-contain"
               />
             </div>
 

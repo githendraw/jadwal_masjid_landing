@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { PlaceholderImage } from "@/components/placeholder-image";
 
@@ -37,13 +38,13 @@ export function TabShowcase() {
             </TabsList>
 
             <TabsContent value="beranda" className="mt-8 overflow-hidden">
-              <PlaceholderImage
-                width={1920}
-                height={1080}
-                label="Showcase: Tampilan Beranda TV Full"
-                note="Screenshot 16:9 1920x1080. UI full: BG Kabah blur, header putih, 7 card, bar hitam, bar pink running text. Jam 18:04"
-                className="rounded-xl max-w-full"
-              />
+        <Image
+                 src="/hero.png"
+                 alt="Tampilan Beranda TV Full - Jadwal Sholat Digital"
+                 width={1920}
+                 height={1080}
+                 className="rounded-xl max-w-full object-contain"
+               />
             </TabsContent>
 
             <TabsContent value="iqomah" className="mt-8 overflow-hidden">
