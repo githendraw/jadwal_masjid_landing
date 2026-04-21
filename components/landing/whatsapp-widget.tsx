@@ -18,9 +18,9 @@ export function WhatsAppWidget() {
         initial={{ opacity: 0, x: -10 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1.5, duration: 0.5 }}
-        className="bg-white text-slate-800 text-sm px-4 py-2 rounded-tr-lg rounded-tl-lg rounded-br-lg shadow-lg max-w-[160px] pb-0"
+        className="bg-slate-800 text-white text-sm px-4 py-2 rounded-tl-lg rounded-tr-lg rounded-bl-lg shadow-lg max-w-[160px] pb-0 text-center border border-slate-700"
       >
-        <p className="font-medium">Chat via WhatsApp</p>
+        Chat via WhatsApp
       </motion.div>
 
       {/* Button */}

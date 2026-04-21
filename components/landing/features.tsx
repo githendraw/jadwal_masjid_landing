@@ -15,9 +15,6 @@ import {
   Wifi,
   Palette,
   Clock,
-  Shield,
-  Languages,
-  QrCode,
   Settings,
   Layout,
 } from "lucide-react";
@@ -65,24 +62,6 @@ const features = [
     title: "Mode Iqomah",
     description:
       "Countdown iqomah otomatis. Tampil setelah adzan, hitung mundur ke sholat.",
-  },
-  {
-    icon: Shield,
-    title: "Anti Lag",
-    description:
-      "Dirancang ringan. Jalan lancar di TV jadul sekalipun.",
-  },
-  {
-    icon: Languages,
-    title: "Multi Bahasa",
-    description:
-      "Indonesia dan Arab. Mudah dipilih dari pengaturan.",
-  },
-  {
-    icon: QrCode,
-    title: "QR Code Connect",
-    description:
-      "Scan QR di TV untuk sinkron. Tanpa perlu input IP atau kabel.",
   },
   {
     icon: Settings,
