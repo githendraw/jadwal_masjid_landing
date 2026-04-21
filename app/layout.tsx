@@ -4,7 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/landing/header";
 import { WhatsAppWidget } from "@/components/landing/whatsapp-widget";
 
-const OG_IMAGE_URL = "https://jadwalmasjid.com/hero.png";
+const OG_IMAGE_URL = "https://jadwalmasjid.com/og-image.jpg";
 
 const sora = Sora({
   variable: "--font-sora",
