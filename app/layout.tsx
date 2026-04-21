@@ -4,7 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/landing/header";
 import { WhatsAppWidget } from "@/components/landing/whatsapp-widget";
 
-const OG_IMAGE_URL = "https://jadwalmasjid.com/api/og";
+const OG_IMAGE_URL = "https://jadwalmasjid.com/hero.png";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "700"],
 });
 
-const WHATSAPP_LINK = "https://wa.me/6281234567890?text=Halo%20Jadwal%20Masjid";
+const WHATSAPP_LINK = "https://wa.me/6287774348558?text=Halo%20Jadwal%20Masjid";
 
 export const metadata: Metadata = {
   title: "Jadwal Masjid - Jadwal Sholat Digital untuk TV Masjid",

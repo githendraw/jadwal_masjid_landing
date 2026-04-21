@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const WHATSAPP_LINK = "https://wa.me/6281234567890?text=Halo%20Waktu%20Sholat";
+const WHATSAPP_LINK = "https://wa.me/6287774348558?text=Halo%20Waktu%20Sholat";
 
 export function CTASection() {
   return (

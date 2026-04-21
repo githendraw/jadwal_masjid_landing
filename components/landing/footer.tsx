@@ -3,7 +3,7 @@
 import { Clock } from "lucide-react";
 import Image from "next/image";
 
-const WHATSAPP_LINK = "https://wa.me/6281234567890?text=Halo%20Waktu%20Sholat";
+const WHATSAPP_LINK = "https://wa.me/6287774348558?text=Halo%20Waktu%20Sholat";
 const GITHUB_REPO = "https://github.com/githendraw";
 
 const footerLinks = {

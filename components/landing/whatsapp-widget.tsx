@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 
-const WHATSAPP_LINK = "https://wa.me/6281234567890?text=Halo%20Waktu%20Sholat";
+const WHATSAPP_LINK = "https://wa.me/6287774348558?text=Halo%20Waktu%20Sholat";
 
 export function WhatsAppWidget() {
   return (
