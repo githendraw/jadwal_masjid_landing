@@ -4,6 +4,8 @@ import "./globals.css";
 import { Header } from "@/components/landing/header";
 import { WhatsAppWidget } from "@/components/landing/whatsapp-widget";
 
+const OG_IMAGE_URL = "https://jadwalmasjid.com/api/og";
+
 const sora = Sora({
   variable: "--font-sora",
   subsets: ["latin"],
@@ -45,7 +47,7 @@ export const metadata: Metadata = {
     locale: "id_ID",
     images: [
       {
-        url: "/api/og",
+        url: OG_IMAGE_URL,
         width: 1200,
         height: 630,
         alt: "Jadwal Masjid - Jadwal Sholat Digital",
@@ -57,7 +59,7 @@ export const metadata: Metadata = {
     title: "Jadwal Masjid - Jadwal Sholat Digital untuk TV Masjid",
     description:
       "Tampilkan jadwal sholat akurat di TV masjid dengan mudah.",
-    images: ["/api/og"],
+    images: [OG_IMAGE_URL],
   },
   robots: {
     index: true,
