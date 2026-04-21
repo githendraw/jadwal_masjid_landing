@@ -32,7 +32,7 @@ const testimonials = [
   {
     name: "H. Taufik",
     role: "DKM Masjid Nurul Iman, Surabaya",
-    text: "Dulu ada masalah jadwal yang selalu salah. Sejak pakai Waktu Sholat, jadwal selalu update otomatis. Sangat recommended untuk masjid manapun.",
+    text: "Dulu ada masalah jadwal yang selalu salah. Sejak pakai Jadwal Masjid, jadwal selalu update otomatis. Sangat recommended untuk masjid manapun.",
     rating: 4,
   },
 ];
@@ -73,7 +73,7 @@ export function Testimonials() {
             transition={{ delay: 0.2 }}
             className="text-slate-400 max-w-2xl mx-auto"
           >
-            Kata mereka yang sudah menggunakan Waktu Sholat untuk masjid mereka
+            Kata mereka yang sudah menggunakan Jadwal Masjid untuk masjid mereka
           </motion.p>
         </div>
 

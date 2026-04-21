@@ -28,13 +28,13 @@ export function Header() {
             <div className="relative w-8 h-8 sm:w-9 sm:h-9">
               <Image
                 src="/logo.png"
-                alt="Waktu Sholat"
+                alt="Jadwal Masjid"
                 fill
                 className="object-contain"
               />
             </div>
             <span className="text-lg sm:text-xl font-bold text-white">
-              Waktu Sholat
+              Jadwal Masjid
             </span>
           </a>
 

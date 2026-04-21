@@ -36,12 +36,12 @@ export function Footer() {
               <div className="relative w-8 h-8">
                 <Image
                   src="/logo.png"
-                  alt="Waktu Sholat"
+                  alt="Jadwal Masjid"
                   fill
                   className="object-contain"
                 />
               </div>
-              <span className="text-lg font-bold text-white">Waktu Sholat</span>
+              <span className="text-lg font-bold text-white">Jadwal Masjid</span>
             </a>
             <p className="text-slate-400 text-sm">
               Jadwal sholat digital untuk TV masjid. Akurat, mudah, bayar sekali pakai selamanya.
@@ -105,7 +105,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 text-sm">
-            &copy; 2026 Waktu Sholat. Dibuat dengan ❤️ untuk umat Islam.
+            &copy; 2026 Jadwal Masjid. Dibuat dengan ❤️ untuk umat Islam.
           </p>
           <div className="flex gap-6">
             <a href="https://twitter.com/waktusholat" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-emerald-400 text-sm">

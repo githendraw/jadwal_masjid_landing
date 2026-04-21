@@ -22,10 +22,10 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "700"],
 });
 
-const WHATSAPP_LINK = "https://wa.me/6281234567890?text=Halo%20Waktu%20Sholat";
+const WHATSAPP_LINK = "https://wa.me/6281234567890?text=Halo%20Jadwal%20Masjid";
 
 export const metadata: Metadata = {
-  title: "Waktu Sholat - Jadwal Sholat Digital untuk TV Masjid",
+  title: "Jadwal Masjid - Jadwal Sholat Digital untuk TV Masjid",
   description:
     "Tampilkan jadwal sholat akurat di TV masjid dengan mudah. Satu HP mengelola banyak TV, otomatis update setiap hari tanpa ribet. Gratis untuk masjid.",
   keywords: [
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     "aplikasi masjid",
     "iqomah counter",
   ],
-  authors: [{ name: "Waktu Sholat" }],
+  authors: [{ name: "Jadwal Masjid" }],
   openGraph: {
-    title: "Waktu Sholat - Jadwal Sholat Digital untuk TV Masjid",
+    title: "Jadwal Masjid - Jadwal Sholat Digital untuk TV Masjid",
     description:
       "Tampilkan jadwal sholat akurat di TV masjid dengan mudah. Satu HP mengelola banyak TV.",
     type: "website",
@@ -48,13 +48,13 @@ export const metadata: Metadata = {
         url: "/api/og",
         width: 1200,
         height: 630,
-        alt: "Waktu Sholat - Jadwal Sholat Digital",
+        alt: "Jadwal Masjid - Jadwal Sholat Digital",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Waktu Sholat - Jadwal Sholat Digital untuk TV Masjid",
+    title: "Jadwal Masjid - Jadwal Sholat Digital untuk TV Masjid",
     description:
       "Tampilkan jadwal sholat akurat di TV masjid dengan mudah.",
     images: ["/api/og"],
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "Waktu Sholat",
+  name: "Jadwal Masjid",
   description: "Jadwal sholat digital untuk TV masjid",
   applicationCategory: "Entertainment",
   operatingSystem: "Android, iOS",

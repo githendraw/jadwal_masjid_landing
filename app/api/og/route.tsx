@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 export const runtime = "edge";
 
 export function GET() {
-  const title = "Waktu Sholat - Jadwal Sholat Digital untuk TV Masjid";
+  const title = "Jadwal Masjid - Jadwal Sholat Digital untuk TV Masjid";
   const description = "Tampilkan jadwal sholat akurat di TV masjid dengan mudah.";
 
   return new ImageResponse(

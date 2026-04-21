@@ -59,7 +59,7 @@ export function BentoGrid() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             5 Alasan DKM Pindah ke{" "}
-            <span className="text-emerald-400">Waktu Sholat</span>
+            <span className="text-emerald-400">Jadwal Masjid</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
             Dirancang khusus untuk kebutuhan masjid di Indonesia

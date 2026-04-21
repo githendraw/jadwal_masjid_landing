@@ -8,7 +8,7 @@ const steps = [
     icon: MessageSquare,
     title: "Hubungi Kami",
     description:
-      "Hubungi kami untuk pemasangan aplikasi Waktu Sholat. Kami akan bantu proses instalasi.",
+      "Hubungi kami untuk pemasangan aplikasi Jadwal Masjid. Kami akan bantu proses instalasi.",
   },
   {
     icon: SlidersHorizontal,
