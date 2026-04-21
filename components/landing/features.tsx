@@ -21,6 +21,7 @@ import {
   Settings,
   Layout,
 } from "lucide-react";
+import { MihrabCard } from "./mihrab-card";
 
 const features = [
   {
@@ -99,7 +100,11 @@ const features = [
 
 export function Features() {
   return (
-    <section className="bg-slate-950 py-24">
+    <section className="bg-slate-950 py-24 relative overflow-hidden">
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-10 pointer-events-none hidden xl:block">
+        <MihrabCard className="w-96 h-96" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

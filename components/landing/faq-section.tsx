@@ -8,6 +8,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+const WHATSAPP_LINK = "https://wa.me/6281234567890?text=Halo%20Waktu%20Sholat";
+
 const faqs = [
   {
     question: "Apakah berbayar?",
@@ -41,7 +43,7 @@ const faqs = [
   },
 ];
 
-export function FaqSection() {
+export function FAQSection() {
   return (
     <section id="faq" className="bg-[#0A192F] py-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,7 +58,15 @@ export function FaqSection() {
             <span className="text-emerald-400">Umum</span>
           </h2>
           <p className="text-slate-400">
-            Ada pertanyaan lain? Hubungi kami via WhatsApp
+            Ada pertanyaan lain?{" "}
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-400 hover:text-emerald-300 underline underline-offset-4"
+            >
+              Hubungi kami via WhatsApp
+            </a>
           </p>
         </motion.div>
 

@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 interface MihrabCardProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   active?: boolean;
   prayerName?: string;
@@ -58,7 +58,7 @@ export function MihrabCard({
 }
 
 interface MihrabBadgeProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
 }
 

@@ -3,23 +3,26 @@
 import { Clock } from "lucide-react";
 import Image from "next/image";
 
+const WHATSAPP_LINK = "https://wa.me/6281234567890?text=Halo%20Waktu%20Sholat";
+const GITHUB_REPO = "https://github.com/githendraw";
+
 const footerLinks = {
   product: [
     { label: "Fitur", href: "#fitur" },
     { label: "Tampilan", href: "#tampilan" },
     { label: "Cara Pakai", href: "#cara-pakai" },
-    { label: "Hubungi Kami", href: "#" },
+    { label: "Hubungi Kami", href: WHATSAPP_LINK },
   ],
   support: [
     { label: "FAQ", href: "#faq" },
-    { label: "Dokumentasi", href: "#" },
-    { label: "Hubungi Kami", href: "#" },
-    { label: "Komunitas", href: "#" },
+    { label: "Dokumentasi", href: `${GITHUB_REPO}/waktu_sholat_landing/wiki` },
+    { label: "Hubungi Kami", href: WHATSAPP_LINK },
+    { label: "Komunitas", href: "mailto:komunitas@waktusholat.com" },
   ],
   legal: [
-    { label: "Kebijakan Privasi", href: "#" },
-    { label: "Syarat & Ketentuan", href: "#" },
-    { label: "Lisensi", href: "#" },
+    { label: "Kebijakan Privasi", href: `${GITHUB_REPO}/waktu_sholat_landing/blob/main/PRIVACY.md` },
+    { label: "Syarat & Ketentuan", href: `${GITHUB_REPO}/waktu_sholat_landing/blob/main/TERMS.md` },
+    { label: "Lisensi", href: `${GITHUB_REPO}/waktu_sholat_landing/blob/main/LICENSE` },
   ],
 };
 
@@ -52,6 +55,8 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="text-slate-400 hover:text-emerald-400 text-sm transition-colors"
                   >
                     {link.label}
@@ -68,6 +73,8 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="text-slate-400 hover:text-emerald-400 text-sm transition-colors"
                   >
                     {link.label}
@@ -84,6 +91,8 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="text-slate-400 hover:text-emerald-400 text-sm transition-colors"
                   >
                     {link.label}
@@ -99,13 +108,13 @@ export function Footer() {
             &copy; 2026 Waktu Sholat. Dibuat dengan ❤️ untuk umat Islam.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-slate-400 hover:text-emerald-400 text-sm">
+            <a href="https://twitter.com/waktusholat" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-emerald-400 text-sm">
               Twitter
             </a>
-            <a href="#" className="text-slate-400 hover:text-emerald-400 text-sm">
+            <a href="https://instagram.com/waktusholat" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-emerald-400 text-sm">
               Instagram
             </a>
-            <a href="#" className="text-slate-400 hover:text-emerald-400 text-sm">
+            <a href="https://youtube.com/@waktusholat" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-emerald-400 text-sm">
               YouTube
             </a>
           </div>

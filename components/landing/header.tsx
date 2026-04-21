@@ -6,6 +6,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
+const WHATSAPP_LINK = "https://wa.me/6281234567890?text=Halo%20Waktu%20Sholat";
+
 const navItems = [
   { label: "Fitur", href: "#fitur" },
   { label: "Tampilan", href: "#tampilan" },
@@ -22,7 +24,7 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16">
-          <a href="#" className="flex items-center gap-2 flex-shrink-0 ml-2 sm:ml-0">
+          <a href="/" className="flex items-center gap-2 flex-shrink-0 ml-2 sm:ml-0">
             <div className="relative w-8 h-8 sm:w-9 sm:h-9">
               <Image
                 src="/logo.png"
@@ -50,7 +52,9 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-3 mr-2 sm:mr-0">
             <Button variant="outline" className="border-emerald-500 text-emerald-400 hover:bg-emerald-500/10">
-              Buka Demo
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                Buka Demo
+              </a>
             </Button>
           </div>
 
@@ -79,7 +83,9 @@ export function Header() {
             ))}
             <div className="pt-4 space-y-2">
               <Button variant="outline" className="w-full border-emerald-500 text-emerald-400">
-                Buka Demo
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                  Buka Demo
+                </a>
               </Button>
             </div>
           </nav>

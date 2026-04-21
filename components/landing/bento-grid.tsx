@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Globe, Monitor, Smartphone, Zap, Shield } from "lucide-react";
 import { PlaceholderImage } from "@/components/placeholder-image";
 import { Card, CardContent } from "@/components/ui/card";
+import { MihrabCard } from "./mihrab-card";
 
 const advantages = [
   {
@@ -44,7 +45,11 @@ const advantages = [
 
 export function BentoGrid() {
   return (
-    <section id="fitur" className="bg-[#0A192F] py-24">
+    <section id="fitur" className="bg-[#0A192F] py-24 relative overflow-hidden">
+      <div className="absolute left-1/2 -translate-x-1/2 top-0 opacity-5 pointer-events-none hidden xl:block">
+        <MihrabCard className="w-96 h-96" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
