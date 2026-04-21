@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Globe, Monitor, Smartphone, Zap, Shield } from "lucide-react";
-import { PlaceholderImage } from "@/components/placeholder-image";
 import { Card, CardContent } from "@/components/ui/card";
 import { MihrabCard } from "./mihrab-card";
 
@@ -75,13 +75,13 @@ export function BentoGrid() {
           >
             <Card className="bg-slate-800/50 border-slate-700 h-full">
               <CardContent className="p-6">
-                <PlaceholderImage
-                  width={800}
-                  height={400}
-                  label="Fitur 1: Screenshot Setting Metode"
-                  note="Screenshot HP bagian Manajemen Masjid > Pilih metode Kemenag/MWL. Crop 800x400, fokus ke dropdown"
-                  className="mb-4 max-w-full overflow-hidden"
-                />
+      <Image
+                   src="/tv1.png"
+                   alt="Screenshot Setting Metode - Jadwal Sholat Digital"
+                   width={800}
+                   height={400}
+                   className="mb-4 max-w-full overflow-hidden rounded-lg"
+                 />
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-emerald-500/20 rounded-lg">
                     <Globe className="w-6 h-6 text-emerald-400" />
@@ -108,13 +108,7 @@ export function BentoGrid() {
           >
             <Card className="bg-slate-800/50 border-slate-700 h-full">
               <CardContent className="p-6">
-                <PlaceholderImage
-                  width={800}
-                  height={400}
-                  label="Fitur 2: Ilustrasi HP ke Banyak TV"
-                  note="Ilustrasi flat design. 1 HP di tengah, panah ke 3-4 TV. Background transparent PNG 800x400"
-                  className="mb-4 max-w-full overflow-hidden"
-                />
+                <Image src="/tv2.png" alt="Ilustrasi: 1 HP → 3+ TV" width={800} height={400} className="mb-4 max-w-full overflow-hidden rounded-lg" />
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-emerald-500/20 rounded-lg">
                     <Smartphone className="w-6 h-6 text-emerald-400" />
