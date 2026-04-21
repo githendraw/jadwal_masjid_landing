@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "700"],
 });
 
-const WHATSAPP_LINK = "https://wa.me/6287774348558?text=Halo%20Jadwal%20Masjid";
+const WHATSAPP_LINK = "https://wa.me/6287774348558?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
 
 export const metadata: Metadata = {
   title: "Jadwal Masjid - Jadwal Sholat Digital untuk TV Masjid",
