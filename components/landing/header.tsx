@@ -54,7 +54,7 @@ export function Header() {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-foreground font-semibold hover:text-primary transition-colors"
               >
                 {item.label}
               </a>
