@@ -45,7 +45,7 @@ const advantages = [
 
 export function BentoGrid() {
   return (
-    <section id="fitur" className="bg-[#0A192F] py-24 relative overflow-hidden">
+    <section id="fitur" className="bg-background py-24 relative overflow-hidden">
       <div className="absolute left-1/2 -translate-x-1/2 top-0 opacity-5 pointer-events-none hidden xl:block">
         <MihrabCard className="w-96 h-96" />
       </div>
@@ -57,11 +57,11 @@ export function BentoGrid() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             5 Alasan DKM Pindah ke{" "}
-            <span className="text-emerald-400">Jadwal Masjid</span>
+            <span className="text-primary">Jadwal Masjid</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Dirancang khusus untuk kebutuhan masjid di Indonesia
           </p>
         </motion.div>
@@ -73,7 +73,7 @@ export function BentoGrid() {
             viewport={{ once: true }}
             className="md:col-span-2 md:row-span-1"
           >
-            <Card className="bg-slate-800/50 border-slate-700 h-full">
+            <Card className="bg-card/50 border-border h-full">
               <CardContent className="p-6">
       <Image
                    src="/tv1.png"
@@ -83,14 +83,14 @@ export function BentoGrid() {
                    className="mb-4 max-w-full overflow-hidden rounded-lg"
                  />
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-emerald-500/20 rounded-lg">
-                    <Globe className="w-6 h-6 text-emerald-400" />
+                  <div className="p-3 bg-primary/20 rounded-lg">
+                    <Globe className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold text-lg mb-2">
+                    <h3 className="text-foreground font-semibold text-lg mb-2">
                       {advantages[0].title}
                     </h3>
-                    <p className="text-slate-400 text-sm">
+                    <p className="text-muted-foreground text-sm">
                       {advantages[0].description}
                     </p>
                   </div>
@@ -106,18 +106,18 @@ export function BentoGrid() {
             transition={{ delay: 0.1 }}
             className="md:col-span-2"
           >
-            <Card className="bg-slate-800/50 border-slate-700 h-full">
+            <Card className="bg-card/50 border-border h-full">
               <CardContent className="p-6">
                 <Image src="/tv2.png" alt="Ilustrasi: 1 HP → 3+ TV" width={800} height={400} className="mb-4 max-w-full overflow-hidden rounded-lg" />
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-emerald-500/20 rounded-lg">
-                    <Smartphone className="w-6 h-6 text-emerald-400" />
+                  <div className="p-3 bg-primary/20 rounded-lg">
+                    <Smartphone className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold text-lg mb-2">
+                    <h3 className="text-foreground font-semibold text-lg mb-2">
                       {advantages[1].title}
                     </h3>
-                    <p className="text-slate-400 text-sm">
+                    <p className="text-muted-foreground text-sm">
                       {advantages[1].description}
                     </p>
                   </div>
@@ -134,17 +134,17 @@ export function BentoGrid() {
               viewport={{ once: true }}
               transition={{ delay: (index + 2) * 0.1 }}
             >
-              <Card className="bg-slate-800/50 border-slate-700 h-full">
+              <Card className="bg-card/50 border-border h-full">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-emerald-500/20 rounded-lg">
-                      <adv.icon className="w-6 h-6 text-emerald-400" />
+                    <div className="p-3 bg-primary/20 rounded-lg">
+                      <adv.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-white font-semibold text-lg mb-2">
+                      <h3 className="text-foreground font-semibold text-lg mb-2">
                         {adv.title}
                       </h3>
-                      <p className="text-slate-400 text-sm">{adv.description}</p>
+                      <p className="text-muted-foreground text-sm">{adv.description}</p>
                     </div>
                   </div>
                 </CardContent>

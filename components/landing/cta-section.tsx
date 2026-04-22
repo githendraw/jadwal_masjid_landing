@@ -9,7 +9,7 @@ const WHATSAPP_LINK = "https://wa.me/6287774348558?text=Halo%20Jadwal%20Masjid,%
 
 export function CTASection() {
   return (
-    <section id="demo" className="bg-gradient-to-br from-emerald-600 to-emerald-800 py-16 sm:py-24 overflow-hidden relative">
+    <section id="demo" className="bg-primary text-primary-foreground py-16 sm:py-24 overflow-hidden relative">
       <div className="absolute right-10 top-1/2 -translate-y-1/2 w-96 h-96 bg-white/5 rounded-full blur-2xl pointer-events-none hidden xl:block" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -18,12 +18,12 @@ export function CTASection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary-foreground mb-6">
               Siap Tingkatkan
               <br />
               Profesionalitas Masjid?
             </h2>
-            <p className="text-emerald-100 text-lg mb-8 max-w-lg">
+            <p className="text-primary-foreground/80 text-lg mb-8 max-w-lg">
               Jadwal sholat digital yang akurat, mudah dikelola, dan tampilan
               menarik. Bikin ibadah semakin nyaman untuk jamaah.
             </p>
@@ -31,21 +31,21 @@ export function CTASection() {
               <Button
                 size="lg"
                 variant="secondary"
-                className="bg-white text-emerald-700 hover:bg-emerald-50"
+                className="bg-white text-primary hover:bg-primary-foreground/90"
               >
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  Buka Demo
+                  Hubungi Kami
                 </a>
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white/10"
+                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
               >
                 <Phone className="w-4 h-4 mr-2" />
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  Hubungi Kami
+                  WhatsApp
                 </a>
               </Button>
             </div>

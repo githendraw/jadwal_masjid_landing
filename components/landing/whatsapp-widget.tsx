@@ -18,7 +18,7 @@ export function WhatsAppWidget() {
         initial={{ opacity: 0, x: -10 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1.5, duration: 0.5 }}
-        className="bg-slate-800 text-white text-sm px-4 py-2 rounded-tl-lg rounded-tr-lg rounded-bl-lg shadow-lg max-w-[160px] pb-0 text-center border border-slate-700"
+        className="bg-card text-foreground text-sm px-4 py-2 rounded-tl-lg rounded-tr-lg rounded-bl-lg shadow-lg max-w-[160px] pb-0 text-center border border-border"
       >
         Chat via WhatsApp
       </motion.div>
@@ -34,7 +34,7 @@ export function WhatsAppWidget() {
       >
         {/* Pulse ring */}
         <motion.span
-          className="absolute inset-0 rounded-full bg-emerald-400"
+          className="absolute inset-0 rounded-full bg-primary"
           animate={{ scale: [1, 1.6, 1], opacity: [0.5, 0, 0.5] }}
           transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut" }}
         />

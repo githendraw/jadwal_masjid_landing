@@ -63,10 +63,10 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-3 mr-2 sm:mr-0">
             <Button
-              variant="ghost"
+              variant="outline"
               size="icon"
               onClick={toggleTheme}
-              className="text-muted-foreground hover:text-primary hover:bg-accent/10"
+              className="border-border text-muted-foreground hover:text-primary hover:bg-accent/10"
               aria-label="Toggle theme"
             >
               {mounted && (theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />)}

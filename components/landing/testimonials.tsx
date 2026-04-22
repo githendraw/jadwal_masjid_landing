@@ -39,8 +39,8 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id="testimoni" className="relative bg-[#0A192F] py-20 lg:py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent" />
+    <section id="testimoni" className="relative bg-background py-20 lg:py-32 overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
       <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-5 pointer-events-none hidden lg:block">
         <MihrabCard className="w-96 h-96" />
       </div>
@@ -51,9 +51,9 @@ export function Testimonials() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-400 px-4 py-1.5 rounded-full text-sm font-medium mb-4"
+            className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-4"
           >
-            <Star className="w-4 h-4 fill-emerald-400 text-emerald-400" />
+            <Star className="w-4 h-4 fill-primary text-primary" />
             Testimoni Pengguna
           </motion.div>
           <motion.h2
@@ -61,17 +61,17 @@ export function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl font-bold text-white mb-4"
+            className="text-3xl sm:text-4xl font-bold text-foreground mb-4"
           >
             Dipercaya oleh{" "}
-            <span className="text-emerald-400">Pengurus Masjid</span>
+            <span className="text-primary">Pengurus Masjid</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-400 max-w-2xl mx-auto"
+            className="text-muted-foreground max-w-2xl mx-auto"
           >
             Kata mereka yang sudah menggunakan Jadwal Masjid untuk masjid mereka
           </motion.p>
@@ -85,7 +85,7 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-slate-900/50 border border-slate-800 rounded-xl p-6 hover:border-emerald-500/30 transition-colors"
+              className="bg-card/50 border border-border rounded-xl p-6 hover:border-primary/30 transition-colors"
             >
               <div className="flex items-center gap-1 mb-4">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -93,19 +93,19 @@ export function Testimonials() {
                     key={i}
                     className={`w-4 h-4 ${
                       i < t.rating
-                        ? "text-emerald-400 fill-emerald-400"
-                        : "text-slate-600"
+                        ? "text-primary fill-primary"
+                        : "text-muted-foreground"
                     }`}
                   />
                 ))}
               </div>
-              <Quote className="w-6 h-6 text-emerald-500/30 mb-3" />
-              <p className="text-slate-300 mb-4 text-sm leading-relaxed">
+              <Quote className="w-6 h-6 text-primary/30 mb-3" />
+              <p className="text-foreground mb-4 text-sm leading-relaxed">
                 &quot;{t.text}&quot;
               </p>
-              <div className="border-t border-slate-800 pt-4">
-                <p className="text-white font-medium">{t.name}</p>
-                <p className="text-slate-500 text-sm">{t.role}</p>
+              <div className="border-t border-border pt-4">
+                <p className="text-foreground font-medium">{t.name}</p>
+                <p className="text-muted-foreground text-sm">{t.role}</p>
               </div>
             </motion.div>
           ))}

@@ -20,7 +20,7 @@ const reviews = [
 
 export function CredibilityStrip() {
   return (
-    <section className="bg-slate-900 py-6 border-y border-slate-800">
+    <section className="bg-muted py-6 border-y border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Stats Row */}
         <div className="grid grid-cols-3 gap-4 py-4">
@@ -33,9 +33,9 @@ export function CredibilityStrip() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="flex flex-col items-center gap-2 text-center"
             >
-              <div className="text-emerald-400">{stat.icon}</div>
-              <span className="text-white font-bold text-lg">{stat.value}</span>
-              <span className="text-slate-400 text-sm">{stat.label}</span>
+              <div className="text-primary">{stat.icon}</div>
+              <span className="text-foreground font-bold text-lg">{stat.value}</span>
+              <span className="text-muted-foreground text-sm">{stat.label}</span>
             </motion.div>
           ))}
         </div>
@@ -46,7 +46,7 @@ export function CredibilityStrip() {
             {reviews.map((review, index) => (
               <span
                 key={index}
-                className="mx-6 text-slate-400 text-sm whitespace-nowrap"
+                className="mx-6 text-muted-foreground text-sm whitespace-nowrap"
               >
                 {review}
               </span>

@@ -7,7 +7,7 @@ import { PlaceholderImage } from "@/components/placeholder-image";
 
 export function TabShowcase() {
   return (
-    <section id="tampilan" className="bg-slate-950 py-24">
+    <section id="tampilan" className="bg-muted/50 py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -15,11 +15,11 @@ export function TabShowcase() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Tampilan{" "}
-            <span className="text-emerald-400">Profesional</span>
+            <span className="text-primary">Profesional</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Cocok untuk TV mosque ukuran besar. Tampilan jelas dan mudah dibaca
             dari jauh.
           </p>
@@ -31,7 +31,7 @@ export function TabShowcase() {
           viewport={{ once: true }}
         >
           <Tabs defaultValue="beranda" className="w-full">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 bg-slate-800">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 bg-muted">
               <TabsTrigger value="beranda">Beranda TV</TabsTrigger>
               <TabsTrigger value="iqomah">Mode Iqomah</TabsTrigger>
               <TabsTrigger value="hp">Aplikasi HP</TabsTrigger>
