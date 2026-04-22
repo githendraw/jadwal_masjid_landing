@@ -78,12 +78,23 @@ export function Header() {
             </Button>
           </div>
 
-          <button
-            className="md:hidden text-foreground flex-shrink-0 mr-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-2 md:hidden mr-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="text-foreground hover:bg-accent/10"
+              aria-label="Toggle theme"
+            >
+              {mounted && (theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />)}
+            </Button>
+            <button
+              className="text-foreground flex-shrink-0"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -102,15 +113,6 @@ export function Header() {
               </a>
             ))}
             <div className="pt-4 space-y-2">
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={toggleTheme}
-                className="border-border text-muted-foreground hover:text-primary hover:bg-accent/10"
-                aria-label="Toggle theme"
-              >
-                {mounted && (theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />)}
-              </Button>
               <Button variant="outline" className="w-full border-primary text-primary">
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                   Hubungi Kami
