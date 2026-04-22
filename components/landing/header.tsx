@@ -1,8 +1,9 @@
 "use client";
 
+import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
-import { Clock, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Menu, Sun, Moon, X } from "lucide-react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
@@ -17,10 +18,20 @@ const navItems = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 bg-[#0A192F]/80 backdrop-blur-md border-b border-slate-800"
+      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
     >
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16">
@@ -33,7 +44,7 @@ export function Header() {
                 className="object-contain"
               />
             </div>
-            <span className="text-lg sm:text-xl font-bold text-white">
+            <span className="text-lg sm:text-xl font-bold text-foreground">
               Jadwal Masjid
             </span>
           </a>
@@ -43,7 +54,7 @@ export function Header() {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-slate-300 hover:text-emerald-400 transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors"
               >
                 {item.label}
               </a>
@@ -51,7 +62,16 @@ export function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-3 mr-2 sm:mr-0">
-            <Button variant="outline" className="border-emerald-500 text-emerald-400 hover:bg-emerald-500/10">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="text-muted-foreground hover:text-primary hover:bg-accent/10"
+              aria-label="Toggle theme"
+            >
+              {mounted && (theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />)}
+            </Button>
+            <Button variant="outline" className="border-primary text-primary hover:bg-accent/10">
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                 Hubungi Kami
               </a>
@@ -59,7 +79,7 @@ export function Header() {
           </div>
 
           <button
-            className="md:hidden text-white flex-shrink-0 mr-2"
+            className="md:hidden text-foreground flex-shrink-0 mr-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -69,20 +89,20 @@ export function Header() {
 
       {mobileMenuOpen && (
         <div
-          className="md:hidden bg-[#0A192F] border-t border-slate-800"
+          className="md:hidden bg-background border-t border-border"
         >
           <nav className="px-4 py-4 space-y-3 max-w-7xl mx-auto">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="block text-slate-300 hover:text-emerald-400 py-2"
+                className="block text-muted-foreground hover:text-primary py-2"
               >
                 {item.label}
               </a>
             ))}
             <div className="pt-4 space-y-2">
-              <Button variant="outline" className="w-full border-emerald-500 text-emerald-400">
+              <Button variant="outline" className="w-full border-primary text-primary">
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                   Hubungi Kami
                 </a>

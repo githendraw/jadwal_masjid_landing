@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Sora, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import { Header } from "@/components/landing/header";
 import { WhatsAppWidget } from "@/components/landing/whatsapp-widget";
@@ -101,12 +102,14 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${sora.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} font-jakarta antialiased bg-[#0A192F] overflow-x-hidden max-w-screen`}
+        className={`${sora.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} font-jakarta antialiased bg-background text-foreground overflow-x-hidden max-w-screen`}
       >
-        <Header />
-        {children}
-        <WhatsAppWidget />
-      </body>
+        <ThemeProvider>
+          <Header />
+          {children}
+          <WhatsAppWidget />
+        </ThemeProvider>
+</body>
     </html>
   );
 }
