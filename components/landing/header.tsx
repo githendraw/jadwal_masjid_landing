@@ -53,7 +53,7 @@ export function Header() {
           <div className="hidden md:flex items-center gap-3 mr-2 sm:mr-0">
             <Button variant="outline" className="border-emerald-500 text-emerald-400 hover:bg-emerald-500/10">
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                Buka Demo
+                Hubungi Kami
               </a>
             </Button>
           </div>
@@ -84,7 +84,7 @@ export function Header() {
             <div className="pt-4 space-y-2">
               <Button variant="outline" className="w-full border-emerald-500 text-emerald-400">
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  Buka Demo
+                  Hubungi Kami
                 </a>
               </Button>
             </div>

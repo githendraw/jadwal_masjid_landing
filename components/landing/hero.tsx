@@ -63,15 +63,7 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button
-                size="lg"
-                className="bg-emerald-500 hover:bg-emerald-600 text-white"
-              >
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  Buka Demo
-                </a>
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+
               <Button
                 size="lg"
                 variant="outline"
