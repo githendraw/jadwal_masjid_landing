@@ -119,7 +119,7 @@ export function PrayerClock({ className = "" }: { className?: string }) {
         </text>
       </svg>
 
-      <div className="mx-auto mt-4 text-center w-fit">
+      <div className="mt-4 text-left w-fit">
         <span className="text-2xl font-mono font-bold text-primary">
           {formatTime(hours)}:{formatTime(minutes)}:{formatTime(seconds)}
         </span>
