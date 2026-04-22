@@ -11,11 +11,11 @@ const stats = [
 ];
 
 const reviews = [
-  "⭐⭐⭐⭐⭐ \"Sangat membantu DKM masjid, jadwal selalu update sendiri tanpa perlu setting ulang.\"",
-  "⭐⭐⭐⭐⭐ \"Instalasi cepat, TV masjid jadi lebih informatif dan islami.\"",
-  "⭐⭐⭐⭐⭐ \"Fitur iqomah counter dan pengumuman sangat berguna untuk jamaah.\"",
-  "⭐⭐⭐⭐⭐ \"Satu HP bisa control banyak TV, hemat waktu dan tenaga.\"",
-  "⭐⭐⭐⭐⭐ \"Tampilan di TV sangat clean dan profesional. Jamaah jadi lebih tenang saat sholat.\"",
+  "\"Sangat membantu DKM masjid, jadwal selalu update sendiri tanpa perlu setting ulang.\" - H. Ahmad Fauzi, Bogor",
+  "\"Instalasi cepat, TV masjid jadi lebih informatif dan islami.\" - Ustadz Bilal, Bandung",
+  "\"Fitur iqomah counter dan pengumuman otomatis sangat berguna untuk jamaah.\" - H. Sudirman, Jakarta",
+  "\"Satu HP bisa control banyak TV, hemat waktu dan tenaga.\" - H. Rahman, Makassar",
+  "\"Tampilan di TV sangat clean dan profesional. Jamaah jadi lebih tenang saat sholat.\" - H. Taufik, Surabaya",
 ];
 
 export function CredibilityStrip() {
