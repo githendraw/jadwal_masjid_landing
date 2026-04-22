@@ -28,7 +28,7 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-muted border-t border-border">
+    <footer className="bg-primary text-primary-foreground border-t border-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-2 md:col-span-1">
@@ -41,15 +41,15 @@ export function Footer() {
                   className="object-contain"
                 />
               </div>
-              <span className="text-lg font-bold text-foreground">Jadwal Masjid</span>
+              <span className="text-lg font-bold text-primary-foreground">Jadwal Masjid</span>
             </a>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-primary-foreground/80 text-sm">
               Jadwal sholat digital untuk TV masjid. Akurat, mudah, bayar sekali pakai selamanya.
             </p>
           </div>
 
           <div>
-            <h4 className="text-foreground font-semibold mb-4">Produk</h4>
+            <h4 className="text-primary-foreground font-semibold mb-4">Produk</h4>
             <ul className="space-y-2">
               {footerLinks.product.map((link) => (
                 <li key={link.label}>
@@ -57,7 +57,7 @@ export function Footer() {
                     href={link.href}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-muted-foreground hover:text-primary text-sm transition-colors"
+                    className="text-primary-foreground/80 hover:text-primary-foreground text-sm transition-colors"
                   >
                     {link.label}
                   </a>
@@ -67,7 +67,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-foreground font-semibold mb-4">Support</h4>
+            <h4 className="text-primary-foreground font-semibold mb-4">Support</h4>
             <ul className="space-y-2">
               {footerLinks.support.map((link) => (
                 <li key={link.label}>
@@ -75,7 +75,7 @@ export function Footer() {
                     href={link.href}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-muted-foreground hover:text-primary text-sm transition-colors"
+                    className="text-primary-foreground/80 hover:text-primary-foreground text-sm transition-colors"
                   >
                     {link.label}
                   </a>
@@ -85,7 +85,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-foreground font-semibold mb-4">Legal</h4>
+            <h4 className="text-primary-foreground font-semibold mb-4">Legal</h4>
             <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
@@ -93,7 +93,7 @@ export function Footer() {
                     href={link.href}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-muted-foreground hover:text-primary text-sm transition-colors"
+                    className="text-primary-foreground/80 hover:text-primary-foreground text-sm transition-colors"
                   >
                     {link.label}
                   </a>
@@ -103,18 +103,18 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">
+        <div className="pt-8 border-t border-primary-foreground/20 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-primary-foreground/60 text-sm">
             &copy; 2026 Jadwal Masjid. Dibuat dengan ❤️ untuk umat Islam.
           </p>
           <div className="flex gap-6">
-            <a href="https://twitter.com/waktusholat" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary text-sm">
+            <a href="https://twitter.com/waktusholat" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground text-sm">
               Twitter
             </a>
-            <a href="https://instagram.com/waktusholat" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary text-sm">
+            <a href="https://instagram.com/waktusholat" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground text-sm">
               Instagram
             </a>
-            <a href="https://youtube.com/@waktusholat" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary text-sm">
+            <a href="https://youtube.com/@waktusholat" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground text-sm">
               YouTube
             </a>
           </div>
