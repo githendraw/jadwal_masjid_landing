@@ -118,12 +118,6 @@ export function PrayerClock({ className = "" }: { className?: string }) {
           SHOLAT
         </text>
       </svg>
-
-      <div className="mt-4 ml-2 text-left w-fit">
-        <span className="text-2xl font-mono font-bold text-primary">
-          {formatTime(hours)}:{formatTime(minutes)}:{formatTime(seconds)}
-        </span>
-      </div>
     </div>
   );
 }
