@@ -79,7 +79,7 @@ const features = [
 
 export function Features() {
   return (
-    <section className="bg-slate-950 py-24 relative overflow-hidden">
+    <section className="bg-background py-24 relative overflow-hidden">
       <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-10 pointer-events-none hidden xl:block">
         <MihrabCard className="w-96 h-96" />
       </div>
@@ -91,11 +91,11 @@ export function Features() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Fitur{" "}
-            <span className="text-emerald-400">Lengkap</span>
+            <span className="text-primary">Lengkap</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Semua yang kamu butuhkan untuk display jadwal sholat yang profesional
           </p>
         </motion.div>
@@ -110,19 +110,19 @@ export function Features() {
               <AccordionItem
                 key={feature.title}
                 value={feature.title}
-                className="bg-slate-900/50 border-slate-800 rounded-lg px-6"
+                className="bg-card/50 border-border rounded-lg px-6"
               >
                 <AccordionTrigger className="hover:no-underline">
                   <div className="flex items-center gap-4">
-                    <div className="p-2 bg-emerald-500/20 rounded-lg">
-                      <feature.icon className="w-5 h-5 text-emerald-400" />
+                    <div className="p-2 bg-primary/20 rounded-lg">
+                      <feature.icon className="w-5 h-5 text-primary" />
                     </div>
-                    <span className="text-white font-medium">
+                    <span className="text-foreground font-medium">
                       {feature.title}
                     </span>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="text-slate-400 pb-4 pl-12">
+                <AccordionContent className="text-muted-foreground pb-4 pl-12">
                   {feature.description}
                 </AccordionContent>
               </AccordionItem>
