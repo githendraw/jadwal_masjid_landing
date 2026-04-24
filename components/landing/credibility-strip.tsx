@@ -53,7 +53,7 @@ export function CredibilityStrip() {
             {reviews.map((review, index) => (
               <span
                 key={index}
-                className="mx-4 sm:mx-6 text-muted-foreground/70 text-xs sm:text-sm whitespace-nowrap"
+                className="mx-4 sm:mx-6 text-muted-foreground/90 text-xs sm:text-sm whitespace-nowrap"
               >
                 {review}
               </span>

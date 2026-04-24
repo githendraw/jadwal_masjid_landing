@@ -116,7 +116,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground/60 text-sm">
+           <p className="text-muted-foreground/80 text-sm">
             &copy; 2026 Jadwal Masjid. Dibuat dengan ❤️ untuk umat Islam.
           </p>
           <div className="flex gap-4">
@@ -124,7 +124,7 @@ export function Footer() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground/60 hover:text-primary text-sm transition-colors"
+              className="text-muted-foreground/80 hover:text-primary text-sm transition-colors"
             >
               WhatsApp
             </a>
@@ -132,7 +132,7 @@ export function Footer() {
               href="https://twitter.com/waktusholat"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground/60 hover:text-primary text-sm transition-colors"
+              className="text-muted-foreground/80 hover:text-primary text-sm transition-colors"
             >
               Twitter
             </a>
@@ -140,7 +140,7 @@ export function Footer() {
               href="https://instagram.com/waktusholat"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground/60 hover:text-primary text-sm transition-colors"
+              className="text-muted-foreground/80 hover:text-primary text-sm transition-colors"
             >
               Instagram
             </a>
