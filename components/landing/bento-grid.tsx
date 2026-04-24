@@ -70,7 +70,7 @@ export function BentoGrid() {
             5 Alasan DKM{" "}
             <span className="gradient-text">Pindah ke Jadwal Masjid</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-foreground/70 max-w-2xl mx-auto">
             Dirancang khusus untuk kebutuhan masjid di Indonesia
           </p>
         </motion.div>
@@ -106,7 +106,7 @@ export function BentoGrid() {
                         {adv.title}
                       </h3>
                     </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-foreground/70 text-sm leading-relaxed">
                       {adv.description}
                     </p>
                   </div>

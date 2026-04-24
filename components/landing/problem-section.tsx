@@ -54,7 +54,7 @@ export function ProblemSection() {
           Sering Mengalami{" "}
           <span className="text-destructive/80">Masalah Ini?</span>
         </h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-foreground/70 max-w-2xl mx-auto">
           Kami tahu frustrasinya. DKM masjid harus fokus melayani jamaah,
           bukan pusing dengan jadwal yang salah.
         </p>
@@ -74,7 +74,7 @@ export function ProblemSection() {
               <item.icon className="w-6 h-6 text-destructive/80" />
             </div>
             <h3 className="text-foreground font-semibold text-lg mb-2">{item.title}</h3>
-            <p className="text-muted-foreground text-sm">{item.text}</p>
+            <p className="text-foreground/70 text-sm">{item.text}</p>
           </motion.div>
         ))}
       </div>
@@ -112,7 +112,7 @@ export function ProblemSection() {
               <item.icon className="w-6 h-6 text-primary" />
             </div>
             <h3 className="text-foreground font-semibold text-lg mb-2">{item.title}</h3>
-            <p className="text-muted-foreground text-sm">{item.text}</p>
+            <p className="text-foreground/70 text-sm">{item.text}</p>
           </motion.div>
         ))}
       </div>

@@ -43,10 +43,10 @@ export function Footer() {
               </div>
               <span className="text-lg font-bold text-foreground">Jadwal Masjid</span>
             </a>
-            <p className="text-muted-foreground text-sm mb-4">
+            <p className="text-foreground/70 text-sm mb-4">
               Jadwal sholat digital untuk TV masjid. Akurat, mudah, bayar sekali pakai selamanya.
             </p>
-            <div className="space-y-2 text-muted-foreground text-sm">
+            <div className="space-y-2 text-foreground/60 text-sm">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-primary flex-shrink-0" />
                 <span>Real-time update</span>
@@ -66,7 +66,7 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary text-sm transition-colors"
+                    className="text-foreground/70 hover:text-primary text-sm transition-colors"
                   >
                     {link.label}
                   </a>
@@ -85,7 +85,7 @@ export function Footer() {
                     href={link.href}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-muted-foreground hover:text-primary text-sm transition-colors"
+                    className="text-foreground/70 hover:text-primary text-sm transition-colors"
                   >
                     {link.label}
                   </a>
@@ -104,7 +104,7 @@ export function Footer() {
                     href={link.href}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-muted-foreground hover:text-primary text-sm transition-colors"
+                    className="text-foreground/70 hover:text-primary text-sm transition-colors"
                   >
                     {link.label}
                   </a>
@@ -116,7 +116,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-           <p className="text-muted-foreground/80 text-sm">
+           <p className="text-foreground/60 text-sm">
             &copy; 2026 Jadwal Masjid. Dibuat dengan ❤️ untuk umat Islam.
           </p>
           <div className="flex gap-4">
@@ -124,7 +124,7 @@ export function Footer() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground/80 hover:text-primary text-sm transition-colors"
+              className="text-foreground/60 hover:text-primary text-sm transition-colors"
             >
               WhatsApp
             </a>
@@ -132,7 +132,7 @@ export function Footer() {
               href="https://twitter.com/waktusholat"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground/80 hover:text-primary text-sm transition-colors"
+              className="text-foreground/60 hover:text-primary text-sm transition-colors"
             >
               Twitter
             </a>
@@ -140,7 +140,7 @@ export function Footer() {
               href="https://instagram.com/waktusholat"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground/80 hover:text-primary text-sm transition-colors"
+              className="text-foreground/60 hover:text-primary text-sm transition-colors"
             >
               Instagram
             </a>
