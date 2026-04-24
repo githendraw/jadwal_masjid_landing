@@ -309,7 +309,9 @@ export function PrayerClock() {
             viewport={{ once: true }}
             className="space-y-2"
           >
-            <h3 className="text-white text-lg font-semibold mb-4 px-2">
+            <h3 className={`text-lg font-semibold mb-4 px-2 ${
+              "text-gray-900 dark:text-white"
+            }`}>
               Jadwal Hari Ini
             </h3>
             {prayerTimes.map((prayer, index) => {
@@ -323,18 +325,18 @@ export function PrayerClock() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   className={`flex items-center justify-between p-3 rounded-xl transition-all duration-300 ${
-                    isNext
-                      ? "bg-emerald-600/30 border border-emerald-500/50 shadow-lg"
-                      : isActive
-                      ? "bg-emerald-800/20 border border-emerald-500/30"
-                      : "bg-gray-800/40 border border-gray-700/30"
-                  }`}
+                  isNext
+                    ? "bg-amber-400/15 border border-amber-400/30 shadow-lg dark:bg-emerald-600/30 dark:border-emerald-500/50"
+                    : isActive
+                    ? "bg-emerald-400/10 border border-emerald-400/30 dark:bg-emerald-800/20 dark:border-emerald-500/30"
+                    : "bg-gray-100/60 border border-gray-200/50 dark:bg-gray-800/40 dark:border-gray-700/30"
+                }`}
                 >
                   <div className="flex items-center gap-3">
                     <span className="text-lg">{prayer.icon}</span>
                     <span
                       className={`text-base font-medium ${
-                        isNext ? "text-emerald-300" : "text-gray-300"
+                        isNext ? "text-amber-600 dark:text-emerald-300" : isActive ? "text-emerald-600 dark:text-emerald-300" : "text-gray-600 dark:text-gray-300"
                       }`}
                     >
                       {prayer.name}
@@ -342,13 +344,13 @@ export function PrayerClock() {
                   </div>
                   <div className="flex items-center gap-2">
                     {isNext && (
-                      <span className="text-xs bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full font-medium">
+                    <span className="text-xs bg-amber-400/20 text-amber-700 dark:bg-emerald-500/20 dark:text-emerald-300 px-2 py-0.5 rounded-full font-medium">
                         Berikutnya
                       </span>
                     )}
                     <span
                       className={`text-lg font-mono font-bold ${
-                        isNext ? "text-emerald-300" : "text-white"
+                        isNext ? "text-amber-600 dark:text-emerald-300" : isActive ? "text-emerald-600 dark:text-emerald-300" : "text-gray-800 dark:text-white"
                       }`}
                     >
                       {prayer.time}
