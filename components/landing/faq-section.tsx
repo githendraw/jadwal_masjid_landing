@@ -55,7 +55,7 @@ export function FAQSection() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Pertanyaan{" "}
-            <span className="text-primary">Umum</span>
+            <span className="gradient-text">Umum</span>
           </h2>
           <p className="text-muted-foreground">
             Ada pertanyaan lain?{" "}
@@ -75,7 +75,7 @@ export function FAQSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <Accordion className="space-y-4">
+          <Accordion className="space-y-3">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}

@@ -31,9 +31,9 @@ export function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
+      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50"
     >
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16">
           <a href="/" className="flex items-center gap-2 flex-shrink-0 ml-2 sm:ml-0">
             <div className="relative w-8 h-8 sm:w-9 sm:h-9">
@@ -54,7 +54,7 @@ export function Header() {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-foreground font-semibold hover:text-primary transition-colors"
+                className="text-foreground/80 font-medium hover:text-primary transition-colors"
               >
                 {item.label}
               </a>
@@ -63,15 +63,18 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-3 mr-2 sm:mr-0">
             <Button
-              variant="outline"
+              variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="border-border text-muted-foreground hover:text-primary hover:bg-accent/10"
+              className="text-muted-foreground hover:text-primary hover:bg-primary/10"
               aria-label="Toggle theme"
             >
               {mounted && (theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />)}
             </Button>
-            <Button variant="outline" className="border-primary text-primary hover:bg-accent/10">
+            <Button
+              size="sm"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+            >
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                 Hubungi Kami
               </a>
@@ -83,7 +86,7 @@ export function Header() {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="text-foreground hover:bg-accent/10"
+              className="text-muted-foreground hover:text-primary hover:bg-primary/10"
               aria-label="Toggle theme"
             >
               {mounted && (theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />)}
@@ -113,7 +116,10 @@ export function Header() {
               </a>
             ))}
             <div className="pt-4 space-y-2">
-              <Button variant="outline" className="w-full border-primary text-primary">
+              <Button
+                size="sm"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                   Hubungi Kami
                 </a>

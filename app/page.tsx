@@ -1,8 +1,10 @@
+import { Header } from "@/components/landing/header";
 import { Hero } from "@/components/landing/hero";
 import { CredibilityStrip } from "@/components/landing/credibility-strip";
+import { ProblemSection } from "@/components/landing/problem-section";
 import { Features } from "@/components/landing/features";
 import { BentoGrid } from "@/components/landing/bento-grid";
-import { TabShowcase } from "@/components/landing/tab-showcase";
+import { PrayerClock } from "@/components/landing/prayer-clock";
 import { HowItWorks } from "@/components/landing/how-it-works";
 import { Testimonials } from "@/components/landing/testimonials";
 import { CTASection } from "@/components/landing/cta-section";
@@ -11,17 +13,21 @@ import { Footer } from "@/components/landing/footer";
 
 export default function Home() {
   return (
-    <>
-      <Hero />
-      <CredibilityStrip />
-      <Features />
-      <BentoGrid />
-      <TabShowcase />
-      <HowItWorks />
-      <Testimonials />
-      <CTASection />
-      <FAQSection />
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main className="relative">
+        <Hero />
+        <CredibilityStrip />
+        <ProblemSection />
+        <Features />
+        <BentoGrid />
+        <PrayerClock />
+        <HowItWorks />
+        <Testimonials />
+        <CTASection />
+        <FAQSection />
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }

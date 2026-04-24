@@ -12,27 +12,35 @@ const advantages = [
     title: "Akurat Metode Resmi",
     description:
       "Hitungan menggunakan metode Kemenag RI dan MWL. Lokasi otomatis via GPS.",
-    colSpan: "col-span-2",
+    colSpan: "md:col-span-2",
+    image: "/tv1.png",
+    imageAlt: "Screenshot Setting Metode - Jadwal Sholat Digital",
+    hasImage: true,
   },
   {
     icon: Smartphone,
     title: "Satu HP, Banyak TV",
     description:
       "Kelola semua TV dari smartphone. Tanpa komputer, tanpa kabel ribet.",
-    colSpan: "col-span-2",
+    colSpan: "md:col-span-2",
+    image: "/tv2.png",
+    imageAlt: "Ilustrasi: 1 HP → 3+ TV",
+    hasImage: true,
   },
   {
     icon: Zap,
     title: "Auto Update",
     description: "Jadwal sholat update otomatis. Tidak perlu input manual setiap hari.",
     colSpan: "",
+    hasImage: false,
   },
   {
     icon: Monitor,
     title: "Tampilan TV Modern",
     description:
-      "UI menarik dengan animasi smooth. Cocok untuk TV apapun ukuran berapapun.",
+      "UI menarik dengan animasi smooth. Cocok untuk TV apapun ukuran.",
     colSpan: "",
+    hasImage: false,
   },
   {
     icon: Shield,
@@ -40,12 +48,13 @@ const advantages = [
     description:
       "Tetap jalan meski internet mati. Cache jadwal 30 hari ke depan.",
     colSpan: "",
+    hasImage: false,
   },
 ];
 
 export function BentoGrid() {
   return (
-    <section id="fitur" className="bg-background py-24 relative overflow-hidden">
+    <section id="fitur-2" className="bg-card/30 py-24 relative overflow-hidden">
       <div className="absolute left-1/2 -translate-x-1/2 top-0 opacity-5 pointer-events-none hidden xl:block">
         <MihrabCard className="w-96 h-96" />
       </div>
@@ -58,8 +67,8 @@ export function BentoGrid() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            5 Alasan DKM Pindah ke{" "}
-            <span className="text-primary">Jadwal Masjid</span>
+            5 Alasan DKM{" "}
+            <span className="gradient-text">Pindah ke Jadwal Masjid</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Dirancang khusus untuk kebutuhan masjid di Indonesia
@@ -67,65 +76,46 @@ export function BentoGrid() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="md:col-span-2 md:row-span-1"
-          >
-            <Card className="bg-card/50 border-border h-full">
-              <CardContent className="p-6">
-      <Image
-                   src="/tv1.png"
-                   alt="Screenshot Setting Metode - Jadwal Sholat Digital"
-                   width={800}
-                   height={400}
-                   className="mb-4 max-w-full overflow-hidden rounded-lg"
-                 />
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/20 rounded-lg">
-                    <Globe className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-foreground font-semibold text-lg mb-2">
-                      {advantages[0].title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      {advantages[0].description}
+          {/* Large cards with images */}
+          {advantages.slice(0, 2).map((adv, index) => (
+            <motion.div
+              key={adv.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className={`${adv.colSpan} card-hover`}
+            >
+             <Card className="bg-card/80 border-border h-full overflow-hidden">
+                <CardContent className="p-0">
+                  {adv.hasImage && (
+                    <Image
+                      src={adv.image as string}
+                      alt={adv.imageAlt || "Image"}
+                      width={800}
+                      height={400}
+                      className="w-full h-48 object-cover rounded-t-xl"
+                    />
+                  )}
+                  <div className="p-6">
+                    <div className="flex items-start gap-3 mb-3">
+                      <div className="p-2.5 bg-primary/10 rounded-lg">
+                        <adv.icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <h3 className="text-foreground font-semibold text-lg">
+                        {adv.title}
+                      </h3>
+                    </div>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {adv.description}
                     </p>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="md:col-span-2"
-          >
-            <Card className="bg-card/50 border-border h-full">
-              <CardContent className="p-6">
-                <Image src="/tv2.png" alt="Ilustrasi: 1 HP → 3+ TV" width={800} height={400} className="mb-4 max-w-full overflow-hidden rounded-lg" />
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/20 rounded-lg">
-                    <Smartphone className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-foreground font-semibold text-lg mb-2">
-                      {advantages[1].title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      {advantages[1].description}
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-
+          {/* Small cards */}
           {advantages.slice(2).map((adv, index) => (
             <motion.div
               key={adv.title}
@@ -133,18 +123,21 @@ export function BentoGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: (index + 2) * 0.1 }}
+              className="card-hover"
             >
-              <Card className="bg-card/50 border-border h-full">
+              <Card className="bg-card/80 border-border h-full">
                 <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-primary/20 rounded-lg">
-                      <adv.icon className="w-6 h-6 text-primary" />
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="p-2.5 bg-primary/10 rounded-lg">
+                      <adv.icon className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-foreground font-semibold text-lg mb-2">
+                      <h3 className="text-foreground font-semibold text-base">
                         {adv.title}
                       </h3>
-                      <p className="text-muted-foreground text-sm">{adv.description}</p>
+                      <p className="text-muted-foreground text-sm leading-relaxed mt-1">
+                        {adv.description}
+                      </p>
                     </div>
                   </div>
                 </CardContent>
