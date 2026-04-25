@@ -2,6 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+
+const APP_REGISTER_URL = "https://app.jadwalmasjid.com/register";
 
 // Prayer time data structure
 interface Prayer {
@@ -585,6 +589,42 @@ export function PrayerClock() {
             })}
           </motion.div>
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <div className="relative max-w-3xl mx-auto rounded-3xl overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent" />
+            <div className="absolute inset-0 border border-primary/20 rounded-3xl" />
+            <div className="relative px-8 py-16 sm:px-16 sm:py-20">
+              <div className="inline-flex items-center gap-2 bg-primary/15 border border-primary/30 rounded-full px-4 py-1.5 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary"><rect x="5" y="3" width="14" height="18" rx="2"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/></svg>
+                <span className="text-primary text-sm font-medium">TV Masjid Digital</span>
+              </div>
+              <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
+                Jadwal Sholat Profesional<br />di TV Masjid Kamu
+              </h3>
+              <p className="text-muted-foreground text-base sm:text-lg mb-8 max-w-xl mx-auto">
+                Setup sekali, otomatis update setiap hari. Tanpa ribet, tanpa setting ulang.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold glow-primary text-base px-8 py-6"
+                >
+                  <a href={APP_REGISTER_URL} target="_blank" rel="noopener noreferrer">
+                    Coba Gratis Sekarang
+                  </a>
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

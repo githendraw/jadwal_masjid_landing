@@ -6,6 +6,8 @@ import { ArrowRight, Phone, AlertCircle, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const WHATSAPP_LINK = "https://wa.me/6287774348558?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
+const APP_REGISTER_URL = "https://app.jadwalmasjid.com/register";
+const APP_LOGIN_URL = "https://app.jadwalmasjid.com/login";
 
 export function CTASection() {
   return (
@@ -24,8 +26,7 @@ export function CTASection() {
             <span className="text-destructive/80">Salah</span> Lagi
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-2">
-            Bayangkan jamaah sholat Maghrib 18:00, tapi jadwal di TV masih
-            menunjukkan 17:55. Jamaah bingung, DKM panik.
+            Bayangkan jamaah sholat Maghrib 18:00 🕌, tapi jadwal di TV masih menunjukkan 17:55 ⏰. Jamaah bingung 😵‍💫, DKM panik 💦😰
           </p>
         </motion.div>
 
@@ -96,36 +97,54 @@ export function CTASection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="text-center mt-16"
         >
-          <div className="bg-card/80 border border-border rounded-2xl p-8 sm:p-12 glow-primary">
-            <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-              Siap Tingkatkan Profesionalitas Masjid?
-            </h3>
-            <p className="text-muted-foreground text-lg mb-8 max-w-lg mx-auto">
-              Jadwal sholat digital yang akurat, mudah dikelola, dan tampilan
-              menarik. Bikin ibadah semakin nyaman untuk jamaah.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold glow-primary"
-              >
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  Mulai Sekarang
-                </a>
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary/50 text-primary hover:bg-primary/10"
-              >
-                <Phone className="w-4 h-4 mr-2" />
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  WhatsApp
-                </a>
-              </Button>
+          <div className="relative max-w-4xl mx-auto rounded-3xl overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/25 via-primary/10 to-transparent" />
+            <div className="absolute inset-0 border border-primary/20 rounded-3xl" />
+            <div className="relative px-8 py-16 sm:px-16 sm:py-24">
+              <div className="inline-flex items-center gap-2 bg-primary/15 border border-primary/30 rounded-full px-4 py-1.5 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary"><path d="m5 8 3 3-3 3"/><rect x="3" y="3" width="18" rx="2"/><path d="M17 3h6v6"/></svg>
+                <span className="text-primary text-sm font-medium">Setup Mudah & Cepat</span>
+              </div>
+              <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
+                Siap Tingkatkan Profesionalitas<br />Masjid Kamu?
+              </h3>
+              <p className="text-muted-foreground text-base sm:text-lg mb-8 max-w-xl mx-auto">
+                Jadwal sholat digital yang akurat, mudah dikelola, dan tampilan menarik. Setup sekali, pakai selamanya.
+              </p>
+              <div className="flex flex-col gap-4 justify-center items-center">
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold glow-primary text-base px-8 py-6 w-full sm:w-auto"
+                >
+                  <a href={APP_REGISTER_URL} target="_blank" rel="noopener noreferrer">
+                    Coba Gratis Sekarang
+                  </a>
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+                <div className="flex gap-3 justify-center mt-2">
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="border-primary/30 text-primary hover:bg-primary/10"
+                  >
+                    <a href={APP_LOGIN_URL} target="_blank" rel="noopener noreferrer">
+                      Masuk ke Dashboard
+                    </a>
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    <Phone className="w-4 h-4 mr-2" />
+                    <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                      Atau Hubungi Kami
+                    </a>
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>

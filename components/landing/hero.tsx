@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 const WHATSAPP_LINK = "https://wa.me/6287774348558?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
+const APP_REGISTER_URL = "https://app.jadwalmasjid.com/register";
 
 const trustBullets = [
   { icon: ShieldCheck, text: "Metode perhitungan resmi Kemenag RI" },
@@ -94,8 +95,8 @@ export function Hero() {
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold glow-primary"
               >
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                  Mulai Sekarang
+                <a href={APP_REGISTER_URL} target="_blank" rel="noopener noreferrer">
+                  Setup Sekarang
                 </a>
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>

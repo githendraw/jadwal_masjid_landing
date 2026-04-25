@@ -2,6 +2,10 @@
 
 import { motion } from "framer-motion";
 import { AlertTriangle, RefreshCw, EyeOff, Smartphone } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+
+const APP_REGISTER_URL = "https://app.jadwalmasjid.com/register";
 
 const problems = [
   {
@@ -113,6 +117,18 @@ export function ProblemSection() {
             </div>
             <h3 className="text-foreground font-semibold text-lg mb-2">{item.title}</h3>
             <p className="text-foreground/70 text-sm">{item.text}</p>
+            {index === 1 && (
+              <Button
+                size="sm"
+                variant="ghost"
+                className="mt-4 w-full text-primary hover:text-primary hover:bg-primary/5"
+              >
+                <a href={APP_REGISTER_URL} target="_blank" rel="noopener noreferrer">
+                  Coba Sekarang
+                </a>
+                <ArrowRight className="w-3 h-3 ml-2" />
+              </Button>
+            )}
           </motion.div>
         ))}
       </div>

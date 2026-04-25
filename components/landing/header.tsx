@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 const WHATSAPP_LINK = "https://wa.me/6287774348558?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
+const APP_URL = "https://app.jadwalmasjid.com/";
 
 const navItems = [
   { label: "Fitur", href: "#fitur" },
@@ -73,6 +74,15 @@ export function Header() {
             </Button>
             <Button
               size="sm"
+              variant="outline"
+              className="border-primary/50 text-primary hover:bg-primary/10 font-medium"
+            >
+              <a href={APP_URL} target="_blank" rel="noopener noreferrer">
+                Coba Gratis
+              </a>
+            </Button>
+            <Button
+              size="sm"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
             >
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
@@ -116,6 +126,15 @@ export function Header() {
               </a>
             ))}
             <div className="pt-4 space-y-2">
+          <Button
+              size="sm"
+              variant="outline"
+              className="w-full border-primary/50 text-primary hover:bg-primary/10 font-medium"
+            >
+              <a href={APP_URL} target="_blank" rel="noopener noreferrer">
+                Coba Gratis
+              </a>
+            </Button>
               <Button
                 size="sm"
                 className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"

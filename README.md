@@ -63,3 +63,15 @@ pm2 startup
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+tolong pelajari codebase ini 
+1. /home/asrock/projects/workspace_jadwal_masjid/jadwal_masjid_landing
+2. /home/asrock/projects/workspace_jadwal_masjid/jadwal_masjid_web_app,
+
+saat ini sudah production :
+1. /home/asrock/projects/workspace_jadwal_masjid/jadwal_masjid_landing , domain : https://jadwalmasjid.com/
+2. /home/asrock/projects/workspace_jadwal_masjid/jadwal_masjid_web_app , domain : https://app.jadwalmasjid.com/
+
+
+saya ingin menambahkan link ini https://app.jadwalmasjid.com/ di web landing tapi saya bingung dimana posisi yang bagus. coba kamu cek design dengan playwright dan analisa dimana letak yang bagus. dan kata2nya apa register atau login atau apa 
