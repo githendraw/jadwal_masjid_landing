@@ -13,7 +13,7 @@ const advantages = [
     description:
       "Hitungan menggunakan metode Kemenag RI dan MWL. Lokasi otomatis via GPS.",
     colSpan: "md:col-span-2",
-    image: "/tv1.png",
+    image: "/tv1.webp",
     imageAlt: "Screenshot Setting Metode - Jadwal Sholat Digital",
     hasImage: true,
   },
@@ -23,7 +23,7 @@ const advantages = [
     description:
       "Kelola semua TV dari smartphone. Tanpa komputer, tanpa kabel ribet.",
     colSpan: "md:col-span-2",
-    image: "/tv2.png",
+    image: "/tv2.webp",
     imageAlt: "Ilustrasi: 1 HP → 3+ TV",
     hasImage: true,
   },

@@ -38,7 +38,7 @@ export function Header() {
           <a href="/" className="flex items-center gap-2 flex-shrink-0 ml-2 sm:ml-0">
             <div className="relative w-8 h-8 sm:w-9 sm:h-9">
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt="Jadwal Masjid"
                 fill
                 className="object-contain"

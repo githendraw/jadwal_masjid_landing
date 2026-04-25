@@ -138,7 +138,7 @@ export function Hero() {
           >
             <div className="relative z-10 overflow-hidden">
               <Image
-                src="/hero.png"
+                src="/hero.webp"
                 alt="Mockup TV 65 Inch Angle - Jadwal Sholat Digital"
                 width={1200}
                 height={750}

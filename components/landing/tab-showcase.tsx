@@ -39,7 +39,7 @@ export function TabShowcase() {
 
             <TabsContent value="beranda" className="mt-8 overflow-hidden">
         <Image
-                 src="/hero.png"
+                 src="/hero.webp"
                  alt="Tampilan Beranda TV Full - Jadwal Sholat Digital"
                  width={1920}
                  height={1080}
