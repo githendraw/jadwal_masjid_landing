@@ -86,20 +86,20 @@ export function BentoGrid() {
               transition={{ delay: index * 0.1 }}
               className={`${adv.colSpan} card-hover`}
             >
-              <Card className="bg-card/80 border-border h-full overflow-hidden">
-                 <CardContent className="p-0 flex flex-col h-full">
+              <Card className="bg-card/80 border-border h-full overflow-hidden rounded-xl gap-0 py-0">
+                 <div className="w-full h-48 relative overflow-hidden rounded-t-xl">
                    {adv.hasImage && (
-                     <div className="w-full h-48 relative overflow-hidden rounded-t-xl">
-                       <Image
-                         src={adv.image as string}
-                         alt={adv.imageAlt || "Image"}
-                         fill
-                         className="object-cover"
-                       />
-                     </div>
+                     <Image
+                       src={adv.image as string}
+                       alt={adv.imageAlt || "Image"}
+                       fill
+                       className="object-cover"
+                     />
                    )}
-                  <div className="p-6">
-                    <div className="flex items-start gap-3 mb-3">
+                 </div>
+                 <CardContent className="p-0">
+                   <div className="p-6">
+                     <div className="flex items-start gap-3 mb-3">
                       <div className="p-2.5 bg-primary/10 rounded-lg">
                         <adv.icon className="w-5 h-5 text-primary" />
                       </div>
