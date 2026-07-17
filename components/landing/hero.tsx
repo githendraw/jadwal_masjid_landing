@@ -5,13 +5,13 @@ import { ArrowRight, Phone, CheckCircle2, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-const WHATSAPP_LINK = "https://wa.me/6287774348558?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
+const WHATSAPP_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
 const APP_REGISTER_URL = "https://app.jadwalmasjid.com/register";
 
 const trustBullets = [
   { icon: ShieldCheck, text: "Metode perhitungan resmi Kemenag RI" },
   { icon: CheckCircle2, text: "Auto-update jadwal setiap hari" },
-  { icon: CheckCircle2, text: "Bayar sekali, pakai selamanya" },
+  { icon: CheckCircle2, text: "Gratis selamanya untuk semua masjid 🆓" },
 ];
 
 export function Hero() {
@@ -96,7 +96,7 @@ export function Hero() {
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold glow-primary"
               >
                 <a href={APP_REGISTER_URL} target="_blank" rel="noopener noreferrer">
-                  Setup Sekarang
+                  Download Gratis 🆓
                 </a>
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>

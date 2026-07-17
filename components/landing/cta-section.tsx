@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ArrowRight, Phone, AlertCircle, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const WHATSAPP_LINK = "https://wa.me/6287774348558?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
+const WHATSAPP_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
 const APP_REGISTER_URL = "https://app.jadwalmasjid.com/register";
 const APP_LOGIN_URL = "https://app.jadwalmasjid.com/login";
 
@@ -22,11 +22,11 @@ export function CTASection() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Jangan Biarkan Jadwal{" "}
-            <span className="text-destructive/80">Salah</span> Lagi
+            Gratis{" "}
+            <span className="gradient-text">Selamanya</span> 🆓
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-2">
-            Bayangkan jamaah sholat Maghrib 18:00 🕌, tapi jadwal di TV masih menunjukkan 17:55 ⏰. Jamaah bingung 😵‍💫, DKM panik 💦😰
+            Jadwal Masjid adalah <strong>project amal</strong> — 100% gratis untuk semua masjid di Indonesia. Download, install, dan pake tanpa biaya sepeserpun.
           </p>
         </motion.div>
 
@@ -72,21 +72,21 @@ export function CTASection() {
             <div className="flex items-center gap-2 mb-4">
               <CheckCircle2 className="w-5 h-5 text-primary" />
               <h3 className="text-foreground font-semibold text-lg">
-                Dengan Jadwal Masjid
+                Gratis Selamanya
               </h3>
             </div>
             <ul className="space-y-3 text-muted-foreground text-sm">
               <li className="flex items-start gap-2">
                 <span className="text-primary font-bold mt-0.5">✓</span>
-                <span>Auto-update jadwal setiap hari, selalu akurat</span>
+                <span>Download gratis, install gratis, pakai gratis</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary font-bold mt-0.5">✓</span>
-                <span>Setup sekali, pakai selamanya</span>
+                <span>Tidak ada biaya bulanan & tidak ada biaya tersembunyi</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary font-bold mt-0.5">✓</span>
-                <span>Tampilan TV profesional, jamaah tenang</span>
+                <span>Project amal — donasi sukarela untuk biaya server</span>
               </li>
             </ul>
           </motion.div>
@@ -108,10 +108,10 @@ export function CTASection() {
                 <span className="text-primary text-sm font-medium">Setup Mudah & Cepat</span>
               </div>
               <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
-                Siap Tingkatkan Profesionalitas<br />Masjid Kamu?
+                100% Gratis<br />Project Amal untuk Semua Masjid
               </h3>
               <p className="text-muted-foreground text-base sm:text-lg mb-8 max-w-xl mx-auto">
-                Jadwal sholat digital yang akurat, mudah dikelola, dan tampilan menarik. Setup sekali, pakai selamanya.
+                Jadwal sholat digital yang akurat, mudah dikelola, dan tampilan menarik. <strong>Gratis total, donasi sukarela untuk biaya server.</strong>
               </p>
               <div className="flex flex-col gap-4 justify-center items-center">
                 <Button
@@ -119,7 +119,7 @@ export function CTASection() {
                   className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold glow-primary text-base px-8 py-6 w-full sm:w-auto"
                 >
                   <a href={APP_REGISTER_URL} target="_blank" rel="noopener noreferrer">
-                    Coba Gratis Sekarang
+                    Download Gratis 🆓
                   </a>
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>

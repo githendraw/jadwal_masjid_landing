@@ -308,7 +308,7 @@ export function PrayerClock() {
   };
 
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden">
+    <section id="jadwal" className="relative py-16 md:py-24 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

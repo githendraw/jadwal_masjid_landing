@@ -8,6 +8,7 @@ import { PrayerClock } from "@/components/landing/prayer-clock";
 import { HowItWorks } from "@/components/landing/how-it-works";
 import { Testimonials } from "@/components/landing/testimonials";
 import { CTASection } from "@/components/landing/cta-section";
+import { DonationSection } from "@/components/landing/donation-section";
 import { TabShowcase } from "@/components/landing/tab-showcase";
 import { FAQSection } from "@/components/landing/faq-section";
 import { Footer } from "@/components/landing/footer";
@@ -27,6 +28,7 @@ export default function Home() {
         <HowItWorks />
         <Testimonials />
         <CTASection />
+        <DonationSection />
         <FAQSection />
       </main>
       <Footer />

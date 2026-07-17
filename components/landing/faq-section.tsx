@@ -8,13 +8,13 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const WHATSAPP_LINK = "https://wa.me/6287774348558?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
+const WHATSAPP_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
 
 const faqs = [
   {
-    question: "Apakah berbayar?",
+    question: "Apakah benar-benar gratis?",
     answer:
-      "Bukan gratis. Bayar sekali, pakai selamanya. Tanpa biaya bulanan atau tersembunyi.",
+      "Iya, 100% gratis selamanya. Download gratis, install gratis, pakai gratis. Tidak ada biaya bulanan, tidak ada biaya tersembunyi. Jadwal Masjid adalah project amal — jika masjid Anda terbantu, donasi sukarela sangat berarti untuk biaya server. Berapa pun, kami bersyukur. 🙏",
   },
   {
     question: "Bagaimana cara konek ke TV?",

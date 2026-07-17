@@ -11,3 +11,4 @@ export { Footer } from "./footer";
 export { PrayerClock } from "./prayer-clock";
 export { Testimonials } from "./testimonials";
 export { MihrabCard, MihrabBadge } from "./mihrab-card";
+export { DonationSection } from "./donation-section";

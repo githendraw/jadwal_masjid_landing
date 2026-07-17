@@ -3,8 +3,7 @@
 import { Clock, MapPin, Mail, Phone } from "lucide-react";
 import Image from "next/image";
 
-const WHATSAPP_LINK = "https://wa.me/6287774348558?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
-const GITHUB_REPO = "https://github.com/githendraw";
+const WHATSAPP_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
 
 const footerLinks = {
   product: [
@@ -14,14 +13,8 @@ const footerLinks = {
     { label: "FAQ", href: "#faq" },
   ],
   support: [
-    { label: "Dokumentasi", href: `${GITHUB_REPO}/waktu_sholat_landing/wiki` },
     { label: "Hubungi Kami", href: WHATSAPP_LINK },
-    { label: "Komunitas", href: "mailto:komunitas@waktusholat.com" },
-  ],
-  legal: [
-    { label: "Kebijakan Privasi", href: `${GITHUB_REPO}/waktu_sholat_landing/blob/main/PRIVACY.md` },
-    { label: "Syarat & Ketentuan", href: `${GITHUB_REPO}/waktu_sholat_landing/blob/main/TERMS.md` },
-    { label: "Lisensi", href: `${GITHUB_REPO}/waktu_sholat_landing/blob/main/LICENSE` },
+    { label: "Komunitas", href: "https://t.me/jadwalmasjid" },
   ],
 };
 
@@ -29,7 +22,7 @@ export function Footer() {
   return (
     <footer className="bg-card border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <a href="/" className="flex items-center gap-2 mb-4">
@@ -44,7 +37,7 @@ export function Footer() {
               <span className="text-lg font-bold text-foreground">Jadwal Masjid</span>
             </a>
             <p className="text-foreground/70 text-sm mb-4">
-              Jadwal sholat digital untuk TV masjid. Akurat, mudah, bayar sekali pakai selamanya.
+              Jadwal sholat digital untuk TV masjid. Akurat, mudah, <strong>gratis selamanya</strong>. Donasi sukarela untuk biaya server.
             </p>
             <div className="space-y-2 text-foreground/60 text-sm">
               <div className="flex items-center gap-2">
@@ -94,24 +87,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Legal */}
-          <div>
-            <h4 className="text-foreground font-semibold mb-4">Legal</h4>
-            <ul className="space-y-2.5">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-foreground/70 hover:text-primary text-sm transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         {/* Bottom bar */}
