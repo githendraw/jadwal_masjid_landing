@@ -9,7 +9,7 @@ module.exports = {
       exec_mode: "fork",
       env: {
         NODE_ENV: "production",
-        PORT: 3005,
+        PORT: 4001,
       },
       max_memory_restart: "300M",
       out_file: "~/.pm2/logs/waktu_sholat-out.log",
