@@ -132,18 +132,16 @@ export function Hero() {
           </motion.div>
 
           {/* Right — Hero image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="order-1 lg:order-2 relative"
-          >
+          <div className="order-1 lg:order-2 relative">
             <div className="relative z-10 overflow-hidden">
               <Image
                 src="/hero.webp"
                 alt="Mockup TV 65 Inch Angle - Jadwal Sholat Digital"
                 width={1200}
-                height={750}
+                height={756}
+                priority
+                fetchPriority="high"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="rounded-2xl max-w-full object-contain shadow-2xl shadow-primary/10"
               />
             </div>
@@ -151,7 +149,7 @@ export function Hero() {
             {/* Decorative elements */}
             <div className="absolute -top-8 -right-8 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
             <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-amber-400/10 rounded-full blur-3xl" />
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

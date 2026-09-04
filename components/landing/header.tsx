@@ -41,7 +41,7 @@ export function Header() {
             <div className="relative w-8 h-8 sm:w-9 sm:h-9">
               <Image
                 src="/logo.webp"
-                alt="Jadwal Masjid"
+                alt=""
                 fill
                 className="object-contain"
               />
@@ -103,6 +103,7 @@ export function Header() {
               {mounted && (theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />)}
             </Button>
             <button
+              aria-label={mobileMenuOpen ? "Tutup menu" : "Buka menu"}
               className="text-foreground flex-shrink-0"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >

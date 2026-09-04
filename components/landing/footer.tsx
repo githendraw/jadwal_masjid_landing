@@ -30,7 +30,7 @@ export function Footer() {
               <div className="relative w-8 h-8">
                 <Image
                   src="/logo.webp"
-                  alt="Jadwal Masjid"
+                  alt=""
                   fill
                   className="object-contain"
                 />

@@ -93,6 +93,7 @@ export function BentoGrid() {
                        src={adv.image as string}
                        alt={adv.imageAlt || "Image"}
                        fill
+                       sizes="(max-width: 768px) 100vw, 800px"
                        className="object-cover"
                      />
                    )}

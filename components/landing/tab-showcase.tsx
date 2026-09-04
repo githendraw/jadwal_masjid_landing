@@ -41,8 +41,9 @@ export function TabShowcase() {
         <Image
                  src="/hero.webp"
                  alt="Tampilan Beranda TV Full - Jadwal Sholat Digital"
-                 width={1920}
-                 height={1080}
+                 width={1200}
+                 height={756}
+                 sizes="(max-width: 768px) 100vw, 50vw"
                  className="rounded-xl max-w-full object-contain"
                />
             </TabsContent>

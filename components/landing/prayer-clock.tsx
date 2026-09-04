@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -24,6 +24,7 @@ interface PrayerData {
 // Fallback coordinates: Masjid Istiqlal, Jakarta
 const FALLBACK_LAT = -6.1698;
 const FALLBACK_LON = 106.8309;
+const FALLBACK_CITY = "Jakarta Pusat";
 
 // Indonesia timezone offsets (hours from UTC)
 const TIMEZONE_OFFSETS = {
@@ -52,90 +53,42 @@ function formatTime(date: Date, timezoneOffset: number): string {
   return `${hours}:${minutes}`;
 }
 
-/**
- * Reverse geocode coordinates to get city name
- * Uses nominatim OpenStreetMap API (free, no API key needed)
- */
-async function getCityName(lat: number, lon: number): Promise<string> {
-  try {
-    const response = await fetch(
-      `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=10&addressdetails=1`,
-      {
-        headers: {
-          "User-Agent": "jadwalmasjid.com",
-        },
-      }
-    );
-    const data = await response.json();
-
-    if (data.address) {
-      const city =
-        data.address.city ||
-        data.address.town ||
-        data.address.village ||
-        data.address.county ||
-        data.address.state ||
-        "";
-      const state = data.address.state || "";
-      if (city && state) return `${city}, ${state}`;
-      if (city) return city;
-      if (state) return state;
-    }
-  } catch (error) {
-    console.warn("Geocoding failed:", error);
-  }
-  return "Jakarta";
-}
-
 export function PrayerClock() {
   const [time, setTime] = useState<Date | null>(null);
   const [activePrayer, setActivePrayer] = useState<number>(0);
   const [prayerData, setPrayerData] = useState<PrayerData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Only run expensive work (prayer calculation + ticking clock) when the
+  // section is in view, to keep the initial page load light.
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "300px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   // Fetch prayer times from API
   useEffect(() => {
+    if (!isVisible) return;
     const fetchPrayerTimes = async () => {
       try {
-        // Get user location
-        let lat: number, lon: number;
-        let city = "Jakarta";
-        let fallback = false;
-
-        if (navigator.geolocation) {
-          try {
-            const position = await new Promise<GeolocationPosition>(
-              (resolve, reject) =>
-                navigator.geolocation.getCurrentPosition(resolve, reject)
-            );
-
-            if (position) {
-              lat = position.coords.latitude;
-              lon = position.coords.longitude;
-
-              // Get city name from coordinates
-              city = await getCityName(lat, lon);
-            } else {
-              // Geolocation denied - use fallback
-              lat = FALLBACK_LAT;
-              lon = FALLBACK_LON;
-              city = "Jakarta";
-              fallback = true;
-            }
-          } catch {
-            // Geolocation error - use fallback
-            lat = FALLBACK_LAT;
-            lon = FALLBACK_LON;
-            city = "Jakarta";
-            fallback = true;
-          }
-        } else {
-          // Geolocation not supported - use fallback
-          lat = FALLBACK_LAT;
-          lon = FALLBACK_LON;
-          city = "Jakarta";
-          fallback = true;
-        }
+        // Use Jakarta as the default location (no geolocation permission prompt)
+        let lat = FALLBACK_LAT;
+        let lon = FALLBACK_LON;
+        let city = FALLBACK_CITY;
+        const fallback = true;
 
         // Calculate timezone offset based on longitude
         const { offset: timezoneOffset } = getTimezoneOffset(lon);
@@ -223,10 +176,11 @@ export function PrayerClock() {
     };
 
     fetchPrayerTimes();
-  }, []);
+  }, [isVisible]);
 
   // Update current time every second
   useEffect(() => {
+    if (!isVisible) return;
     const updateTime = () => {
       const now = new Date();
       setTime(now);
@@ -254,7 +208,7 @@ export function PrayerClock() {
     updateTime();
     const timer = setInterval(updateTime, 1000);
     return () => clearInterval(timer);
-  }, [prayerData]);
+  }, [prayerData, isVisible]);
 
   // Use fallback prayer times if API fails
   const prayerTimes =
@@ -308,7 +262,7 @@ export function PrayerClock() {
   };
 
   return (
-    <section id="jadwal" className="relative py-16 md:py-24 overflow-hidden">
+    <section ref={sectionRef} id="jadwal" className="relative py-16 md:py-24 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
