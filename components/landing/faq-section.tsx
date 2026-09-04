@@ -12,19 +12,24 @@ const WHATSAPP_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%
 
 const faqs = [
   {
-    question: "Apakah benar-benar gratis?",
+    question: "Berapa harga Android TV Box-nya?",
     answer:
-      "Iya, 100% gratis selamanya. Download gratis, install gratis, pakai gratis. Tidak ada biaya bulanan, tidak ada biaya tersembunyi. Jadwal Masjid adalah project amal — jika masjid Anda terbantu, donasi sukarela sangat berarti untuk biaya server. Berapa pun, kami bersyukur. 🙏",
+      "Harga Rp 946.000 per box (1 box untuk 1 TV). Sudah termasuk Android TV Box dengan aplikasi Jadwal Masjid yang terinstall, kabel HDMI, dan adaptor daya. Sekali bayar, langsung bisa dipasang.",
   },
   {
-    question: "Bagaimana cara konek ke TV?",
+    question: "Apakah perlu download atau install aplikasi?",
     answer:
-      "Buka aplikasi di HP, pilih menu TV, akan muncul QR code di layar TV. Scan QR tersebut dengan HP, maka TV langsung terhubung.",
+      "Tidak perlu. Aplikasi Jadwal Masjid sudah terinstall di dalam TV box. Anda tinggal colok box ke TV dan melakukan setting dasar.",
   },
   {
     question: "Apakah harus online terus?",
     answer:
-      "Tidak. Setelah sinkron pertama, aplikasi menyimpan jadwal 30 hari ke depan. Internet mati pun tetap jalan.",
+      "Tidak. Setelah setting awal, aplikasi menyimpan jadwal hingga 30 hari ke depan. Internet mati pun tetap jalan.",
+  },
+  {
+    question: "Bagaimana cara memesan?",
+    answer:
+      "Hubungi kami via WhatsApp, sampaikan jumlah box yang ingin dipesan. Kami akan bantu proses pemesanan dan pengiriman.",
   },
   {
     question: "Metode perhitungan apa saja yang tersedia?",
@@ -32,14 +37,9 @@ const faqs = [
       "Kami menyediakan metode resmi: Kemenag RI, Ministry of Awqaf Kuwait (MWL), Egypt, dan custom untuk ahli falak.",
   },
   {
-    question: "Berapa banyak TV yang bisa dikonek?",
+    question: "Apakah ada garansi?",
     answer:
-      "Satu HP bisa mengelola hingga 10 TV secara bersamaan. Semua akan tampil sama persis.",
-  },
-  {
-    question: "Apakah ada versi web?",
-    answer:
-      "Saat ini baru tersedia untuk Android. Versi web dan iOS sedang dalam pengembangan.",
+      "Ada. Setiap box dilengkapi garansi dan dukungan pemasangan. Jika ada kendala, tim kami siap membantu via WhatsApp.",
   },
 ];
 

@@ -7,19 +7,15 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-const WHATSAPP_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
-const APP_URL = "https://app.jadwalmasjid.com/";
-const LOGIN_URL = "https://app.jadwalmasjid.com/login";
-const REGISTER_URL = "https://app.jadwalmasjid.com/register";
+const ORDER_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20memesan%20Android%20TV%20Box%20Jadwal%20Masjid";
 
 const navItems = [
   { label: "Jadwal", href: "#jadwal" },
   { label: "Fitur", href: "#fitur" },
   { label: "Tampilan", href: "#tampilan" },
+  { label: "Harga", href: "#harga" },
   { label: "Cara Pakai", href: "#cara-pakai" },
   { label: "FAQ", href: "#faq" },
-  { label: "Login", href: LOGIN_URL, external: true, highlight: true },
-  { label: "Daftar", href: REGISTER_URL, external: true },
 ];
 
 export function Header() {
@@ -60,13 +56,7 @@ export function Header() {
               <a
                 key={item.label}
                 href={item.href}
-                target={item.external ? "_blank" : undefined}
-                rel={item.external ? "noopener noreferrer" : undefined}
-                className={`font-medium transition-colors ${
-                  item.highlight 
-                    ? 'font-semibold bg-gradient-to-r from-primary via-primary/80 to-amber-400 bg-clip-text text-transparent hover:opacity-80' 
-                    : 'text-foreground/80 hover:text-primary'
-                }`}
+                className="font-medium text-foreground/80 hover:text-primary transition-colors"
               >
                 {item.label}
               </a>
@@ -88,16 +78,16 @@ export function Header() {
               variant="outline"
               className="border-primary/50 text-primary hover:bg-primary/10 font-medium"
             >
-              <a href={APP_URL} target="_blank" rel="noopener noreferrer">
-                Download Gratis 🆓
+              <a href="#harga">
+                Rp 946rb
               </a>
             </Button>
             <Button
               size="sm"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
             >
-              <a href="#dukung-kami">
-                Dukung Kami 🙏
+              <a href={ORDER_LINK} target="_blank" rel="noopener noreferrer">
+                Pesan Sekarang
               </a>
             </Button>
           </div>
@@ -131,13 +121,7 @@ export function Header() {
               <a
                 key={item.label}
                 href={item.href}
-                target={item.external ? "_blank" : undefined}
-                rel={item.external ? "noopener noreferrer" : undefined}
-                className={`block py-1.5 transition-colors ${
-                  item.highlight 
-                    ? 'font-semibold bg-gradient-to-r from-primary via-primary/80 to-amber-400 bg-clip-text text-transparent hover:opacity-80' 
-                    : 'text-muted-foreground hover:text-primary'
-                }`}
+                className={`block py-1.5 text-muted-foreground hover:text-primary transition-colors`}
               >
                 {item.label}
               </a>
@@ -148,16 +132,16 @@ export function Header() {
                 variant="outline"
                 className="w-full border-primary/50 text-primary hover:bg-primary/10 font-medium h-9"
               >
-                <a href={APP_URL} target="_blank" rel="noopener noreferrer" className="w-full">
-                  Download Gratis 🆓
+                <a href="#harga" className="w-full">
+                  Rp 946rb / box
                 </a>
               </Button>
               <Button
                 size="sm"
                 className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-9"
               >
-                <a href="#dukung-kami" className="w-full">
-                  Dukung Kami 🙏
+                <a href={ORDER_LINK} target="_blank" rel="noopener noreferrer" className="w-full">
+                  Pesan Sekarang
                 </a>
               </Button>
             </div>

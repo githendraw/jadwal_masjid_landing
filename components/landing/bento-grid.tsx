@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Globe, Monitor, Smartphone, Zap, Shield } from "lucide-react";
+import { Globe, Monitor, Zap, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { MihrabCard } from "./mihrab-card";
 
@@ -18,13 +18,13 @@ const advantages = [
     hasImage: true,
   },
   {
-    icon: Smartphone,
-    title: "Satu HP, Banyak TV",
+    icon: Monitor,
+    title: "Siap Pakai",
     description:
-      "Kelola semua TV dari smartphone. Tanpa komputer, tanpa kabel ribet.",
+      "Aplikasi sudah terinstall di dalam box. Tinggal colok ke TV, tanpa ribet.",
     colSpan: "md:col-span-2",
     image: "/tv2.webp",
-    imageAlt: "Ilustrasi: 1 HP → 3+ TV",
+    imageAlt: "Ilustrasi: Android TV Box → TV",
     hasImage: true,
   },
   {

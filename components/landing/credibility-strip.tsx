@@ -8,7 +8,7 @@ const stats = [
   { icon: Shield, value: "120+", label: "Masjid Terdaftar" },
   { icon: Clock, value: "100%", label: "Akurasi Jadwal" },
   { icon: Zap, value: "Auto", label: "Update Harian" },
-  { icon: Users, value: "100%", label: "Gratis Total 🆓" },
+  { icon: Users, value: "Offline", label: "Tanpa Internet" },
   { icon: Award, value: "4.8", label: "Rating Pengguna" },
 ];
 

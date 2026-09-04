@@ -6,12 +6,12 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 const WHATSAPP_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
-const APP_REGISTER_URL = "https://app.jadwalmasjid.com/register";
+const ORDER_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20memesan%20Android%20TV%20Box%20Jadwal%20Masjid";
 
 const trustBullets = [
   { icon: ShieldCheck, text: "Metode perhitungan resmi Kemenag RI" },
   { icon: CheckCircle2, text: "Auto-update jadwal setiap hari" },
-  { icon: CheckCircle2, text: "Gratis selamanya untuk semua masjid 🆓" },
+  { icon: CheckCircle2, text: "Aplikasi sudah terinstall — tinggal setting" },
 ];
 
 export function Hero() {
@@ -64,8 +64,9 @@ export function Hero() {
 
             {/* Subtitle */}
             <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
-              Tampilkan jadwal sholat akurat di TV masjid dengan mudah. Satu HP
-              mengelola banyak TV, otomatis update setiap hari tanpa ribet.
+              Android TV Box khusus jadwal sholat untuk TV masjid. Aplikasi
+              sudah terinstall, tinggal colok dan setting — tanpa ribet, tanpa
+              butuh internet.
             </p>
 
             {/* Trust bullets */}
@@ -95,8 +96,8 @@ export function Hero() {
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold glow-primary"
               >
-                <a href={APP_REGISTER_URL} target="_blank" rel="noopener noreferrer">
-                  Download Gratis 🆓
+                <a href={ORDER_LINK} target="_blank" rel="noopener noreferrer">
+                  Pesan Sekarang
                 </a>
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>

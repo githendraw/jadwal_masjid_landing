@@ -1,26 +1,28 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageSquare, SlidersHorizontal, QrCode } from "lucide-react";
+import { MessageSquare, Cable, SlidersHorizontal } from "lucide-react";
+
+const WHATSAPP_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20memesan%20Android%20TV%20Box%20Jadwal%20Masjid";
 
 const steps = [
   {
     icon: MessageSquare,
-    title: "Hubungi Kami",
+    title: "Pesan TV Box",
     description:
-      "Hubungi kami untuk pemasangan aplikasi Jadwal Masjid. Kami akan bantu proses instalasi.",
+      "Hubungi kami via WhatsApp untuk memesan Android TV Box. Kami bantu proses pemesanan dan pengiriman.",
+  },
+  {
+    icon: Cable,
+    title: "Pasang ke TV",
+    description:
+      "Colok TV box ke TV masjid Anda. Kabel HDMI sudah termasuk. Tidak perlu download atau install apa pun.",
   },
   {
     icon: SlidersHorizontal,
-    title: "Atur Pengaturan",
+    title: "Setting & Siap",
     description:
-      "Pilih masjid, metode perhitungan sholat (Kemenag/MWL), dan lokasi otomatis via GPS.",
-  },
-  {
-    icon: QrCode,
-    title: "Scan ke TV",
-    description:
-      "Buka menu TV, scan QR code di layar TV. Selesai! Jadwal sholat langsung tampil.",
+      "Atur nama masjid, kota, dan metode perhitungan (Kemenag/MWL). Semua offline, langsung tampil.",
   },
 ];
 

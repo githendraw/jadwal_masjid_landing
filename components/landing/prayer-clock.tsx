@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-const APP_REGISTER_URL = "https://app.jadwalmasjid.com/register";
+const ORDER_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20memesan%20Android%20TV%20Box%20Jadwal%20Masjid";
 
 // Prayer time data structure
 interface Prayer {
@@ -616,8 +616,8 @@ export function PrayerClock() {
                   size="lg"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold glow-primary text-base px-8 py-6"
                 >
-                  <a href={APP_REGISTER_URL} target="_blank" rel="noopener noreferrer">
-                    Coba Gratis Sekarang
+                  <a href={ORDER_LINK} target="_blank" rel="noopener noreferrer">
+                    Pesan Sekarang
                   </a>
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>

@@ -5,7 +5,7 @@ import { AlertTriangle, RefreshCw, EyeOff, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-const APP_REGISTER_URL = "https://app.jadwalmasjid.com/register";
+const ORDER_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20memesan%20Android%20TV%20Box%20Jadwal%20Masjid";
 
 const problems = [
   {
@@ -33,8 +33,8 @@ const solutions = [
   },
   {
     icon: Smartphone,
-    title: "Kelola dari Satu HP",
-    text: "Satu smartphone atur semua TV. QR scan, selesai. Tidak perlu buka TV.",
+    title: "Langsung Siap Pakai",
+    text: "Aplikasi sudah terinstall di dalam box. Tinggal colok ke TV dan setting dasar.",
   },
   {
     icon: EyeOff,
@@ -123,8 +123,8 @@ export function ProblemSection() {
                 variant="ghost"
                 className="mt-4 w-full text-primary hover:text-primary hover:bg-primary/5"
               >
-                <a href={APP_REGISTER_URL} target="_blank" rel="noopener noreferrer">
-                  Coba Sekarang
+                <a href={ORDER_LINK} target="_blank" rel="noopener noreferrer">
+                  Pesan Sekarang
                 </a>
                 <ArrowRight className="w-3 h-3 ml-2" />
               </Button>

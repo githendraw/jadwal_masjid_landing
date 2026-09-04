@@ -24,9 +24,9 @@ const features = [
   },
   {
     icon: Smartphone,
-    title: "Kelola dari Smartphone",
+    title: "Setting Cepat & Mudah",
     description:
-      "Semua pengaturan dari HP. Tidak perlu dekat TV untuk mengubah jadwal.",
+      "Atur nama masjid, kota, dan metode perhitungan langsung dari TV box. Sekali setting, selesai.",
     span: "",
   },
   {
@@ -45,7 +45,7 @@ const features = [
   },
   {
     icon: Wifi,
-    title: "Offline Mode",
+    title: "Fully Offline",
     description:
       "Cache jadwal 30 hari. Tetap jalan walau internet mati sebulan.",
     span: "",
@@ -66,9 +66,9 @@ const features = [
   },
   {
     icon: Settings,
-    title: "Manajemen Multi TV",
+    title: "Siap Pakai",
     description:
-      "Satu HP konek ke 10+ TV sekaligus. Semua tampil sama persis.",
+      "Aplikasi sudah terinstall di dalam box. Tinggal colok ke TV dan langsung jalan.",
     span: "",
   },
   {

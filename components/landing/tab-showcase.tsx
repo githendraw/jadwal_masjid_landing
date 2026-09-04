@@ -34,7 +34,7 @@ export function TabShowcase() {
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 bg-muted">
               <TabsTrigger value="beranda">Beranda TV</TabsTrigger>
               <TabsTrigger value="iqomah">Mode Iqomah</TabsTrigger>
-              <TabsTrigger value="hp">Aplikasi HP</TabsTrigger>
+              <TabsTrigger value="hp">Halaman Setting</TabsTrigger>
             </TabsList>
 
             <TabsContent value="beranda" className="mt-8 overflow-hidden">
@@ -61,8 +61,8 @@ export function TabShowcase() {
               <PlaceholderImage
                 width={1080}
                 height={1920}
-                label="Showcase: Aplikasi HP Manajemen"
-                note="Screenshot HP 9:16. Tampilkan halaman Manajemen Masjid. Ada form nama, kota, background. Status 3 TV Online"
+                label="Showcase: Halaman Setting Aplikasi"
+                note="Screenshot 9:16. Tampilkan halaman pengaturan. Ada form nama masjid, kota, metode perhitungan. Status TV Online"
                 className="rounded-xl max-w-sm mx-auto"
               />
             </TabsContent>

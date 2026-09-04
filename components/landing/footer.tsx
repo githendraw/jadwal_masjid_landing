@@ -9,6 +9,7 @@ const footerLinks = {
   product: [
     { label: "Fitur", href: "#fitur" },
     { label: "Tampilan", href: "#tampilan" },
+    { label: "Harga", href: "#harga" },
     { label: "Cara Pakai", href: "#cara-pakai" },
     { label: "FAQ", href: "#faq" },
   ],
@@ -37,7 +38,8 @@ export function Footer() {
               <span className="text-lg font-bold text-foreground">Jadwal Masjid</span>
             </a>
             <p className="text-foreground/70 text-sm mb-4">
-              Jadwal sholat digital untuk TV masjid. Akurat, mudah, <strong>gratis selamanya</strong>. Donasi sukarela untuk biaya server.
+              Android TV Box jadwal sholat digital untuk TV masjid. Akurat, mudah,
+              dan langsung siap pakai. Setup 100% offline.
             </p>
             <div className="space-y-2 text-foreground/60 text-sm">
               <div className="flex items-center gap-2">
