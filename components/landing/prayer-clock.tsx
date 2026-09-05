@@ -53,6 +53,41 @@ function formatTime(date: Date, timezoneOffset: number): string {
   return `${hours}:${minutes}`;
 }
 
+/**
+ * Reverse geocode coordinates to get city name
+ * Uses nominatim OpenStreetMap API (free, no API key needed)
+ */
+async function getCityName(lat: number, lon: number): Promise<string> {
+  try {
+    const response = await fetch(
+      `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=10&addressdetails=1`,
+      {
+        headers: {
+          "User-Agent": "jadwalmasjid.com",
+        },
+      }
+    );
+    const data = await response.json();
+
+    if (data.address) {
+      const city =
+        data.address.city ||
+        data.address.town ||
+        data.address.village ||
+        data.address.county ||
+        data.address.state ||
+        "";
+      const state = data.address.state || "";
+      if (city && state) return `${city}, ${state}`;
+      if (city) return city;
+      if (state) return state;
+    }
+  } catch (error) {
+    console.warn("Geocoding failed:", error);
+  }
+  return "Jakarta";
+}
+
 export function PrayerClock() {
   const [time, setTime] = useState<Date | null>(null);
   const [activePrayer, setActivePrayer] = useState<number>(0);
@@ -84,11 +119,45 @@ export function PrayerClock() {
     if (!isVisible) return;
     const fetchPrayerTimes = async () => {
       try {
-        // Use Jakarta as the default location (no geolocation permission prompt)
-        let lat = FALLBACK_LAT;
-        let lon = FALLBACK_LON;
-        let city = FALLBACK_CITY;
-        const fallback = true;
+        // Get user location via geolocation (fallback to Jakarta if denied/unavailable)
+        let lat: number, lon: number;
+        let city = "Jakarta";
+        let fallback = false;
+
+        if (navigator.geolocation) {
+          try {
+            const position = await new Promise<GeolocationPosition>(
+              (resolve, reject) =>
+                navigator.geolocation.getCurrentPosition(resolve, reject)
+            );
+
+            if (position) {
+              lat = position.coords.latitude;
+              lon = position.coords.longitude;
+
+              // Get city name from coordinates
+              city = await getCityName(lat, lon);
+            } else {
+              // Geolocation returned nothing - use fallback
+              lat = FALLBACK_LAT;
+              lon = FALLBACK_LON;
+              city = "Jakarta";
+              fallback = true;
+            }
+          } catch {
+            // Geolocation denied / error - use fallback
+            lat = FALLBACK_LAT;
+            lon = FALLBACK_LON;
+            city = "Jakarta";
+            fallback = true;
+          }
+        } else {
+          // Geolocation not supported - use fallback
+          lat = FALLBACK_LAT;
+          lon = FALLBACK_LON;
+          city = "Jakarta";
+          fallback = true;
+        }
 
         // Calculate timezone offset based on longitude
         const { offset: timezoneOffset } = getTimezoneOffset(lon);
