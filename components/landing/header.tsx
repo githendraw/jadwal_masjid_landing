@@ -10,7 +10,7 @@ import Image from "next/image";
 const ORDER_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20memesan%20Android%20TV%20Box%20Jadwal%20Masjid";
 
 const navItems = [
-  { label: "Jadwal", href: "#jadwal" },
+  { label: "Jadwal Sholat", href: "#jadwal" },
   { label: "Fitur", href: "#fitur" },
   { label: "Tampilan", href: "#tampilan" },
   { label: "Harga", href: "#harga" },

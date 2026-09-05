@@ -60,7 +60,7 @@ function formatTime(date: Date, timezoneOffset: number): string {
 async function getCityName(lat: number, lon: number): Promise<string> {
   try {
     const response = await fetch(
-      `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=10&addressdetails=1`,
+      `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=15&addressdetails=1`,
       {
         headers: {
           "User-Agent": "jadwalmasjid.com",
@@ -70,17 +70,24 @@ async function getCityName(lat: number, lon: number): Promise<string> {
     const data = await response.json();
 
     if (data.address) {
-      const city =
+      // The kecamatan (sub-district) field varies by region in Nominatim/OSM:
+      // usually "district"/"municipality", but "suburb" for DKI Jakarta etc.
+      const kecamatan =
+        data.address.district ||
+        data.address.municipality ||
+        data.address.suburb ||
+        "";
+      const region =
         data.address.city ||
+        data.address.county ||
         data.address.town ||
         data.address.village ||
-        data.address.county ||
-        data.address.state ||
         "";
       const state = data.address.state || "";
-      if (city && state) return `${city}, ${state}`;
-      if (city) return city;
-      if (state) return state;
+
+      // Build "Kecamatan, Kota/Kabupaten, Provinsi" (deduped)
+      const parts = Array.from(new Set([kecamatan, region, state].filter((p) => !!p)));
+      if (parts.length > 0) return parts.join(", ");
     }
   } catch (error) {
     console.warn("Geocoding failed:", error);
