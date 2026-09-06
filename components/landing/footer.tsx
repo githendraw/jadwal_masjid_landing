@@ -29,7 +29,7 @@ export function Footer() {
             <a href="/" className="flex items-center gap-2 mb-4">
               <div className="relative w-8 h-8">
                 <Image
-                  src="/logo-v2.webp"
+                  src="/logo-v3.webp"
                   alt="Logo Jadwal Masjid"
                   fill
                   className="object-contain"
