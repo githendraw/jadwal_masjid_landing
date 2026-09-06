@@ -22,6 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 const WHATSAPP_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jadwalmasjid.com"),
   title: "Jadwal Masjid - Android TV Box Jadwal Sholat Digital",
   description:
     "Android TV Box jadwal sholat digital untuk TV masjid. Cukup colok ke TV, scan QR Code di layar TV pakai HP untuk atur nama masjid. 100% offline tanpa butuh internet.",
@@ -35,10 +36,15 @@ export const metadata: Metadata = {
     "jadwal sholat digital",
   ],
   authors: [{ name: "Jadwal Masjid" }],
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     title: "Jadwal Masjid - Android TV Box Jadwal Sholat Digital",
     description:
       "Android TV Box jadwal sholat digital untuk TV masjid. Cukup colok ke TV, scan QR Code di layar TV pakai HP. 100% offline tanpa internet.",
+    url: "https://jadwalmasjid.com",
+    siteName: "Jadwal Masjid",
     type: "website",
     locale: "id_ID",
     images: [
@@ -81,6 +87,37 @@ const jsonLd = {
   },
 };
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Berapa harga Android TV Box-nya?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Harga Rp 946.000 per box (1 box untuk 1 TV). Sudah termasuk Android TV Box dengan aplikasi Jadwal Masjid yang terinstall, kabel HDMI, dan adaptor daya. Sekali bayar, langsung bisa dipasang.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Apakah perlu download aplikasi atau daftar akun?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Tidak perlu sama sekali. Aplikasi Jadwal Masjid sudah terinstall di dalam TV box. Untuk pengaturannya, Anda cukup scan QR Code di layar TV menggunakan HP (dalam jaringan Wi-Fi yang sama). Tanpa buat akun cloud dan tanpa download aplikasi tambahan.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Apakah harus terkoneksi ke internet?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Tidak. Sistem berjalan 100% lokal di Android TV Box. Pengaturan via QR Code dan penayangan jadwal sholat tetap berfungsi walau tidak ada jaringan internet.",
+      },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -93,6 +130,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       </head>
       <body
