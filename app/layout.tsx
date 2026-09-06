@@ -126,7 +126,7 @@ export default function RootLayout({
   return (
     <html lang="id" className="light scroll-smooth" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico?v=3" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico?v=4" type="image/x-icon" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
