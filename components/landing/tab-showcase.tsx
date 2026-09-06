@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { PlaceholderImage } from "@/components/placeholder-image";
 
 export function TabShowcase() {
   return (
@@ -34,7 +33,7 @@ export function TabShowcase() {
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 bg-muted">
               <TabsTrigger value="beranda">Beranda TV</TabsTrigger>
               <TabsTrigger value="iqomah">Mode Iqomah</TabsTrigger>
-              <TabsTrigger value="hp">Halaman Setting</TabsTrigger>
+              <TabsTrigger value="hp">Barcode Setting</TabsTrigger>
             </TabsList>
 
             <TabsContent value="beranda" className="mt-8 overflow-hidden">
@@ -49,22 +48,24 @@ export function TabShowcase() {
             </TabsContent>
 
             <TabsContent value="iqomah" className="mt-8 overflow-hidden">
-              <PlaceholderImage
-                width={1920}
-                height={1080}
-                label="Showcase: Mode Iqomah Countdown"
-                note="Screenshot 16:9. BG sama tapi scrim 80%. Tengah text 'IQOMAH' 60px, 'MAGHRIB' pink, '09:58' gede 180px"
-                className="rounded-xl max-w-full"
+              <Image
+                src="/iqomah.webp"
+                alt="Tampilan Mode Iqomah Countdown - Jadwal Sholat Digital"
+                width={1200}
+                height={766}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="rounded-xl max-w-full object-contain mx-auto"
               />
             </TabsContent>
 
-            <TabsContent value="hp" className="mt-8">
-              <PlaceholderImage
-                width={1080}
-                height={1920}
-                label="Showcase: Halaman Setting Aplikasi"
-                note="Screenshot 9:16. Tampilkan halaman pengaturan. Ada form nama masjid, kota, metode perhitungan. Status TV Online"
-                className="rounded-xl max-w-sm mx-auto"
+            <TabsContent value="hp" className="mt-8 overflow-hidden">
+              <Image
+                src="/barcode-setting.webp"
+                alt="Tampilan Barcode Setting - Scan QR Code via HP"
+                width={1200}
+                height={766}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="rounded-xl max-w-full object-contain mx-auto"
               />
             </TabsContent>
           </Tabs>

@@ -33,8 +33,8 @@ const solutions = [
   },
   {
     icon: Smartphone,
-    title: "Langsung Siap Pakai",
-    text: "Aplikasi sudah terinstall di dalam box. Tinggal colok ke TV dan setting dasar.",
+    title: "Setup Scan Barcode TV",
+    text: "Tinggal colok ke TV, scan QR Code di layar TV pakai HP untuk atur nama masjid & pengumuman tanpa butuh internet.",
   },
   {
     icon: EyeOff,

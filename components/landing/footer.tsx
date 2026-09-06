@@ -38,8 +38,8 @@ export function Footer() {
               <span className="text-lg font-bold text-foreground">Jadwal Masjid</span>
             </a>
             <p className="text-foreground/70 text-sm mb-4">
-              Android TV Box jadwal sholat digital untuk TV masjid. Akurat, mudah,
-              dan langsung siap pakai. Setup 100% offline.
+              Android TV Box jadwal sholat digital untuk TV masjid. Setup cepat via
+              Scan QR Code di layar TV, 100% offline tanpa butuh internet.
             </p>
             <div className="space-y-2 text-foreground/60 text-sm">
               <div className="flex items-center gap-2">
@@ -98,20 +98,12 @@ export function Footer() {
           </p>
           <div className="flex gap-4">
             <a
-              href={WHATSAPP_LINK}
+              href="https://tiktok.com/@jadwalmasjid"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/60 hover:text-primary text-sm transition-colors"
             >
-              WhatsApp
-            </a>
-            <a
-              href="https://twitter.com/waktusholat"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground/60 hover:text-primary text-sm transition-colors"
-            >
-              Twitter
+              TikTok
             </a>
             <a
               href="https://instagram.com/waktusholat"

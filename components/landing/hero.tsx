@@ -10,8 +10,8 @@ const ORDER_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20s
 
 const trustBullets = [
   { icon: ShieldCheck, text: "Metode perhitungan resmi Kemenag RI" },
-  { icon: CheckCircle2, text: "Auto-update jadwal setiap hari" },
-  { icon: CheckCircle2, text: "Aplikasi sudah terinstall — tinggal setting" },
+  { icon: CheckCircle2, text: "Auto-update jadwal sholat setiap hari" },
+  { icon: CheckCircle2, text: "Setup cepat: Cukup scan QR Code di layar TV pakai HP" },
 ];
 
 export function Hero() {
@@ -64,9 +64,9 @@ export function Hero() {
 
             {/* Subtitle */}
             <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
-              Android TV Box khusus jadwal sholat untuk TV masjid. Aplikasi
-              sudah terinstall, tinggal colok dan setting — tanpa ribet, tanpa
-              butuh internet.
+              Android TV Box khusus jadwal sholat untuk TV masjid. Cukup colok ke TV,
+              scan QR Code di layar TV pakai HP untuk atur nama masjid & pengumuman —
+              tanpa ribet, tanpa buat akun, tanpa butuh internet.
             </p>
 
             {/* Trust bullets */}

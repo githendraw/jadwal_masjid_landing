@@ -53,13 +53,9 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
 
-tolong pelajari codebase ini 
-1. /home/asrock/projects/workspace_jadwal_masjid/jadwal_masjid_landing
-2. /home/asrock/projects/workspace_jadwal_masjid/jadwal_masjid_web_app,
+## Model Produk & Arsitektur
 
-saat ini sudah production :
-1. /home/asrock/projects/workspace_jadwal_masjid/jadwal_masjid_landing , domain : https://jadwalmasjid.com/
-2. /home/asrock/projects/workspace_jadwal_masjid/jadwal_masjid_web_app , domain : https://app.jadwalmasjid.com/
+Landing page ini (`jadwalmasjid.com`) digunakan untuk menjual produk **Android TV Box Jadwal Masjid** (Hardware STB + Aplikasi TV Box).
 
-
-saya ingin menambahkan link ini https://app.jadwalmasjid.com/ di web landing tapi saya bingung dimana posisi yang bagus. coba kamu cek design dengan playwright dan analisa dimana letak yang bagus. dan kata2nya apa register atau login atau apa 
+- **Pengaturan Produk:** Menggunakan jaringan lokal & Scan QR Code di layar TV.
+- **Tanpa Server Cloud / Web App:** Tidak memerlukan registrasi akun, login, ataupun koneksi internet harian. Pengurus masjid cukup scan QR Code di layar TV menggunakan HP di jaringan Wi-Fi/LAN yang sama untuk mengakses halaman pengaturan admin lokal.

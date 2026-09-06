@@ -47,15 +47,15 @@ export function CTASection() {
             <ul className="space-y-3 text-muted-foreground text-sm">
               <li className="flex items-start gap-2">
                 <span className="text-destructive/80 font-bold mt-0.5">✗</span>
-                <span>Harus cari & pasang aplikasi sendiri</span>
+                <span>Harus daftar akun cloud & install aplikasi sendiri</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-destructive/80 font-bold mt-0.5">✗</span>
-                <span>Butuh internet & perangkat pendukung</span>
+                <span>Butuh koneksi internet & bayar server langganan</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-destructive/80 font-bold mt-0.5">✗</span>
-                <span>Jadwal sering keliru karena setting manual</span>
+                <span>Proses setting rumit bagi pengurus masjid senior</span>
               </li>
             </ul>
           </motion.div>
@@ -77,15 +77,15 @@ export function CTASection() {
             <ul className="space-y-3 text-muted-foreground text-sm">
               <li className="flex items-start gap-2">
                 <span className="text-primary font-bold mt-0.5">✓</span>
-                <span>Aplikasi sudah terinstall — tinggal colok</span>
+                <span>Aplikasi sudah terinstall — tinggal colok ke TV</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary font-bold mt-0.5">✓</span>
-                <span>Setup offline, tanpa butuh internet</span>
+                <span>Scan QR Code di TV untuk atur nama & pesan dari HP</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary font-bold mt-0.5">✓</span>
-                <span>Jadwal akurat, tampilan profesional</span>
+                <span>100% lokal & offline, tanpa internet & tanpa akun</span>
               </li>
             </ul>
           </motion.div>

@@ -79,7 +79,7 @@ export function Header() {
               className="border-primary/50 text-primary hover:bg-primary/10 font-medium"
             >
               <a href="#harga">
-                Rp 946rb
+                Lihat Harga
               </a>
             </Button>
             <Button
@@ -134,7 +134,7 @@ export function Header() {
                 className="w-full border-primary/50 text-primary hover:bg-primary/10 font-medium h-9"
               >
                 <a href="#harga" className="w-full">
-                  Rp 946rb / box
+                  Lihat Harga
                 </a>
               </Button>
               <Button

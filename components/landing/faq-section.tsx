@@ -17,14 +17,19 @@ const faqs = [
       "Harga Rp 946.000 per box (1 box untuk 1 TV). Sudah termasuk Android TV Box dengan aplikasi Jadwal Masjid yang terinstall, kabel HDMI, dan adaptor daya. Sekali bayar, langsung bisa dipasang.",
   },
   {
-    question: "Apakah perlu download atau install aplikasi?",
+    question: "Apakah perlu download aplikasi atau daftar akun?",
     answer:
-      "Tidak perlu. Aplikasi Jadwal Masjid sudah terinstall di dalam TV box. Anda tinggal colok box ke TV dan melakukan setting dasar.",
+      "Tidak perlu sama sekali. Aplikasi Jadwal Masjid sudah terinstall di dalam TV box. Untuk pengaturannya, Anda cukup scan QR Code di layar TV menggunakan HP (dalam jaringan Wi-Fi yang sama). Tanpa buat akun cloud dan tanpa download aplikasi tambahan.",
   },
   {
-    question: "Apakah harus online terus?",
+    question: "Bagaimana cara mengatur nama masjid dan running text?",
     answer:
-      "Tidak. Setelah setting awal, aplikasi menyimpan jadwal hingga 30 hari ke depan. Internet mati pun tetap jalan.",
+      "Sangat simpel! Scan QR Code yang tampil di layar TV menggunakan HP Anda. Halaman pengaturan lokal akan terbuka di browser HP. Anda bisa mengubah nama masjid, running text pengumuman, dan timer iqomah, lalu klik simpan.",
+  },
+  {
+    question: "Apakah harus terkoneksi ke internet?",
+    answer:
+      "Tidak. Sistem berjalan 100% lokal di Android TV Box. Pengaturan via QR Code dan penayangan jadwal sholat tetap berfungsi walau tidak ada jaringan internet.",
   },
   {
     question: "Bagaimana cara memesan?",

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Globe, Monitor, Zap, Shield } from "lucide-react";
+import { Globe, Monitor, Zap, Shield, QrCode } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { MihrabCard } from "./mihrab-card";
 
@@ -18,13 +18,13 @@ const advantages = [
     hasImage: true,
   },
   {
-    icon: Monitor,
-    title: "Siap Pakai",
+    icon: QrCode,
+    title: "Setup 1 Scan Barcode",
     description:
-      "Aplikasi sudah terinstall di dalam box. Tinggal colok ke TV, tanpa ribet.",
+      "Scan Barcode di layar TV menggunakan HP. Atur nama masjid & pengumuman dalam 1 menit tanpa daftar akun.",
     colSpan: "md:col-span-2",
     image: "/tv2.webp",
-    imageAlt: "Ilustrasi: Android TV Box → TV",
+    imageAlt: "Ilustrasi: Scan Barcode di TV via HP",
     hasImage: true,
   },
   {

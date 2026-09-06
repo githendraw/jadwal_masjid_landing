@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import {
   Globe,
-  Smartphone,
+  QrCode,
   Monitor,
   Bell,
   Wifi,
@@ -23,10 +23,10 @@ const features = [
     span: "md:col-span-2",
   },
   {
-    icon: Smartphone,
-    title: "Setting Cepat & Mudah",
+    icon: QrCode,
+    title: "Setup QR Code Lokal",
     description:
-      "Atur nama masjid, kota, dan metode perhitungan langsung dari TV box. Sekali setting, selesai.",
+      "Scan QR Code di layar TV dengan HP (jaringan lokal). Langsung atur nama masjid & pesan dari browser HP tanpa butuh akun/cloud.",
     span: "",
   },
   {
@@ -45,9 +45,9 @@ const features = [
   },
   {
     icon: Wifi,
-    title: "Fully Offline",
+    title: "100% Fully Offline",
     description:
-      "Cache jadwal 30 hari. Tetap jalan walau internet mati sebulan.",
+      "Semua data tersimpan di TV Box. Tetap jalan stabil tanpa koneksi internet.",
     span: "",
   },
   {
@@ -66,9 +66,9 @@ const features = [
   },
   {
     icon: Settings,
-    title: "Siap Pakai",
+    title: "Plug & Play Siap Pakai",
     description:
-      "Aplikasi sudah terinstall di dalam box. Tinggal colok ke TV dan langsung jalan.",
+      "Aplikasi sudah terinstall di Android TV Box. Cukup colok ke TV dan langsung jalan.",
     span: "",
   },
   {

@@ -18,8 +18,8 @@ const includes = [
 
 const highlights = [
   { icon: CheckCircle2, text: "1 box untuk 1 TV" },
-  { icon: CheckCircle2, text: "Setup 100% offline" },
-  { icon: CheckCircle2, text: "Auto-update jadwal setiap hari" },
+  { icon: CheckCircle2, text: "Setup QR Code lokal via HP" },
+  { icon: CheckCircle2, text: "100% Offline tanpa butuh internet" },
   { icon: CheckCircle2, text: "Tampilan Full HD profesional" },
 ];
 
