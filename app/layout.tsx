@@ -22,22 +22,23 @@ const jetbrainsMono = JetBrains_Mono({
 const WHATSAPP_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
 
 export const metadata: Metadata = {
-  title: "Jadwal Masjid - Jadwal Sholat Digital untuk TV Masjid",
+  title: "Jadwal Masjid - Android TV Box Jadwal Sholat Digital",
   description:
-    "Tampilkan jadwal sholat akurat di TV masjid dengan mudah. Satu HP mengelola banyak TV, otomatis update setiap hari tanpa ribet. Gratis untuk masjid.",
+    "Android TV Box jadwal sholat digital untuk TV masjid. Cukup colok ke TV, scan QR Code di layar TV pakai HP untuk atur nama masjid. 100% offline tanpa butuh internet.",
   keywords: [
     "jadwal sholat",
     "digital mosque",
     "TV masjid",
     "display sholat",
-    "aplikasi masjid",
+    "android tv box masjid",
     "iqomah counter",
+    "jadwal sholat digital",
   ],
   authors: [{ name: "Jadwal Masjid" }],
   openGraph: {
-    title: "Jadwal Masjid - Jadwal Sholat Digital untuk TV Masjid",
+    title: "Jadwal Masjid - Android TV Box Jadwal Sholat Digital",
     description:
-      "Tampilkan jadwal sholat akurat di TV masjid dengan mudah. Satu HP mengelola banyak TV.",
+      "Android TV Box jadwal sholat digital untuk TV masjid. Cukup colok ke TV, scan QR Code di layar TV pakai HP. 100% offline tanpa internet.",
     type: "website",
     locale: "id_ID",
     images: [
@@ -51,9 +52,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jadwal Masjid - Jadwal Sholat Digital untuk TV Masjid",
+    title: "Jadwal Masjid - Android TV Box Jadwal Sholat Digital",
     description:
-      "Tampilkan jadwal sholat akurat di TV masjid dengan mudah.",
+      "Android TV Box jadwal sholat digital untuk TV masjid. Cukup colok ke TV, scan QR Code di layar TV pakai HP.",
     images: [OG_IMAGE_URL],
   },
   robots: {
@@ -64,15 +65,14 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Jadwal Masjid",
-  description: "Jadwal sholat digital untuk TV masjid",
-  applicationCategory: "Entertainment",
-  operatingSystem: "Android, iOS",
+  "@type": "Product",
+  name: "Android TV Box Jadwal Masjid",
+  description: "Android TV Box jadwal sholat digital untuk TV masjid. Setup cepat via scan QR code di layar TV.",
   offers: {
     "@type": "Offer",
-    price: "0",
+    price: "946000",
     priceCurrency: "IDR",
+    availability: "https://schema.org/InStock",
   },
   aggregateRating: {
     "@type": "AggregateRating",
