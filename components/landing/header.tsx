@@ -40,10 +40,10 @@ export function Header() {
           <a href="/" className="flex items-center gap-2 flex-shrink-0 ml-2 sm:ml-0">
             <div className="relative w-8 h-8 sm:w-9 sm:h-9">
               <Image
-                src="/logo-v3.webp"
+                src="/logo-v4.webp"
                 alt="Logo Jadwal Masjid"
                 fill
-                className="object-contain"
+                className="object-contain rounded-full"
               />
             </div>
             <span className="text-lg sm:text-xl font-bold text-foreground">
