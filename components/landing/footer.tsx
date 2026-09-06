@@ -29,10 +29,10 @@ export function Footer() {
             <a href="/" className="flex items-center gap-2 mb-4">
               <div className="relative w-8 h-8">
                 <Image
-                  src="/logo-v4.webp"
+                  src="/logo-v5.webp"
                   alt="Logo Jadwal Masjid"
                   fill
-                  className="object-contain rounded-full"
+                  className="object-contain"
                 />
               </div>
               <span className="text-lg font-bold text-foreground">Jadwal Masjid</span>
