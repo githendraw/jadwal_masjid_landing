@@ -1,10 +1,4 @@
 {
-  "mcp": {
-    "MCP_DOCKER": {
-      "type": "local",
-      "command": ["docker", "mcp", "gateway", "run"],
-      "enabled": true
-    }
-  },
+  "mcp": {},
   "$schema": "https://opencode.ai/config.json"
 }

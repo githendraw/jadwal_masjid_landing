@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { CartProvider } from "@/components/store/cart-provider";
 import "./globals.css";
 import { Header } from "@/components/landing/header";
 import { WhatsAppWidget } from "@/components/landing/whatsapp-widget";
@@ -19,30 +20,34 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "700"],
 });
 
-const WHATSAPP_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
+const WHATSAPP_LINK = "https://wa.me/6287789179242?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jadwalmasjid.com"),
-  title: "Jadwal Masjid - Android TV Box Jadwal Sholat Digital",
+  title: "Jadwal Masjid - Paket Display Jadwal Sholat Digital untuk TV Masjid",
   description:
-    "Android TV Box jadwal sholat digital untuk TV masjid. Cukup colok ke TV, scan QR Code di layar TV pakai HP untuk atur nama masjid. 100% offline tanpa butuh internet.",
+    "Paket jam digital masjid siap pasang: TV + mesin + bracket. Jadwal sholat akurat Kemenag, auto-update, stabil 24 jam. Sekali wakaf tanpa biaya langganan. Mulai Rp860.000.",
   keywords: [
-    "jadwal sholat",
-    "digital mosque",
-    "TV masjid",
-    "display sholat",
-    "android tv box masjid",
-    "iqomah counter",
     "jadwal sholat digital",
+    "jam digital masjid",
+    "jam sholat TV",
+    "TV masjid",
+    "display jadwal sholat",
+    "android tv box masjid",
+    "jam azan TV",
+    "running text masjid",
+    "iqomah counter",
+    "jadwal sholat otomatis",
+    "wakaf TV masjid",
   ],
   authors: [{ name: "Jadwal Masjid" }],
   alternates: {
     canonical: "./",
   },
   openGraph: {
-    title: "Jadwal Masjid - Android TV Box Jadwal Sholat Digital",
+    title: "Jadwal Masjid - Paket Display Jadwal Sholat Digital untuk TV Masjid",
     description:
-      "Android TV Box jadwal sholat digital untuk TV masjid. Cukup colok ke TV, scan QR Code di layar TV pakai HP. 100% offline tanpa internet.",
+      "Paket jam digital masjid siap pasang: TV + mesin + bracket. Jadwal sholat akurat Kemenag, auto-update, stabil 24 jam. Sekali wakaf tanpa biaya langganan. Mulai Rp860.000.",
     url: "https://jadwalmasjid.com",
     siteName: "Jadwal Masjid",
     type: "website",
@@ -52,16 +57,16 @@ export const metadata: Metadata = {
         url: OG_IMAGE_URL,
         width: 1200,
         height: 630,
-        alt: "Jadwal Masjid - Jadwal Sholat Digital",
+        alt: "Jadwal Masjid - Paket Display Jadwal Sholat Digital",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jadwal Masjid - Android TV Box Jadwal Sholat Digital",
+    title: "Jadwal Masjid - Paket Display Jadwal Sholat Digital untuk TV Masjid",
     description:
-      "Android TV Box jadwal sholat digital untuk TV masjid. Cukup colok ke TV, scan QR Code di layar TV pakai HP.",
-    images: [OG_IMAGE_URL],
+        "Paket jam digital masjid siap pasang. Sekali wakaf tanpa biaya langganan. Mulai Rp860.000.",
+        images: [OG_IMAGE_URL],
   },
   robots: {
     index: true,
@@ -72,11 +77,12 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Product",
-  name: "Android TV Box Jadwal Masjid",
-  description: "Android TV Box jadwal sholat digital untuk TV masjid. Setup cepat via scan QR code di layar TV.",
+  name: "Paket Display Jadwal Sholat Digital untuk TV Masjid",
+  description:
+    "Paket jam digital masjid siap pasang: TV + mesin + bracket. Jadwal sholat akurat Kemenag, auto-update, stabil 24 jam. Sekali wakaf tanpa biaya langganan. Mulai Rp860.000.",
   offers: {
     "@type": "Offer",
-    price: "946000",
+    price: "860000",
     priceCurrency: "IDR",
     availability: "https://schema.org/InStock",
   },
@@ -93,10 +99,10 @@ const faqJsonLd = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "Berapa harga Android TV Box-nya?",
+      name: "Apa saja paket yang tersedia dan berapa harganya?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Harga Rp 946.000 per box (1 box untuk 1 TV). Sudah termasuk Android TV Box dengan aplikasi Jadwal Masjid yang terinstall, kabel HDMI, dan adaptor daya. Sekali bayar, langsung bisa dipasang.",
+        text: "Ada 3 paket: Paket Mesin Rp860.000, Paket Hemat 32\" Rp3.899.000, dan Paket Layar Besar 40\" Rp4.999.000. Semua sekali bayar tanpa langganan bulanan.",
       },
     },
     {
@@ -104,7 +110,7 @@ const faqJsonLd = {
       name: "Apakah perlu download aplikasi atau daftar akun?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Tidak perlu sama sekali. Aplikasi Jadwal Masjid sudah terinstall di dalam TV box. Untuk pengaturannya, Anda cukup scan QR Code di layar TV menggunakan HP (dalam jaringan Wi-Fi yang sama). Tanpa buat akun cloud dan tanpa download aplikasi tambahan.",
+        text: "Tidak perlu sama sekali. Aplikasi Jadwal Masjid sudah terinstall di dalam TV box. Untuk pengaturannya, Anda cukup scan QR Code di layar TV menggunakan HP.",
       },
     },
     {
@@ -140,9 +146,11 @@ export default function RootLayout({
         className={`${dmSans.variable} ${jetbrainsMono.variable} font-sans antialiased bg-background text-foreground overflow-x-hidden max-w-screen`}
       >
         <ThemeProvider>
-          <Header />
-          {children}
-          <WhatsAppWidget />
+          <CartProvider>
+            <Header />
+            {children}
+            <WhatsAppWidget />
+          </CartProvider>
         </ThemeProvider>
 </body>
     </html>

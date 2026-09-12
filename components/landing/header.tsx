@@ -2,30 +2,48 @@
 
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
-import { Menu, Sun, Moon, X } from "lucide-react";
+import { Menu, Sun, Moon, X, LogOut, Package } from "lucide-react";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { StoreNav } from "@/components/store/store-nav";
 import Image from "next/image";
 
-const ORDER_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20memesan%20Android%20TV%20Box%20Jadwal%20Masjid";
-
 const navItems = [
-  { label: "Jadwal Sholat", href: "#jadwal" },
-  { label: "Fitur", href: "#fitur" },
-  { label: "Tampilan", href: "#tampilan" },
-  { label: "Harga", href: "#harga" },
-  { label: "Cara Pakai", href: "#cara-pakai" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Jadwal Sholat", href: "/#jadwal" },
+  { label: "Paket Waqaf", href: "/produk" },
+  { label: "Cara Pakai", href: "/#cara-pakai" },
+  { label: "FAQ", href: "/#faq" },
 ];
+
+interface MeUser {
+  id: number;
+  name: string;
+  email: string;
+  role: string;
+}
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [user, setUser] = useState<MeUser | null>(null);
 
   useEffect(() => {
     setMounted(true);
+    fetch("/api/auth/me")
+      .then((r) => r.json())
+      .then((d) => setUser(d.user || null))
+      .catch(() => {});
   }, []);
+
+  async function logout() {
+    await fetch("/api/auth/logout", { method: "POST" });
+    setUser(null);
+    window.location.href = "/";
+  }
+
+  const closeMobileMenu = () => setMobileMenuOpen(false);
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -64,6 +82,7 @@ export function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-3 mr-2 sm:mr-0">
+            <StoreNav />
             <Button
               variant="ghost"
               size="icon"
@@ -73,26 +92,10 @@ export function Header() {
             >
               {mounted && (theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />)}
             </Button>
-            <Button
-              size="sm"
-              variant="outline"
-              className="border-primary/50 text-primary hover:bg-primary/10 font-medium"
-            >
-              <a href="#harga">
-                Lihat Harga
-              </a>
-            </Button>
-            <Button
-              size="sm"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
-            >
-              <a href={ORDER_LINK} target="_blank" rel="noopener noreferrer">
-                Pesan Sekarang
-              </a>
-            </Button>
           </div>
 
           <div className="flex items-center gap-2 md:hidden mr-2">
+            <StoreNav />
             <Button
               variant="ghost"
               size="icon"
@@ -122,29 +125,52 @@ export function Header() {
               <a
                 key={item.label}
                 href={item.href}
+                onClick={closeMobileMenu}
                 className={`block py-1.5 text-muted-foreground hover:text-primary transition-colors`}
               >
                 {item.label}
               </a>
             ))}
-            <div className="pt-3 space-y-1.5">
-              <Button
-                size="sm"
-                variant="outline"
-                className="w-full border-primary/50 text-primary hover:bg-primary/10 font-medium h-9"
-              >
-                <a href="#harga" className="w-full">
-                  Lihat Harga
-                </a>
-              </Button>
-              <Button
-                size="sm"
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-9"
-              >
-                <a href={ORDER_LINK} target="_blank" rel="noopener noreferrer" className="w-full">
-                  Pesan Sekarang
-                </a>
-              </Button>
+
+            <div className="pt-3 mt-2 border-t border-border space-y-2">
+              {user ? (
+                <>
+                  <div className="px-1 py-1">
+                    <p className="text-sm font-semibold text-foreground truncate">
+                      {user.name}
+                    </p>
+                    <p className="text-xs text-muted-foreground truncate">
+                      {user.email}
+                    </p>
+                  </div>
+                  <Link
+                    href="/akun"
+                    onClick={closeMobileMenu}
+                    className="flex items-center gap-2 w-full h-11 px-4 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
+                  >
+                    <Package className="w-4 h-4" />
+                    Akun Saya
+                  </Link>
+                  <button
+                    onClick={() => {
+                      closeMobileMenu();
+                      logout();
+                    }}
+                    className="flex items-center justify-center gap-2 w-full h-11 px-4 rounded-lg border border-border bg-background text-sm font-medium text-red-600 hover:bg-red-50 transition-colors"
+                  >
+                    <LogOut className="w-4 h-4" />
+                    Keluar
+                  </button>
+                </>
+              ) : (
+                <Link
+                  href="/masuk"
+                  onClick={closeMobileMenu}
+                  className="flex items-center justify-center w-full h-11 px-4 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
+                >
+                  Login
+                </Link>
+              )}
             </div>
           </nav>
         </div>

@@ -8,6 +8,7 @@ import { PrayerClock } from "@/components/landing/prayer-clock";
 import { HowItWorks } from "@/components/landing/how-it-works";
 import { Testimonials } from "@/components/landing/testimonials";
 import { PricingSection } from "@/components/landing/pricing-section";
+import { ComparisonSection } from "@/components/landing/comparison-section";
 import { CTASection } from "@/components/landing/cta-section";
 import { TabShowcase } from "@/components/landing/tab-showcase";
 import { FAQSection } from "@/components/landing/faq-section";
@@ -17,7 +18,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="relative">
+      <main className="relative pb-16">
         <Hero />
         <CredibilityStrip />
         <ProblemSection />
@@ -26,6 +27,7 @@ export default function Home() {
         <BentoGrid />
         <PrayerClock />
         <HowItWorks />
+        <ComparisonSection />
         <Testimonials />
         <PricingSection />
         <CTASection />

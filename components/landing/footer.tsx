@@ -3,7 +3,7 @@
 import { Clock, MapPin, Mail, Phone } from "lucide-react";
 import Image from "next/image";
 
-const WHATSAPP_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
+const WHATSAPP_LINK = "https://wa.me/6287789179242?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
 
 const footerLinks = {
   product: [
@@ -38,8 +38,8 @@ export function Footer() {
               <span className="text-lg font-bold text-foreground">Jadwal Masjid</span>
             </a>
             <p className="text-foreground/70 text-sm mb-4">
-              Android TV Box jadwal sholat digital untuk TV masjid. Setup cepat via
-              Scan QR Code di layar TV, 100% offline tanpa butuh internet.
+              Penyedia solusi display jadwal sholat digital untuk masjid &amp;
+              musholla. Paket siap pasang, sekali bayar tanpa langganan bulanan.
             </p>
             <div className="space-y-2 text-foreground/60 text-sm">
               <div className="flex items-center gap-2">

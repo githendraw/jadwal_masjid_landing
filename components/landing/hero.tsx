@@ -5,13 +5,13 @@ import { ArrowRight, Phone, CheckCircle2, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-const WHATSAPP_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
-const ORDER_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20memesan%20Android%20TV%20Box%20Jadwal%20Masjid";
+const WHATSAPP_LINK = "https://wa.me/6287789179242?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
+const ORDER_LINK = "https://wa.me/6287789179242?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20memesan%20Android%20TV%20Box%20Jadwal%20Masjid";
 
 const trustBullets = [
   { icon: ShieldCheck, text: "Metode perhitungan resmi Kemenag RI" },
-  { icon: CheckCircle2, text: "Auto-update jadwal sholat setiap hari" },
-  { icon: CheckCircle2, text: "Setup cepat: Cukup scan QR Code di layar TV pakai HP" },
+  { icon: CheckCircle2, text: "Sekali wakaf, tanpa biaya langganan bulanan" },
+  { icon: CheckCircle2, text: "Paket siap pasang: TV + mesin + bracket" },
 ];
 
 export function Hero() {
@@ -48,7 +48,7 @@ export function Hero() {
                 className="w-2 h-2 rounded-full bg-primary animate-pulse"
               />
               <span className="text-primary text-sm font-medium">
-                Jadwal Sholat Real-time untuk TV Masjid
+                Solusi Display Jadwal Sholat Digital untuk Masjid
               </span>
             </motion.div>
 
@@ -64,9 +64,9 @@ export function Hero() {
 
             {/* Subtitle */}
             <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
-              Android TV Box khusus jadwal sholat untuk TV masjid. Cukup colok ke TV,
-              scan QR Code di layar TV pakai HP untuk atur nama masjid & pengumuman —
-              tanpa ribet, tanpa buat akun, tanpa butuh internet.
+              Paket lengkap jam digital masjid: TV, mesin, dan bracket siap pasang.
+              Jadwal sholat akurat sesuai Kemenag, auto-update setiap hari, stabil
+              menyala nonstop — sekali bayar, tanpa langganan bulanan.
             </p>
 
             {/* Trust bullets */}
@@ -127,7 +127,7 @@ export function Hero() {
                   </div>
                 ))}
               </div>
-              <span>Digunakan oleh <span className="text-foreground font-semibold">120+</span> pengurus masjid di seluruh Indonesia</span>
+              <span>Dipercaya oleh <span className="text-foreground font-semibold">120+</span> pengurus masjid di seluruh Indonesia</span>
             </motion.div>
           </motion.div>
 

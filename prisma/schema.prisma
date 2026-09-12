@@ -1,0 +1,150 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+enum UserRole {
+  CUSTOMER
+  ADMIN
+}
+
+enum OrderStatus {
+  PENDING_PAYMENT
+  PAID
+  PROCESSING
+  SHIPPED
+  COMPLETED
+  CANCELLED
+  EXPIRED
+}
+
+model User {
+  id              Int       @id @default(autoincrement())
+  googleId        String    @unique @db.VarChar(255)
+  email           String    @unique @db.VarChar(255)
+  name            String    @db.VarChar(200)
+  avatarUrl       String?   @db.VarChar(500)
+  phone           String?   @db.VarChar(30)
+  mosqueName      String?   @db.VarChar(200)
+  mosqueAddress   String?   @db.VarChar(500)
+  city            String?   @db.VarChar(100)
+  province        String?   @db.VarChar(100)
+  postalCode      String?   @db.VarChar(10)
+  role            UserRole  @default(CUSTOMER)
+  profileCompleted Boolean  @default(false)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  orders Order[]
+
+  @@map("users")
+}
+
+model Product {
+  id            Int     @id @default(autoincrement())
+  slug          String  @unique @db.VarChar(150)
+  name          String  @db.VarChar(200)
+  subtitle      String? @db.VarChar(300)
+  description   String? @db.Text
+  price         Int
+  originalPrice Int?
+  badge         String? @db.VarChar(50)
+  isFeatured    Boolean @default(false)
+  isActive      Boolean @default(true)
+  stock         Int     @default(0)
+  weightGrams   Int     @default(1000)
+  shippingFee   Int     @default(0)
+  imageKey      String? @db.VarChar(300)
+  sortOrder     Int     @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  items OrderItem[]
+
+  @@map("products")
+}
+
+model Order {
+  id                Int         @id @default(autoincrement())
+  orderNumber       String      @unique @db.VarChar(40)
+  userId            Int
+  status            OrderStatus @default(PENDING_PAYMENT)
+  subtotal          Int
+  shippingFee       Int
+  total             Int
+  duitkuReference   String?     @db.VarChar(255)
+  duitkuPaymentUrl  String?     @db.VarChar(600)
+  paymentChannel    String?     @db.VarChar(50)
+  paidAt            DateTime?
+  expiryAt          DateTime
+  // --- alamat pengiriman (snapshot saat checkout) ---
+  recipientName     String      @db.VarChar(200)
+  phone             String      @db.VarChar(30)
+  receiverMosqueName String     @db.VarChar(200)
+  address           String      @db.VarChar(500)
+  city              String      @db.VarChar(100)
+  province          String      @db.VarChar(100)
+  postalCode        String      @db.VarChar(10)
+  notes             String?     @db.Text
+  courier           String?     @db.VarChar(50)
+  trackingNumber    String?     @db.VarChar(100)
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
+
+  user  User           @relation(fields: [userId], references: [id], onDelete: Restrict)
+  items OrderItem[]
+  logs  OrderStatusLog[]
+
+  @@index([userId])
+  @@map("orders")
+}
+
+model OrderItem {
+  id          Int    @id @default(autoincrement())
+  orderId     Int
+  productId   Int
+  productName String @db.VarChar(200)
+  unitPrice   Int
+  qty         Int
+  lineTotal   Int
+
+  order   Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Restrict)
+
+  @@index([orderId])
+  @@map("order_items")
+}
+
+model OrderStatusLog {
+  id        Int         @id @default(autoincrement())
+  orderId   Int
+  status    OrderStatus
+  note      String?     @db.VarChar(500)
+  createdAt DateTime    @default(now())
+
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+  @@map("order_status_logs")
+}
+
+model DuitkuCallback {
+  id            Int      @id @default(autoincrement())
+  merchantOrderId String @db.VarChar(100)
+  merchantCode  String?  @db.VarChar(50)
+  amount        Int?
+  productCode   String?  @db.VarChar(50)
+  resultCode    Int?
+  reference     String?  @db.VarChar(100)
+  signature     String   @db.VarChar(255)
+  rawJson       String?  @db.Text
+  processed     Boolean  @default(false)
+  createdAt     DateTime @default(now())
+
+  @@index([merchantOrderId])
+  @@map("duitku_callbacks")
+}

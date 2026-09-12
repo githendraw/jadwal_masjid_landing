@@ -1,16 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cable, QrCode, SlidersHorizontal } from "lucide-react";
+import { Cable, QrCode, SlidersHorizontal, Truck } from "lucide-react";
 
-const WHATSAPP_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20memesan%20Android%20TV%20Box%20Jadwal%20Masjid";
+const WHATSAPP_LINK = "https://wa.me/6287789179242?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20memesan%20Android%20TV%20Box%20Jadwal%20Masjid";
 
 const steps = [
   {
     icon: Cable,
-    title: "1. Colok ke TV Masjid",
+    title: "1. Pilih Paket & Pasang",
     description:
-      "Sambungkan Android TV Box ke TV masjid menggunakan kabel HDMI. Tampilan jadwal sholat langsung aktif tanpa butuh internet.",
+      "Untuk Paket Mesin: colok TV Box ke TV via HDMI. Untuk Paket TV 32\"/40\": kami rakit TV + bracket rapi di belakang layar, tinggal colok 1 kabel listrik.",
   },
   {
     icon: QrCode,
@@ -44,6 +44,21 @@ export function HowItWorks() {
             Simpel dan cepat. Dalam 5 menit, TV masjid sudah bisa menampilkan
             jadwal sholat.
           </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mx-auto max-w-2xl mb-12 flex items-start gap-3 bg-primary/5 border border-primary/20 rounded-xl p-4 text-sm text-foreground/80"
+        >
+          <Truck className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+          <span>
+            <strong className="text-foreground">Butuh terima beres?</strong> Untuk
+            area kota Anda, tersedia layanan pasang &amp; bor dinding langsung di
+            masjid (Rp300.000). Kami juga sudah mengatur nama masjid &amp;
+            running text sebelum paket dikirim.
+          </span>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">

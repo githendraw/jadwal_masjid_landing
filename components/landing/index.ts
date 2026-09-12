@@ -11,4 +11,5 @@ export { Footer } from "./footer";
 export { PrayerClock } from "./prayer-clock";
 export { Testimonials } from "./testimonials";
 export { PricingSection } from "./pricing-section";
+export { ComparisonSection } from "./comparison-section";
 export { MihrabCard, MihrabBadge } from "./mihrab-card";

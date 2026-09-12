@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { ArrowRight, Phone, AlertCircle, CheckCircle2, Cable } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const WHATSAPP_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
-const ORDER_LINK = "https://wa.me/6285283302551?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20memesan%20Android%20TV%20Box%20Jadwal%20Masjid";
+const WHATSAPP_LINK = "https://wa.me/6287789179242?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
+const ORDER_LINK = "https://wa.me/6287789179242?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20memesan%20Android%20TV%20Box%20Jadwal%20Masjid";
 
 export function CTASection() {
   return (
@@ -20,12 +20,12 @@ export function CTASection() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Tanpa Ribet,{" "}
+            Sekali Bayar,{" "}
             <span className="gradient-text">Langsung Siap Pakai</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-2">
-            Android TV Box dengan aplikasi Jadwal Masjid yang sudah terinstall.
-            Sekali beli, langsung bisa dipasang di TV masjid Anda.
+            Paket display jadwal sholat lengkap untuk masjid — dari mesin saja
+            hingga TV 40 inch siap pasang. Tanpa langganan bulanan, tanpa ribet.
           </p>
         </motion.div>
 
@@ -110,7 +110,8 @@ export function CTASection() {
                 Jadwal Sholat Profesional<br />di TV Masjid Kamu
               </h3>
               <p className="text-muted-foreground text-base sm:text-lg mb-8 max-w-xl mx-auto">
-                Sekali beli, langsung pasang. Tanpa ribet, tanpa setting ulang.
+                Sekali wakaf, langsung pasang. Auto-update setiap hari, stabil 24 jam,
+                tanpa setting ulang.
               </p>
               <div className="flex flex-col gap-4 justify-center items-center">
                 <Button
