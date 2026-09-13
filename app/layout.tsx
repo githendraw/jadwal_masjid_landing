@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, JetBrains_Mono } from "next/font/google";
-import { AnalyticsWithConsent } from "@/components/analytics/analytics-consent";
+import { GoogleAnalyticsPageViews } from "@/components/analytics/google-analytics-pageviews";
+import { GA_ID } from "@/lib/gtag";
 import { ThemeProvider } from "@/components/theme-provider";
 import { CartProvider } from "@/components/store/cart-provider";
 import "./globals.css";
@@ -22,6 +23,23 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const WHATSAPP_LINK = "https://wa.me/6287789179242?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
+
+/**
+ * Google tag (gtag.js) — dipasang langsung di <head> sesuai petunjuk Google,
+ * sehingga tag terbaca oleh alat verifikasi Google dan Analytics berjalan
+ * untuk semua pengunjung.
+ *
+ * Catatan: banner persetujuan cookie + Consent Mode sengaja DIMATIKAN untuk
+ * sekarang (permintaan pemilik situs). Komponennya tetap tersimpan
+ * (components/analytics/analytics-consent.tsx + consent-banner.tsx) sehingga
+ * bisa diaktifkan kembali kapan saja saat dibutuhkan.
+ */
+const GA_TAG_SCRIPT = [
+  "window.dataLayer=window.dataLayer||[];",
+  "function gtag(){dataLayer.push(arguments);}",
+  "gtag('js',new Date());",
+  `gtag('config','${GA_ID}');`,
+].join("");
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jadwalmasjid.com"),
@@ -134,6 +152,9 @@ export default function RootLayout({
     <html lang="id" className="light scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico?v=5" type="image/x-icon" />
+        {/* Google tag (gtag.js) di <head> — tanpa gating consent untuk saat ini */}
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+        <script dangerouslySetInnerHTML={{ __html: GA_TAG_SCRIPT }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -153,8 +174,8 @@ export default function RootLayout({
             <WhatsAppWidget />
           </CartProvider>
         </ThemeProvider>
-        {/* Analitik: GA hanya dimuat setelah pengunjung menyetujui lewat banner cookie */}
-        <AnalyticsWithConsent />
+        {/* Analitik: tag sudah di <head>; ini melacak page_view saat navigasi SPA */}
+        <GoogleAnalyticsPageViews enabled />
 </body>
     </html>
   );
