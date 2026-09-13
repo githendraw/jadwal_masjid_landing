@@ -6,7 +6,10 @@ import { Features } from "@/components/landing/features";
 import { BentoGrid } from "@/components/landing/bento-grid";
 import { PrayerClock } from "@/components/landing/prayer-clock";
 import { HowItWorks } from "@/components/landing/how-it-works";
-import { Testimonials } from "@/components/landing/testimonials";
+// Testimonials tidak dirender: isinya contoh, bukan pelanggan sungguhan
+// (dihapus 2026-09-13). Komponennya sengaja dibiarkan di
+// components/landing/testimonials.tsx untuk diaktifkan kembali setelah ada
+// testimoni asli yang boleh ditampilkan.
 import { PricingSection } from "@/components/landing/pricing-section";
 import { ComparisonSection } from "@/components/landing/comparison-section";
 import { CTASection } from "@/components/landing/cta-section";
@@ -39,7 +42,7 @@ export default function Home() {
         <PrayerClock />
         <HowItWorks />
         <ComparisonSection />
-        <Testimonials />
+        {/* Testimoni dihapus 2026-09-13: teksnya contoh, bukan pelanggan nyata. */}
         <PricingSection />
         <CTASection />
         <FAQSection />
