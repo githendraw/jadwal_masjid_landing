@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -121,138 +121,141 @@ export function PrayerClock() {
     return () => observer.disconnect();
   }, []);
 
-  // Fetch prayer times from API
-  useEffect(() => {
-    if (!isVisible) return;
-    const fetchPrayerTimes = async () => {
-      try {
-        // Get user location via geolocation (fallback to Jakarta if denied/unavailable)
-        let lat: number, lon: number;
-        let city = "Jakarta";
-        let fallback = false;
+  // Ambil lokasi (geolocation) + hitung jadwal sholat.
+  // Dipanggil otomatis saat section terlihat, dan bisa dipicu ulang dari tombol refresh.
+  const fetchPrayerTimes = useCallback(async () => {
+    setLoading(true);
+    try {
+      // Get user location via geolocation (fallback to Jakarta if denied/unavailable)
+      let lat: number, lon: number;
+      let city = "Jakarta";
+      let fallback = false;
 
-        if (navigator.geolocation) {
-          try {
-            const position = await new Promise<GeolocationPosition>(
-              (resolve, reject) =>
-                navigator.geolocation.getCurrentPosition(resolve, reject)
-            );
+      if (navigator.geolocation) {
+        try {
+          const position = await new Promise<GeolocationPosition>(
+            (resolve, reject) =>
+              navigator.geolocation.getCurrentPosition(resolve, reject)
+          );
 
-            if (position) {
-              lat = position.coords.latitude;
-              lon = position.coords.longitude;
+          if (position) {
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
 
-              // Get city name from coordinates
-              city = await getCityName(lat, lon);
-            } else {
-              // Geolocation returned nothing - use fallback
-              lat = FALLBACK_LAT;
-              lon = FALLBACK_LON;
-              city = "Jakarta";
-              fallback = true;
-            }
-          } catch {
-            // Geolocation denied / error - use fallback
+            // Get city name from coordinates
+            city = await getCityName(lat, lon);
+          } else {
+            // Geolocation returned nothing - use fallback
             lat = FALLBACK_LAT;
             lon = FALLBACK_LON;
             city = "Jakarta";
             fallback = true;
           }
-        } else {
-          // Geolocation not supported - use fallback
+        } catch {
+          // Geolocation denied / error - use fallback
           lat = FALLBACK_LAT;
           lon = FALLBACK_LON;
           city = "Jakarta";
           fallback = true;
         }
-
-        // Calculate timezone offset based on longitude
-        const { offset: timezoneOffset } = getTimezoneOffset(lon);
-
-        // Calculate prayer times using adhan library
-        const adhan = require("adhan");
-        const { PrayerTimes, Madhab, Coordinates, CalculationParameters } = adhan;
-
-        const coordinates = new Coordinates(lat, lon);
-
-        // Create Kemenag RI calculation method
-        // Fajr: 20°, Isha: 18°, Madhab: Shafi'i
-        const params = new CalculationParameters(
-          null, // null = custom method
-          20, // Fajr angle (Kemenag RI)
-          18, // Isha angle (Kemenag RI)
-          0, // Isha interval (0 = no additional minutes)
-          0 // Maghrib angle (not used for calculation)
-        );
-        params.madhab = Madhab.Shafi;
-
-        // Get prayer times for today
-        const today = new Date();
-        const prayerTimes = new PrayerTimes(coordinates, today, params);
-
-        // Format prayer times
-        const prayers: Prayer[] = [
-          {
-            name: "Subuh",
-            time: formatTime(prayerTimes.fajr, timezoneOffset),
-            icon: "🌙",
-          },
-          {
-            name: "Terbit",
-            time: formatTime(prayerTimes.sunrise, timezoneOffset),
-            icon: "🌅",
-          },
-          {
-            name: "Dzuhur",
-            time: formatTime(prayerTimes.dhuhr, timezoneOffset),
-            icon: "☀️",
-          },
-          {
-            name: "Ashar",
-            time: formatTime(prayerTimes.asr, timezoneOffset),
-            icon: "🌤️",
-          },
-          {
-            name: "Maghrib",
-            time: formatTime(prayerTimes.sunset, timezoneOffset),
-            icon: "🌇",
-          },
-          {
-            name: "Isya",
-            time: formatTime(prayerTimes.isha, timezoneOffset),
-            icon: "🌃",
-          },
-        ];
-
-        setPrayerData({
-          city,
-          prayers,
-          gmtOffset: timezoneOffset,
-          fallback,
-        });
-      } catch (error) {
-        console.error("Error calculating prayer times:", error);
-        // Fallback to hardcoded times if calculation fails
-        setPrayerData({
-          city: "Jakarta",
-          prayers: [
-            { name: "Subuh", time: "04:15", icon: "🌙" },
-            { name: "Terbit", time: "05:42", icon: "🌅" },
-            { name: "Dzuhur", time: "12:05", icon: "☀️" },
-            { name: "Ashar", time: "15:02", icon: "🌤️" },
-            { name: "Maghrib", time: "18:18", icon: "🌇" },
-            { name: "Isya", time: "19:30", icon: "🌃" },
-          ],
-          gmtOffset: 7,
-          fallback: true,
-        });
-      } finally {
-        setLoading(false);
+      } else {
+        // Geolocation not supported - use fallback
+        lat = FALLBACK_LAT;
+        lon = FALLBACK_LON;
+        city = "Jakarta";
+        fallback = true;
       }
-    };
 
+      // Calculate timezone offset based on longitude
+      const { offset: timezoneOffset } = getTimezoneOffset(lon);
+
+      // Calculate prayer times using adhan library
+      const adhan = require("adhan");
+      const { PrayerTimes, Madhab, Coordinates, CalculationParameters } = adhan;
+
+      const coordinates = new Coordinates(lat, lon);
+
+      // Create Kemenag RI calculation method
+      // Fajr: 20°, Isha: 18°, Madhab: Shafi'i
+      const params = new CalculationParameters(
+        null, // null = custom method
+        20, // Fajr angle (Kemenag RI)
+        18, // Isha angle (Kemenag RI)
+        0, // Isha interval (0 = no additional minutes)
+        0 // Maghrib angle (not used for calculation)
+      );
+      params.madhab = Madhab.Shafi;
+
+      // Get prayer times for today
+      const today = new Date();
+      const prayerTimes = new PrayerTimes(coordinates, today, params);
+
+      // Format prayer times
+      const prayers: Prayer[] = [
+        {
+          name: "Subuh",
+          time: formatTime(prayerTimes.fajr, timezoneOffset),
+          icon: "🌙",
+        },
+        {
+          name: "Terbit",
+          time: formatTime(prayerTimes.sunrise, timezoneOffset),
+          icon: "🌅",
+        },
+        {
+          name: "Dzuhur",
+          time: formatTime(prayerTimes.dhuhr, timezoneOffset),
+          icon: "☀️",
+        },
+        {
+          name: "Ashar",
+          time: formatTime(prayerTimes.asr, timezoneOffset),
+          icon: "🌤️",
+        },
+        {
+          name: "Maghrib",
+          time: formatTime(prayerTimes.sunset, timezoneOffset),
+          icon: "🌇",
+        },
+        {
+          name: "Isya",
+          time: formatTime(prayerTimes.isha, timezoneOffset),
+          icon: "🌃",
+        },
+      ];
+
+      setPrayerData({
+        city,
+        prayers,
+        gmtOffset: timezoneOffset,
+        fallback,
+      });
+    } catch (error) {
+      console.error("Error calculating prayer times:", error);
+      // Fallback to hardcoded times if calculation fails
+      setPrayerData({
+        city: "Jakarta",
+        prayers: [
+          { name: "Subuh", time: "04:15", icon: "🌙" },
+          { name: "Terbit", time: "05:42", icon: "🌅" },
+          { name: "Dzuhur", time: "12:05", icon: "☀️" },
+          { name: "Ashar", time: "15:02", icon: "🌤️" },
+          { name: "Maghrib", time: "18:18", icon: "🌇" },
+          { name: "Isya", time: "19:30", icon: "🌃" },
+        ],
+        gmtOffset: 7,
+        fallback: true,
+      });
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  // Jalankan otomatis begitu section masuk viewport
+  useEffect(() => {
+    if (!isVisible) return;
     fetchPrayerTimes();
-  }, [isVisible]);
+  }, [isVisible, fetchPrayerTimes]);
 
   // Update current time every second
   useEffect(() => {
@@ -346,9 +349,20 @@ export function PrayerClock() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
-            Jadwal Sholat{" "}
-            <span className="text-primary">Real-time</span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 flex items-center justify-center gap-3">
+            <span>
+              Jadwal Sholat <span className="text-primary">Real-time</span>
+            </span>
+            <button
+              type="button"
+              onClick={fetchPrayerTimes}
+              disabled={loading}
+              aria-label="Ambil lokasi & jadwal sholat"
+              title="Ambil lokasi & jadwal sholat"
+              className="inline-flex h-9 shrink-0 items-center justify-center rounded-full border border-border bg-card/60 px-3 text-sm font-medium transition-colors hover:bg-muted disabled:opacity-60"
+            >
+              <span>Ambil Lokasi</span>
+            </button>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
             Tampil profesional di TV masjid Anda. Jadwal otomatis update setiap
