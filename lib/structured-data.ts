@@ -12,6 +12,14 @@ const PRICE_VALID_UNTIL = "2027-12-31"; // kalau lewat, penawaran bisa berhenti 
 const HANDLING_DAYS = { min: 1, max: 2 }; // masa siap kirim dari gudang
 const TRANSIT_DAYS = { min: 2, max: 4 }; // estimasi perjalanan (packing kayu, se-Indonesia)
 const SHIPPING_COUNTRY = "ID";
+/**
+ * Kebijakan retur sesuai keputusan pemilik (2026-09-13): barang rusak atau
+ * salah kirim bisa ditukar dalam 7 hari, ongkir kirim balik ditanggung penjual.
+ * `itemCondition: DamagedCondition` sengaja dipakai supaya markup tidak
+ * menjanjikan retur bebas untuk semua alasan — hanya untuk barang rusak/salah.
+ * Retur berlaku untuk semua produk, jadi dipasang di level Offer tiap produk.
+ */
+const RETURN_WINDOW_DAYS = 7;
 
 export type ProdukUntukMarkup = {
   slug: string;
@@ -78,6 +86,15 @@ function buatPenawaran(
           unitCode: "DAY",
         },
       },
+    },
+    hasMerchantReturnPolicy: {
+      "@type": "MerchantReturnPolicy",
+      applicableCountry: SHIPPING_COUNTRY,
+      returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+      merchantReturnDays: RETURN_WINDOW_DAYS,
+      itemCondition: "https://schema.org/DamagedCondition",
+      returnMethod: "https://schema.org/ReturnByMail",
+      returnFees: "https://schema.org/FreeReturn",
     },
   };
 
