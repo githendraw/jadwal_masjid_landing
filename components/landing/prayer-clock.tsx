@@ -349,7 +349,10 @@ export function PrayerClock() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 flex items-center justify-center gap-3">
+          {/* Di mobile judul + tombol bertumpuk (flex-col); dari sm ke atas
+              kembali sebaris. Sebelumnya selalu sebaris sehingga di layar
+              sempit judul 2 baris berdesakan dengan tombol. */}
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <span>
               Jadwal Sholat <span className="text-primary">Real-time</span>
             </span>
