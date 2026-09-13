@@ -7,6 +7,7 @@ import { formatRupiah } from "@/lib/format";
 import { BuyPanel } from "@/components/store/buy-panel";
 import { CheckCircle2 } from "lucide-react";
 import { Footer } from "@/components/landing/footer";
+import { jsonLdProduk } from "@/lib/structured-data";
 
 export const dynamic = "force-dynamic";
 
@@ -39,6 +40,13 @@ export default async function ProdukDetailPage({
 
   return (
     <div className="min-h-screen pt-16 sm:pt-20 bg-background">
+      {/* Product + Offer untuk produk INI. Sebelumnya markup-nya datang dari
+          layout dan selalu berisi harga paket mesin, sehingga halaman ini
+          menandai Rp860.000 padahal harganya {formatRupiah(product.price)}. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdProduk(product)) }}
+      />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <Link
           href="/produk"

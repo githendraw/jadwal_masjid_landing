@@ -104,56 +104,11 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  name: "Paket Display Jadwal Sholat Digital untuk TV Masjid",
-  description:
-    "Paket jam digital masjid siap pasang: TV + mesin + bracket. Jadwal sholat akurat Kemenag, auto-update, stabil 24 jam. Sekali wakaf tanpa biaya langganan. Mulai Rp860.000.",
-  offers: {
-    "@type": "Offer",
-    price: "860000",
-    priceCurrency: "IDR",
-    availability: "https://schema.org/InStock",
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    ratingCount: "120",
-  },
-};
-
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Apa saja paket yang tersedia dan berapa harganya?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Ada 3 paket: Paket Mesin Rp860.000, Paket Hemat 32\" Rp3.899.000, dan Paket Layar Besar 40\" Rp4.999.000. Semua sekali bayar tanpa langganan bulanan.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Apakah perlu download aplikasi atau daftar akun?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Tidak perlu sama sekali. Aplikasi Jadwal Masjid sudah terinstall di dalam TV box. Untuk pengaturannya, Anda cukup scan QR Code di layar TV menggunakan HP.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Apakah harus terkoneksi ke internet?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Tidak. Sistem berjalan 100% lokal di Android TV Box. Pengaturan via QR Code dan penayangan jadwal sholat tetap berfungsi walau tidak ada jaringan internet.",
-      },
-    },
-  ],
-};
-
+// Markup Product/FAQPage TIDAK lagi di sini: dulu disuntikkan ke semua halaman
+// (harga Rp860.000 muncul di halaman produk Rp4.999.000, dan FAQPage ikut di
+// halaman yang tidak memuat FAQ). Sekarang dibangun di lib/structured-data.ts
+// dan dipasang di halaman yang memuat kontennya: app/page.tsx (homepage) dan
+// app/produk/[slug]/page.tsx.
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -167,14 +122,6 @@ export default function RootLayout({
         {/* Google tag (gtag.js) di <head> — tanpa gating consent untuk saat ini */}
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
         <script dangerouslySetInnerHTML={{ __html: GA_TAG_SCRIPT }} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-        />
       </head>
       <body
         className={`${dmSans.variable} ${jetbrainsMono.variable} font-sans antialiased bg-background text-foreground overflow-x-hidden max-w-screen`}

@@ -13,10 +13,21 @@ import { CTASection } from "@/components/landing/cta-section";
 import { TabShowcase } from "@/components/landing/tab-showcase";
 import { FAQSection } from "@/components/landing/faq-section";
 import { Footer } from "@/components/landing/footer";
+import { jsonLdFaq, jsonLdHomepage } from "@/lib/structured-data";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
+      {/* Markup terstruktur khusus halaman ini. Jangan pindahkan ke layout:
+          markup Product wajib cocok dengan isi halaman yang memasangnya. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdHomepage()) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq()) }}
+      />
       <Header />
       <main className="relative pb-16">
         <Hero />
