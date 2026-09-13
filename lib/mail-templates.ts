@@ -75,7 +75,7 @@ function domain(baseUrl: string): string {
 
 function card(inner: string): string {
   return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
-    style="width:100%;border:1px solid #e2e8f0;border-radius:12px;margin-top:18px">
+    style="width:100%;border:1px solid #d7ece2;border-radius:12px;margin-top:18px">
     <tr><td style="padding:16px 18px">${inner}</td></tr>
   </table>`;
 }
@@ -89,7 +89,7 @@ function kv(rows: [string, string][]): string {
     ${rows
       .map(
         ([k, v]) =>
-          `<tr><td style="padding:3px 0;color:#64748b;white-space:nowrap" valign="top">${k}</td><td style="padding:3px 0;text-align:right" align="right"><strong style="color:#0f172a">${v}</strong></td></tr>`
+          `<tr><td style="padding:3px 0;color:#5c7a6e;white-space:nowrap" valign="top">${k}</td><td style="padding:3px 0;text-align:right" align="right"><strong style="color:#0f172a">${v}</strong></td></tr>`
       )
       .join("")}
   </table>`;
@@ -99,11 +99,11 @@ function rincianPesanan(order: OrderLike): string {
   const rows = order.items
     .map(
       (i) => `<tr>
-        <td style="padding:9px 0;border-bottom:1px solid #f1f5f9;font:400 14px/1.5 Arial,Helvetica,sans-serif;color:#334155">
+        <td style="padding:9px 0;border-bottom:1px solid #eef6f1;font:400 14px/1.5 Arial,Helvetica,sans-serif;color:#334155">
           ${i.productName}
-          <div style="font:400 12px/1.5 Arial,Helvetica,sans-serif;color:#94a3b8">${rupiah(i.unitPrice)} × ${i.qty}</div>
+          <div style="font:400 12px/1.5 Arial,Helvetica,sans-serif;color:#8aa79a">${rupiah(i.unitPrice)} × ${i.qty}</div>
         </td>
-        <td style="padding:9px 0;border-bottom:1px solid #f1f5f9;text-align:right;font:600 14px/1.5 Arial,Helvetica,sans-serif;color:#0f172a" align="right">
+        <td style="padding:9px 0;border-bottom:1px solid #eef6f1;text-align:right;font:600 14px/1.5 Arial,Helvetica,sans-serif;color:#0f172a" align="right">
           ${rupiah(i.lineTotal)}
         </td>
       </tr>`
@@ -114,40 +114,47 @@ function rincianPesanan(order: OrderLike): string {
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse">
       ${rows}
     </table>
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;margin-top:12px;font:400 13px/1.7 Arial,Helvetica,sans-serif;color:#64748b">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;margin-top:12px;font:400 13px/1.7 Arial,Helvetica,sans-serif;color:#5c7a6e">
       <tr><td>Subtotal</td><td align="right" style="text-align:right">${rupiah(order.subtotal)}</td></tr>
       <tr><td>Ongkos kirim</td><td align="right" style="text-align:right">${rupiah(order.shippingFee)}</td></tr>
     </table>
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;margin-top:8px;background:#ecfdf9;border-radius:10px">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;margin-top:8px;border-radius:10px;overflow:hidden">
       <tr>
-        <td style="padding:12px 14px;font:700 14px/1.4 Arial,Helvetica,sans-serif;color:#0f172a">Total</td>
-        <td align="right" style="padding:12px 14px;text-align:right;font:700 16px/1.4 Arial,Helvetica,sans-serif;color:#0f766e">${rupiah(order.total)}</td>
+        <td bgcolor="#ecfdf9" style="padding:12px 14px;font:700 14px/1.4 Arial,Helvetica,sans-serif;color:#0f172a;background-color:#ecfdf9;background-image:linear-gradient(90deg,#ecfdf9 0%,#f0fdfa 100%)">Total</td>
+        <td align="right" bgcolor="#ecfdf9" style="padding:12px 14px;text-align:right;font:700 16px/1.4 Arial,Helvetica,sans-serif;color:#0f766e;background-color:#ecfdf9;background-image:linear-gradient(90deg,#ecfdf9 0%,#f0fdfa 100%)">${rupiah(order.total)}</td>
       </tr>
     </table>`);
 }
 
 function alamatPesanan(order: OrderLike): string {
   return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
-    style="width:100%;margin-top:18px;background:#f8fafc;border-left:4px solid #00d4aa;border-radius:0 12px 12px 0">
-    <tr><td style="padding:14px 18px">
-      <div style="font:700 12px/1 Arial,Helvetica,sans-serif;color:#0f766e;letter-spacing:.6px;text-transform:uppercase">Alamat pengiriman</div>
-      <div style="margin-top:9px;font:400 14px/1.7 Arial,Helvetica,sans-serif;color:#334155">
-        <strong style="color:#0f172a">${order.recipientName}</strong> &middot; ${order.phone}<br />
-        ${order.receiverMosqueName}<br />
-        ${order.address}, ${order.city}, ${order.province} ${order.postalCode}
-      </div>
-    </td></tr>
+    style="width:100%;margin-top:18px;border-radius:0 12px 12px 0;overflow:hidden">
+    <tr>
+      <td bgcolor="#00d4aa" width="4"
+          style="width:4px;font-size:0;line-height:0;background-color:#00d4aa;background-image:linear-gradient(180deg,#00d4aa 0%,#d4af37 100%)">&nbsp;</td>
+      <td style="padding:14px 18px;background-color:#f2faf6;background-image:linear-gradient(90deg,#f2faf6 0%,#eaf6f0 100%)">
+        <div style="font:700 12px/1 Arial,Helvetica,sans-serif;color:#0f766e;letter-spacing:.6px;text-transform:uppercase">Alamat pengiriman</div>
+        <div style="margin-top:9px;font:400 14px/1.7 Arial,Helvetica,sans-serif;color:#334155">
+          <strong style="color:#0f172a">${order.recipientName}</strong> &middot; ${order.phone}<br />
+          ${order.receiverMosqueName}<br />
+          ${order.address}, ${order.city}, ${order.province} ${order.postalCode}
+        </div>
+      </td>
+    </tr>
   </table>`;
 }
 
 function kotakCatatan(judul: string, isi: string, tone: "netral" | "peringatan" = "netral"): string {
   const bg = tone === "peringatan" ? "#fffbeb" : "#f8fafc";
-  const border = tone === "peringatan" ? "#f59e0b" : "#cbd5e1";
+  const strip = tone === "peringatan" ? "#f59e0b" : "#94a3b8";
   return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
-    style="width:100%;margin-top:16px;background:${bg};border-left:4px solid ${border};border-radius:0 10px 10px 0">
-    <tr><td style="padding:13px 16px;font:400 13px/1.7 Arial,Helvetica,sans-serif;color:#334155">
-      <strong style="color:#0f172a">${judul}</strong><br />${isi}
-    </td></tr>
+    style="width:100%;margin-top:16px;border-radius:0 10px 10px 0;overflow:hidden">
+    <tr>
+      <td bgcolor="${strip}" width="4" style="width:4px;font-size:0;line-height:0;background-color:${strip}">&nbsp;</td>
+      <td style="padding:13px 16px;background-color:${bg};font:400 13px/1.7 Arial,Helvetica,sans-serif;color:#334155">
+        <strong style="color:#0f172a">${judul}</strong><br />${isi}
+      </td>
+    </tr>
   </table>`;
 }
 

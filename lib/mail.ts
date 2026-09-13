@@ -208,12 +208,12 @@ export interface LayoutOptions {
 }
 
 const SITE = "jadwalmasjid.com";
-const LOGO_URL = "https://jadwalmasjid.com/logo-email-96.png";
+const LOGO_URL = "https://jadwalmasjid.com/logo-email.png";
 
 const TONES: Record<string, { bg: string; fg: string }> = {
   ok: { bg: "#ccfbf1", fg: "#0f766e" },
-  info: { bg: "#e0f2fe", fg: "#0369a1" },
-  warn: { bg: "#fef3c7", fg: "#b45309" },
+  info: { bg: "#e0f2fe", fg: "#075985" },
+  warn: { bg: "#fef3c7", fg: "#92400e" },
 };
 
 /**
@@ -230,7 +230,7 @@ export function mailLayout(o: LayoutOptions): string {
     : "";
   const cta = o.cta
     ? `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:22px 0 4px"><tr>
-         <td bgcolor="#00d4aa" style="border-radius:10px">
+         <td bgcolor="#00d4aa" style="border-radius:10px;background-color:#00d4aa;background-image:linear-gradient(135deg,#00d4aa 0%,#00a98f 100%)">
            <a href="${o.cta.url}" target="_blank" style="display:inline-block;padding:14px 26px;font:700 15px/1 Arial,Helvetica,sans-serif;color:#062e2a;text-decoration:none;border-radius:10px">${o.cta.label}</a>
          </td>
        </tr></table>`
@@ -243,26 +243,25 @@ export function mailLayout(o: LayoutOptions): string {
     <meta name="color-scheme" content="light only" />
     <title>${o.title}</title>
   </head>
-  <body style="margin:0;padding:0;background:#eef2f7">
+  <body style="margin:0;padding:0;background:#eef7f3">
     ${preheader}
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#eef2f7">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#eef7f3">
       <tr>
         <td align="center" style="padding:26px 12px">
-          <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#ffffff;border-radius:16px;overflow:hidden">
-            <tr><td style="height:4px;line-height:4px;font-size:0;background:#00d4aa">&nbsp;</td></tr>
+          <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 1px 3px rgba(2,44,34,.10)">
+            <tr><td bgcolor="#00d4aa" height="5" style="height:5px;line-height:5px;font-size:0;background-color:#00d4aa;background-image:linear-gradient(90deg,#00d4aa 0%,#d4af37 50%,#00d4aa 100%)">&nbsp;</td></tr>
             <tr>
-              <td style="background:#0a192f;padding:22px 26px">
-                <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <td bgcolor="#065f46" style="background-color:#065f46;background-image:linear-gradient(135deg,#022c22 0%,#0b6b4f 48%,#04382f 100%);padding:26px 26px 24px" align="center">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto">
                   <tr>
-                    <td width="56" valign="middle">
-                      <div style="width:52px;height:52px;background:#ffffff;border-radius:14px;text-align:center">
-                        <img src="${LOGO_URL}" width="44" height="44" alt="Jadwal Masjid"
-                             style="display:inline-block;margin-top:4px;border:0;outline:none;text-decoration:none;border-radius:11px" />
-                      </div>
+                    <td align="center" style="padding-bottom:10px">
+                      <img src="${LOGO_URL}" width="112" height="112" alt="Jadwal Masjid"
+                           style="display:block;width:112px;height:112px;border:0;outline:none;text-decoration:none" />
                     </td>
-                    <td valign="middle" style="padding-left:14px">
-                      <div style="font:700 18px/1.2 Arial,Helvetica,sans-serif;color:#ffffff;letter-spacing:.2px">Jadwal Masjid</div>
-                      <div style="font:400 12px/1.6 Arial,Helvetica,sans-serif;color:#00d4aa;margin-top:2px">${SITE}</div>
+                  </tr>
+                  <tr>
+                    <td align="center">
+                      <div style="font:700 13px/1.4 Arial,Helvetica,sans-serif;color:#a7f3d0;letter-spacing:2.4px">JADWALMASJID.COM</div>
                     </td>
                   </tr>
                 </table>
@@ -271,13 +270,14 @@ export function mailLayout(o: LayoutOptions): string {
             <tr>
               <td style="padding:28px 26px 22px">
                 ${badge}
-                <h1 style="margin:0 0 14px;font:700 21px/1.35 Arial,Helvetica,sans-serif;color:#0f172a">${o.title}</h1>
+                <h1 style="margin:0 0 10px;font:700 22px/1.35 Arial,Helvetica,sans-serif;color:#0f172a">${o.title}</h1>
+                <div style="width:64px;height:4px;border-radius:2px;background-color:#00d4aa;background-image:linear-gradient(90deg,#00d4aa 0%,#d4af37 100%);margin:0 0 16px"></div>
                 <div style="font:400 14px/1.75 Arial,Helvetica,sans-serif;color:#334155">${o.bodyHtml}</div>
                 ${cta}
               </td>
             </tr>
             <tr>
-              <td style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:18px 26px;font:400 12px/1.7 Arial,Helvetica,sans-serif;color:#64748b">
+              <td style="background:#f2faf6;border-top:1px solid #d7ece2;padding:18px 26px;font:400 12px/1.7 Arial,Helvetica,sans-serif;color:#5c7a6e;background-image:linear-gradient(180deg,#f2faf6 0%,#e8f5ee 100%)">
                 ${o.footerNote ?? "Email ini dikirim otomatis oleh sistem, mohon jangan dibalas."}
                 <div style="margin-top:8px">
                   <a href="https://${SITE}" target="_blank" style="color:#0f766e;text-decoration:none;font-weight:700">${SITE}</a>
@@ -285,7 +285,7 @@ export function mailLayout(o: LayoutOptions): string {
               </td>
             </tr>
           </table>
-          <div style="font:400 11px/1.6 Arial,Helvetica,sans-serif;color:#94a3b8;margin-top:12px">
+          <div style="font:400 11px/1.6 Arial,Helvetica,sans-serif;color:#7d9a8e;margin-top:12px">
             &copy; ${new Date().getFullYear()} Jadwal Masjid
           </div>
         </td>
