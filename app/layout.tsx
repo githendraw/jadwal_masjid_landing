@@ -87,6 +87,17 @@ export const metadata: Metadata = {
         "Paket jam digital masjid siap pasang. Sekali wakaf tanpa biaya langganan. Mulai Rp860.000.",
         images: [OG_IMAGE_URL],
   },
+  icons: {
+    // Satu sumber: public/logo-v5.webp (logo yang dipakai di header).
+    // URL sengaja stabil tanpa query hash — Google mensyaratkan URL favicon
+    // tidak sering berubah. Sebelumnya ada 4 <link rel="icon"> bertumpuk yang
+    // menunjuk 3 berkas berbeda, dan salah satunya PNG yang dinamai .ico.
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon", sizes: "48x48 96x96 144x144" },
+      { url: "/icon.png", type: "image/png", sizes: "192x192" },
+    ],
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
+  },
   robots: {
     index: true,
     follow: true,
@@ -151,7 +162,8 @@ export default function RootLayout({
   return (
     <html lang="id" className="light scroll-smooth" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico?v=5" type="image/x-icon" />
+        {/* Ikon dideklarasikan lewat metadata.icons di atas — satu set URL tetap,
+            jangan tambahkan <link rel="icon"> manual di sini. */}
         {/* Google tag (gtag.js) di <head> — tanpa gating consent untuk saat ini */}
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
         <script dangerouslySetInnerHTML={{ __html: GA_TAG_SCRIPT }} />
