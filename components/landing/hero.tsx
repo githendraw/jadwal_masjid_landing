@@ -47,8 +47,8 @@ export function Hero() {
               <div
                 className="w-2 h-2 rounded-full bg-primary animate-pulse"
               />
-              <span className="text-primary text-sm font-medium">
-                Solusi jadwal sholat Digital
+              <span className="text-primary text-xs font-medium">
+                Solusi Jadwal Sholat Digital
               </span>
             </motion.div>
 
