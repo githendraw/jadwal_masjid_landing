@@ -261,7 +261,7 @@ export function mailLayout(o: LayoutOptions): string {
                   </tr>
                   <tr>
                     <td align="center">
-                      <div style="font:700 13px/1.4 Arial,Helvetica,sans-serif;color:#a7f3d0;letter-spacing:2.4px">JADWALMASJID.COM</div>
+                      <div style="font:700 13px/1.4 Arial,Helvetica,sans-serif;color:#a7f3d0;letter-spacing:1.4px">JADWALMASJID.COM</div>
                     </td>
                   </tr>
                 </table>

@@ -101,7 +101,7 @@ function rincianPesanan(order: OrderLike): string {
       (i) => `<tr>
         <td style="padding:9px 0;border-bottom:1px solid #eef6f1;font:400 14px/1.5 Arial,Helvetica,sans-serif;color:#334155">
           ${i.productName}
-          <div style="font:400 12px/1.5 Arial,Helvetica,sans-serif;color:#8aa79a">${rupiah(i.unitPrice)} × ${i.qty}</div>
+          <div style="font:400 13px/1.5 Arial,Helvetica,sans-serif;color:#5c7a6e">${rupiah(i.unitPrice)} × ${i.qty}</div>
         </td>
         <td style="padding:9px 0;border-bottom:1px solid #eef6f1;text-align:right;font:600 14px/1.5 Arial,Helvetica,sans-serif;color:#0f172a" align="right">
           ${rupiah(i.lineTotal)}
