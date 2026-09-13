@@ -1,6 +1,7 @@
 import prisma from "@/lib/prisma";
 import { verifyCallbackSignature } from "@/lib/duitku";
 import { updateOrderStatus } from "@/lib/orders";
+import { notifyPaymentReceived } from "@/lib/notify";
 
 /**
  * Callback Duitku (server-to-server notification setelah pembayaran).
@@ -52,6 +53,8 @@ export async function POST(request: Request) {
         where: { merchantOrderId },
         data: { processed: true },
       });
+      // Email "pembayaran diterima" ke pembeli (fire-and-forget)
+      notifyPaymentReceived(order.id);
     }
   } catch (e) {
     console.error("Callback Duitku gagal diproses:", e);

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import { requireAdmin } from "@/lib/current-user";
 import { updateOrderStatus } from "@/lib/orders";
+import { notifyStatusChanged } from "@/lib/notify";
 import type { OrderStatus } from "@/lib/generated/prisma/client";
 
 const VALID: OrderStatus[] = [
@@ -47,5 +48,8 @@ export async function PATCH(
       },
     });
   }
+  // Beri tahu pembeli soal perubahan status (fire-and-forget). Notifikasi membaca ulang
+  // order dari database, jadi nomor resi/kurir yang baru diisi ikut terkirim.
+  notifyStatusChanged(order.id, status, note || null);
   return NextResponse.json({ order: updated });
 }

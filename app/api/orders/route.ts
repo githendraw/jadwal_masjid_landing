@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/current-user";
 import { createOrder } from "@/lib/orders";
+import { notifyOrderCreated } from "@/lib/notify";
 import { checkoutSchema } from "@/lib/schemas";
 
 export async function GET(request: Request) {
@@ -53,6 +54,9 @@ export async function POST(request: Request) {
 
   try {
     const order = await createOrder(user.id, lines, parsed.data, body.notes || undefined);
+    // Email konfirmasi ke pembeli + notifikasi pesanan baru ke admin.
+    // Fire-and-forget: kalau email gagal, pesanan tetap berhasil dibuat.
+    notifyOrderCreated(order, { name: user.name, email: user.email });
     return NextResponse.json({ order }, { status: 201 });
   } catch (e: any) {
     return NextResponse.json({ error: e.message || "Gagal membuat pesanan" }, { status: 400 });

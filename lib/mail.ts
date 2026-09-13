@@ -195,25 +195,103 @@ export async function sendMail(opts: {
   return kind === "api" ? sendViaApi(opts) : sendViaSmtp(opts);
 }
 
-/** Bungkus isi email dengan kerangka HTML sederhana (aman untuk semua klien email). */
-export function mailLayout(title: string, bodyHtml: string): string {
+export interface LayoutOptions {
+  title: string;
+  /** teks pratinjau yang muncul di daftar inbox (tidak terlihat di badan email) */
+  preheader?: string;
+  /** label status kecil di atas judul */
+  badge?: { text: string; tone?: "ok" | "info" | "warn" };
+  /** tombol aksi utama */
+  cta?: { label: string; url: string };
+  bodyHtml: string;
+  footerNote?: string;
+}
+
+const SITE = "jadwalmasjid.com";
+const LOGO_URL = "https://jadwalmasjid.com/logo-email-96.png";
+
+const TONES: Record<string, { bg: string; fg: string }> = {
+  ok: { bg: "#ccfbf1", fg: "#0f766e" },
+  info: { bg: "#e0f2fe", fg: "#0369a1" },
+  warn: { bg: "#fef3c7", fg: "#b45309" },
+};
+
+/**
+ * Kerangka email ber-brand (navy #0a192f + teal #00d4aa, sama seperti situs).
+ * Dipakai tabel + inline style supaya tampil konsisten di Gmail, Outlook, dan klien mobile.
+ */
+export function mailLayout(o: LayoutOptions): string {
+  const preheader = o.preheader
+    ? `<div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;color:#eef2f7">${o.preheader}</div>`
+    : "";
+  const tone = TONES[o.badge?.tone ?? "info"] ?? TONES.info;
+  const badge = o.badge
+    ? `<div style="margin:0 0 10px"><span style="display:inline-block;padding:6px 12px;border-radius:999px;background:${tone.bg};color:${tone.fg};font:700 11px/1 Arial,Helvetica,sans-serif;letter-spacing:.6px;text-transform:uppercase">${o.badge.text}</span></div>`
+    : "";
+  const cta = o.cta
+    ? `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:22px 0 4px"><tr>
+         <td bgcolor="#00d4aa" style="border-radius:10px">
+           <a href="${o.cta.url}" target="_blank" style="display:inline-block;padding:14px 26px;font:700 15px/1 Arial,Helvetica,sans-serif;color:#062e2a;text-decoration:none;border-radius:10px">${o.cta.label}</a>
+         </td>
+       </tr></table>`
+    : "";
   return `<!doctype html>
 <html lang="id">
-  <body style="margin:0;padding:0;background:#f6f7fb;font-family:Arial,Helvetica,sans-serif;color:#111827">
-    <div style="max-width:560px;margin:0 auto;padding:24px 16px">
-      <div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden">
-        <div style="padding:18px 22px;border-bottom:1px solid #e5e7eb">
-          <strong style="font-size:15px">Jadwal Masjid</strong>
-        </div>
-        <div style="padding:22px">
-          <h1 style="margin:0 0 12px;font-size:18px;line-height:1.4">${title}</h1>
-          <div style="font-size:14px;line-height:1.7;color:#374151">${bodyHtml}</div>
-        </div>
-      </div>
-      <p style="margin:14px 2px 0;font-size:12px;color:#6b7280">
-        Email ini dikirim otomatis oleh jadwalmasjid.com. Jangan balas email ini.
-      </p>
-    </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light only" />
+    <title>${o.title}</title>
+  </head>
+  <body style="margin:0;padding:0;background:#eef2f7">
+    ${preheader}
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#eef2f7">
+      <tr>
+        <td align="center" style="padding:26px 12px">
+          <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#ffffff;border-radius:16px;overflow:hidden">
+            <tr><td style="height:4px;line-height:4px;font-size:0;background:#00d4aa">&nbsp;</td></tr>
+            <tr>
+              <td style="background:#0a192f;padding:22px 26px">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td width="56" valign="middle">
+                      <div style="width:52px;height:52px;background:#ffffff;border-radius:14px;text-align:center">
+                        <img src="${LOGO_URL}" width="44" height="44" alt="Jadwal Masjid"
+                             style="display:inline-block;margin-top:4px;border:0;outline:none;text-decoration:none;border-radius:11px" />
+                      </div>
+                    </td>
+                    <td valign="middle" style="padding-left:14px">
+                      <div style="font:700 18px/1.2 Arial,Helvetica,sans-serif;color:#ffffff;letter-spacing:.2px">Jadwal Masjid</div>
+                      <div style="font:400 12px/1.6 Arial,Helvetica,sans-serif;color:#00d4aa;margin-top:2px">${SITE}</div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:28px 26px 22px">
+                ${badge}
+                <h1 style="margin:0 0 14px;font:700 21px/1.35 Arial,Helvetica,sans-serif;color:#0f172a">${o.title}</h1>
+                <div style="font:400 14px/1.75 Arial,Helvetica,sans-serif;color:#334155">${o.bodyHtml}</div>
+                ${cta}
+              </td>
+            </tr>
+            <tr>
+              <td style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:18px 26px;font:400 12px/1.7 Arial,Helvetica,sans-serif;color:#64748b">
+                ${o.footerNote ?? "Email ini dikirim otomatis oleh sistem, mohon jangan dibalas."}
+                <div style="margin-top:8px">
+                  <a href="https://${SITE}" target="_blank" style="color:#0f766e;text-decoration:none;font-weight:700">${SITE}</a>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <div style="font:400 11px/1.6 Arial,Helvetica,sans-serif;color:#94a3b8;margin-top:12px">
+            &copy; ${new Date().getFullYear()} Jadwal Masjid
+          </div>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>`;
 }
+
