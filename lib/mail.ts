@@ -249,9 +249,9 @@ export function mailLayout(o: LayoutOptions): string {
       <tr>
         <td align="center" style="padding:26px 12px">
           <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 1px 3px rgba(2,44,34,.10)">
-            <tr><td bgcolor="#00d4aa" height="5" style="height:5px;line-height:5px;font-size:0;background-color:#00d4aa;background-image:linear-gradient(90deg,#00d4aa 0%,#d4af37 50%,#00d4aa 100%)">&nbsp;</td></tr>
+            <tr><td bgcolor="#c9a44c" height="5" style="height:5px;line-height:5px;font-size:0;background-color:#c9a44c;background-image:linear-gradient(90deg,#7d6122 0%,#e6c766 50%,#7d6122 100%)">&nbsp;</td></tr>
             <tr>
-              <td bgcolor="#065f46" style="background-color:#065f46;background-image:linear-gradient(135deg,#022c22 0%,#0b6b4f 48%,#04382f 100%);padding:26px 26px 24px" align="center">
+              <td bgcolor="#04231c" style="background-color:#04231c;background-image:linear-gradient(135deg,#02150f 0%,#06412f 50%,#021b15 100%);padding:26px 26px 24px" align="center">
                 <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto">
                   <tr>
                     <td align="center" style="padding-bottom:10px">
@@ -261,7 +261,7 @@ export function mailLayout(o: LayoutOptions): string {
                   </tr>
                   <tr>
                     <td align="center">
-                      <div style="font:700 13px/1.4 Arial,Helvetica,sans-serif;color:#a7f3d0;letter-spacing:1.4px">JADWALMASJID.COM</div>
+                      <div style="font:700 13px/1.4 Arial,Helvetica,sans-serif;color:#e0c060;letter-spacing:1.4px">JADWALMASJID.COM</div>
                     </td>
                   </tr>
                 </table>
