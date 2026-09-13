@@ -113,22 +113,12 @@ export function Hero() {
               </Button>
             </motion.div>
 
-            {/* Social proof */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1 }}
-              className="mt-8 flex items-center gap-3 text-sm text-muted-foreground"
-            >
-              <div className="flex -space-x-2">
-                {["bg-primary/30", "bg-primary/20", "bg-primary/15"].map((c, i) => (
-                  <div key={i} className={`w-8 h-8 rounded-full ${c} border-2 border-background flex items-center justify-center text-xs font-bold text-primary`} style={{ zIndex: 3 - i }}>
-                    {["A", "B", "S"][i]}
-                  </div>
-                ))}
-              </div>
-              <span>Dipercaya oleh <span className="text-foreground font-semibold">120+</span> pengurus masjid di seluruh Indonesia</span>
-            </motion.div>
+            {/* Blok "bukti sosial" dihapus 2026-09-13: angka "120+ pengurus
+                masjid" tidak berdasar (belum ada masjid yang terdaftar) dan
+                tiga avatar berisi huruf A/B/S itu bukan orang sungguhan.
+                Kalau nanti sudah ada pelanggan nyata — dan mereka setuju
+                namanya ditampilkan — blok ini bisa ditulis ulang dari data
+                asli, bukan angka karangan. */}
           </motion.div>
 
           {/* Right — Hero image */}

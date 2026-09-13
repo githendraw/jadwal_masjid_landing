@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield, Zap, Clock, Users } from "lucide-react";
+import { Zap, Clock, Users } from "lucide-react";
 
-// Marquee testimoni dan badge "4.8 Rating Pengguna" dihapus 2026-09-13:
-// keduanya memakai teks contoh, bukan pelanggan nyata. Jangan dikembalikan
-// sebelum ada testimoni/rating yang benar-benar dari pengguna.
+// Marquee testimoni, badge "4.8 Rating Pengguna", dan stat "120+ Masjid
+// Terdaftar" dihapus 2026-09-13: dua yang pertama memakai teks contoh, yang
+// terakhir tidak berdasar karena belum ada masjid yang terdaftar. Jangan
+// dikembalikan sebelum ada datanya yang benar.
 const stats = [
-  { icon: Shield, value: "120+", label: "Masjid Terdaftar" },
   { icon: Clock, value: "100%", label: "Akurasi Jadwal" },
   { icon: Zap, value: "Auto", label: "Update Harian" },
   { icon: Users, value: "Offline", label: "Tanpa Internet" },
@@ -21,7 +21,7 @@ export function CredibilityStrip() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Stats Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-8">
+        <div className="grid grid-cols-3 gap-4 py-8">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
