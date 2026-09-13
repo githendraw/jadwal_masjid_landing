@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, JetBrains_Mono } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalyticsPageViews } from "@/components/analytics/google-analytics-pageviews";
 import { ThemeProvider } from "@/components/theme-provider";
 import { CartProvider } from "@/components/store/cart-provider";
 import "./globals.css";
@@ -152,6 +154,9 @@ export default function RootLayout({
             <WhatsAppWidget />
           </CartProvider>
         </ThemeProvider>
+        {/* Google Analytics 4 — config awal + pelacakan page_view tiap navigasi */}
+        <GoogleAnalytics gaId="G-V7VC569WH7" />
+        <GoogleAnalyticsPageViews />
 </body>
     </html>
   );
