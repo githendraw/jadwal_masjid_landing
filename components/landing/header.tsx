@@ -64,7 +64,10 @@ export function Header() {
                 className="object-contain"
               />
             </div>
-            <span className="text-lg sm:text-xl font-bold text-foreground">
+            {/* Gradient disamakan dengan kata "Digital" di hero (kelas
+                .gradient-text di globals.css). text-foreground wajib dilepas:
+                warnanya akan menimpa text-transparent milik gradient itu. */}
+            <span className="text-lg sm:text-xl font-bold gradient-text">
               Jadwal Masjid
             </span>
           </a>
