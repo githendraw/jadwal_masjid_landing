@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { FlaskConical, Info } from "lucide-react";
+import { Info } from "lucide-react";
 import { getSession } from "@/lib/session";
 import { googleAuthEnabled } from "@/lib/auth";
 
@@ -39,20 +39,10 @@ export default async function MasukPage() {
             </a>
 
             {!googleEnabled && (
-              <>
-                <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                  <div className="h-px flex-1 bg-border" />
-                  ATAU
-                  <div className="h-px flex-1 bg-border" />
-                </div>
-                <a
-                  href="/api/auth/dummy"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-dashed border-primary/40 text-primary hover:bg-primary/10 transition-colors h-12 font-medium text-sm"
-                >
-                  <FlaskConical className="w-4 h-4" />
-                  Login Simulasi (Mode Pengembangan)
-                </a>
-              </>
+              <div className="mt-2 rounded-xl border border-dashed border-border p-3 text-left text-xs text-muted-foreground">
+                Login Google belum dikonfigurasi pada server ini, jadi pendaftaran
+                dan masuk lewat Google belum bisa dipakai. Hubungi pengelola situs.
+              </div>
             )}
           </div>
 
@@ -60,9 +50,11 @@ export default async function MasukPage() {
             <div className="mt-6 rounded-xl border border-amber-200 bg-amber-50 p-3 text-left flex gap-2 text-xs text-amber-700">
               <Info className="w-4 h-4 flex-shrink-0 mt-0.5" />
               <p>
-                Kredensial Google OAuth masih placeholder (dummy). Tombol
-                &ldquo;Login Simulasi&rdquo; dipakai untuk menguji alur wakaf
-                dulu. Simulasi ini nonaktif otomatis saat kredensial asli diisi.
+                Kredensial Google OAuth belum diisi. Untuk pengujian internal,
+                akses login simulasi memakai kunci rahasia{" "}
+                <span className="font-mono">DEV_LOGIN_SECRET</span> (lihat file
+                .env). Tautan login simulasi tidak lagi ditampilkan di halaman
+                publik.
               </p>
             </div>
           )}
