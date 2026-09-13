@@ -48,7 +48,7 @@ export function Hero() {
                 className="w-2 h-2 rounded-full bg-primary animate-pulse"
               />
               <span className="text-primary text-sm font-medium">
-                Solusi Display Jadwal Sholat Digital untuk Masjid
+                Solusi jadwal sholat Digital
               </span>
             </motion.div>
 
