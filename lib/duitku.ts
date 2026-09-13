@@ -1,5 +1,5 @@
 import "server-only";
-import { createHash } from "node:crypto";
+import { createHash, timingSafeEqual } from "node:crypto";
 import { getBaseUrl } from "./auth";
 
 export interface DuitkuInvoiceInput {
@@ -21,10 +21,33 @@ export interface DuitkuInvoiceResult {
   simulation: boolean;
 }
 
+function isPlaceholder(v: string | undefined): boolean {
+  const s = (v || "").trim();
+  return s === "" || s.toUpperCase().startsWith("DUMMY");
+}
+
+/**
+ * True bila kredensial Duitku asli sudah diisi (merchant code + api key bukan placeholder).
+ * Selama belum, gateway belum bisa dipakai untuk transaksi nyata.
+ */
+export function isDuitkuConfigured(): boolean {
+  return !isPlaceholder(process.env.DUITKU_MERCHANT_CODE) && !isPlaceholder(process.env.DUITKU_API_KEY);
+}
+
+/**
+ * Mode simulasi pembayaran.
+ *
+ * KEAMANAN: dulu fungsi ini menganggap simulasi aktif cukup karena API key masih
+ * "DUMMY", sehingga di produksi siapa pun bisa menandai pesanannya sendiri LUNAS.
+ * Sekarang:
+ *   - gateway asli sudah dikonfigurasi  -> simulasi SELALU mati (tidak bisa dibypass)
+ *   - NODE_ENV = production            -> simulasi mati (tidak ada pesanan gratis)
+ *   - selain itu mengikuti DUITKU_ALLOW_SIMULATION=true (pengembangan lokal)
+ */
 export function isDuitkuSimulation(): boolean {
-  const allow = process.env.DUITKU_ALLOW_SIMULATION === "true";
-  const key = process.env.DUITKU_API_KEY || "";
-  return allow || key === "DUMMY" || key.trim() === "";
+  if (isDuitkuConfigured()) return false;
+  if (process.env.NODE_ENV === "production") return false;
+  return process.env.DUITKU_ALLOW_SIMULATION === "true";
 }
 
 function md5(input: string): string {
@@ -52,6 +75,12 @@ export async function createDuitkuInvoice(
       reference: `SIM-${input.merchantOrderId}`,
       simulation: true,
     };
+  }
+
+  if (!isDuitkuConfigured()) {
+    throw new Error(
+      "Pembayaran belum dikonfigurasi: kredensial Duitku (merchant code & API key) belum diisi."
+    );
   }
 
   const payload = {
@@ -97,6 +126,11 @@ export async function createDuitkuInvoice(
 /**
  * Verifikasi tanda tangan callback Duitku.
  * signature = md5(merchantCode + amount + merchantOrderId + apiKey)
+ *
+ * KEAMANAN: bila kredensial Duitku belum dikonfigurasi (masih "DUMMY"), tanda
+ * tangan bisa dihitung siapa pun -- dulu itu cukup untuk menandai pesanan LUNAS.
+ * Sekarang callback ditolak selama gateway belum dikonfigurasi, dan
+ * perbandingannya memakai waktu konstan.
  */
 export function verifyCallbackSignature(params: {
   merchantCode: string;
@@ -104,8 +138,13 @@ export function verifyCallbackSignature(params: {
   merchantOrderId: string;
   signature: string;
 }): boolean {
+  if (!isDuitkuConfigured()) return false;
+
   const expected = md5(
     `${params.merchantCode}${params.amount}${params.merchantOrderId}${apiKey()}`
   );
-  return expected === params.signature;
+  const a = Buffer.from(expected, "utf8");
+  const b = Buffer.from(params.signature || "", "utf8");
+  if (a.length !== b.length) return false;
+  return timingSafeEqual(a, b);
 }
