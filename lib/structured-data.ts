@@ -149,18 +149,11 @@ export function jsonLdHomepage() {
     sku: skuProduk(paketMesin.slug),
     brand: { "@type": "Brand", name: BRAND_NAME },
     offers: buatPenawaran(paketMesin, BASE_URL),
-    // PERHATIAN: angka ini diwarisi dari markup lama dan belum bisa
-    // diverifikasi dari data di situs — yang tampil hanya 5 testimoni
-    // (semuanya bintang 5, lihat components/landing/testimonials.tsx), dan
-    // tidak ada tabel ulasan di DB. Kalau 4.8/120 berasal dari sumber ulasan
-    // nyata (mis. Google Business), biarkan; kalau tidak, ganti dengan angka
-    // yang benar atau hapus blok ini — aggregateRating tanpa ulasan nyata
-    // termasuk markup palsu yang bisa berujung manual action.
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: 4.8,
-      ratingCount: 120,
-    },
+    // TIDAK ada aggregateRating/review di sini, dan jangan ditambahkan sampai
+    // ada ulasan pengguna yang nyata: 5 testimoni di components/landing/
+    // testimonials.tsx isinya contoh (bukan pelanggan sungguhan), dan DB tidak
+    // punya tabel ulasan. aggregateRating tanpa ulasan nyata = markup palsu —
+    // bisa berujung manual action structured data, bukan cuma kehilangan bintang.
   };
 }
 
