@@ -1,9 +1,16 @@
 import { NextResponse } from "next/server";
 import { buildGoogleAuthUrl, googleAuthEnabled, getBaseUrl } from "@/lib/auth";
+import { HALAMAN_DITUTUP, TOKO_AKTIF } from "@/lib/features";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
+  // Toko belum dibuka: login dimatikan total (pemilik memilih termasuk admin),
+  // jadi jangan sampai alur OAuth dimulai sama sekali.
+  if (!TOKO_AKTIF) {
+    return NextResponse.redirect(`${getBaseUrl()}${HALAMAN_DITUTUP}`);
+  }
+
   // Google belum dikonfigurasi: JANGAN arahkan ke login simulasi (dulu ini
   // membuat siapa pun bisa masuk sebagai admin). Kembalikan ke halaman masuk
   // dengan pesan yang jelas.

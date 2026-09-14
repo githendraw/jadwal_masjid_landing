@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { StoreNav } from "@/components/store/store-nav";
 import Image from "next/image";
+import { TOKO_AKTIF } from "@/lib/features";
 
 const navItems = [
   { label: "Jadwal Sholat", href: "/#jadwal" },
@@ -166,13 +167,18 @@ export function Header() {
                   </button>
                 </>
               ) : (
-                <Link
-                  href="/masuk"
-                  onClick={closeMobileMenu}
-                  className="flex items-center justify-center w-full h-11 px-4 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
-                >
-                  Login
-                </Link>
+                // Tombol Login disembunyikan selama toko belum dibuka. Rute
+                // /masuk sendiri juga dialihkan di proxy.ts, jadi ini hanya
+                // lapisan tampilan.
+                TOKO_AKTIF && (
+                  <Link
+                    href="/masuk"
+                    onClick={closeMobileMenu}
+                    className="flex items-center justify-center w-full h-11 px-4 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
+                  >
+                    Login
+                  </Link>
+                )
               )}
             </div>
           </nav>

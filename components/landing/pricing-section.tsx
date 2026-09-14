@@ -14,6 +14,7 @@ import {
   Crown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { TOKO_AKTIF } from "@/lib/features";
 
 const WHATSAPP_LINK = "https://wa.me/6287789179242?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
 
@@ -193,20 +194,21 @@ export function PricingSection() {
                 </div>
 
                 <div className="mt-auto flex flex-col gap-3">
-                  <Button
-                    size="lg"
-                    className={`w-full font-semibold text-base ${
-                      plan.featured
-                        ? "bg-primary hover:bg-primary/90 text-primary-foreground glow-primary"
-                        : "border-primary/50 text-primary hover:bg-primary/10 bg-transparent border"
-                    }`}
-                  >
-<a
-                      href={`/produk/${plan.slug}`}
+                  {/* Tombol paket ("Pesan Paket …") disembunyikan selama toko
+                      belum dibuka. Halaman paket tetap terjangkau dari menu
+                      "Paket Waqaf" di header dan dari halaman katalog. */}
+                  {TOKO_AKTIF && (
+                    <Button
+                      size="lg"
+                      className={`w-full font-semibold text-base ${
+                        plan.featured
+                          ? "bg-primary hover:bg-primary/90 text-primary-foreground glow-primary"
+                          : "border-primary/50 text-primary hover:bg-primary/10 bg-transparent border"
+                      }`}
                     >
-                      {plan.orderText}
-                    </a>
-                  </Button>
+                      <a href={`/produk/${plan.slug}`}>{plan.orderText}</a>
+                    </Button>
+                  )}
                 </div>
               </div>
             </motion.div>

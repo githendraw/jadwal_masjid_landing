@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle2, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { TOKO_AKTIF } from "@/lib/features";
 
 const WHATSAPP_LINK = "https://wa.me/6287789179242?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
 const ORDER_LINK = "https://wa.me/6287789179242?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20memesan%20Android%20TV%20Box%20Jadwal%20Masjid";
@@ -92,15 +93,20 @@ export function Hero() {
               transition={{ delay: 0.7 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold glow-primary"
-              >
-                <a href={ORDER_LINK} target="_blank" rel="noopener noreferrer">
-                  Pesan Sekarang
-                </a>
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+              {/* Tombol pesan disembunyikan selama toko belum dibuka (menunggu
+                  review Duitku). Kode tombolnya sengaja tetap ada — cukup ubah
+                  NEXT_PUBLIC_TOKO_AKTIF untuk memunculkannya lagi. */}
+              {TOKO_AKTIF && (
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold glow-primary"
+                >
+                  <a href={ORDER_LINK} target="_blank" rel="noopener noreferrer">
+                    Pesan Sekarang
+                  </a>
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              )}
               <Button
                 size="lg"
                 variant="outline"

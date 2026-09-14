@@ -4,6 +4,7 @@ import { getCurrentUser } from "@/lib/current-user";
 import { createOrder } from "@/lib/orders";
 import { notifyOrderCreated } from "@/lib/notify";
 import { checkoutSchema } from "@/lib/schemas";
+import { TOKO_AKTIF } from "@/lib/features";
 
 export async function GET(request: Request) {
   const user = await getCurrentUser();
@@ -26,6 +27,15 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
+  // Toko belum dibuka: ditolak di server, bukan cuma disembunyikan tombolnya.
+  // Tanpa ini, endpoint pesanan tetap bisa dipanggil langsung walau UI bersih.
+  if (!TOKO_AKTIF) {
+    return NextResponse.json(
+      { error: "Pemesanan lewat situs sedang dinonaktifkan sementara." },
+      { status: 503 }
+    );
+  }
+
   const user = await getCurrentUser();
   if (!user) return NextResponse.json({ error: "UNAUTHORIZED" }, { status: 401 });
 

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { AlertTriangle, RefreshCw, EyeOff, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { TOKO_AKTIF } from "@/lib/features";
 
 const ORDER_LINK = "https://wa.me/6287789179242?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20memesan%20Android%20TV%20Box%20Jadwal%20Masjid";
 
@@ -117,7 +118,7 @@ export function ProblemSection() {
             </div>
             <h3 className="text-foreground font-semibold text-lg mb-2">{item.title}</h3>
             <p className="text-foreground/70 text-sm">{item.text}</p>
-            {index === 1 && (
+            {TOKO_AKTIF && index === 1 && (
               <Button
                 size="sm"
                 variant="ghost"

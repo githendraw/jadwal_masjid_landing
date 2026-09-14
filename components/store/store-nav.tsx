@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { useCart } from "./cart-provider";
 import { Button } from "@/components/ui/button";
+import { TOKO_AKTIF } from "@/lib/features";
 
 interface MeUser {
   id: number;
@@ -48,6 +49,11 @@ export function StoreNav() {
     await fetch("/api/auth/logout", { method: "POST" });
     window.location.href = "/";
   }
+
+  // Toko belum dibuka: ikon keranjang dan tombol login tidak perlu tampil sama
+  // sekali. Login juga sudah mati, jadi blok `user ?` di bawah tidak akan
+  // pernah muncul — mengembalikan null menyembunyikan keduanya sekaligus.
+  if (!TOKO_AKTIF) return null;
 
   return (
     <div className="flex items-center gap-2">

@@ -4,11 +4,21 @@ import { getCurrentUser } from "@/lib/current-user";
 import { getOrderForUser, updateOrderStatus } from "@/lib/orders";
 import { createDuitkuInvoice } from "@/lib/duitku";
 import { getBaseUrl } from "@/lib/auth";
+import { TOKO_AKTIF } from "@/lib/features";
 
 export async function POST(
   _request: Request,
   { params }: { params: Promise<{ orderNumber: string }> }
 ) {
+  // Toko belum dibuka: jangan sampai ada invoice Duitku baru dibuat saat
+  // akun merchant masih di-review.
+  if (!TOKO_AKTIF) {
+    return NextResponse.json(
+      { error: "Pembayaran sedang dinonaktifkan sementara." },
+      { status: 503 }
+    );
+  }
+
   const user = await getCurrentUser();
   if (!user) return NextResponse.json({ error: "UNAUTHORIZED" }, { status: 401 });
 

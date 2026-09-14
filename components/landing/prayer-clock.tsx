@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { TOKO_AKTIF } from "@/lib/features";
 
 const ORDER_LINK = "https://wa.me/6287789179242?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20memesan%20Android%20TV%20Box%20Jadwal%20Masjid";
 
@@ -659,15 +660,17 @@ export function PrayerClock() {
                 Setup sekali, otomatis update setiap hari. Tanpa ribet, tanpa setting ulang.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold glow-primary text-base px-8 py-6"
-                >
-                  <a href={ORDER_LINK} target="_blank" rel="noopener noreferrer">
-                    Pesan Sekarang
-                  </a>
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
+                {TOKO_AKTIF && (
+                  <Button
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold glow-primary text-base px-8 py-6"
+                  >
+                    <a href={ORDER_LINK} target="_blank" rel="noopener noreferrer">
+                      Pesan Sekarang
+                    </a>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                )}
               </div>
             </div>
           </div>

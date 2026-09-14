@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, AlertCircle, CheckCircle2, Cable } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { TOKO_AKTIF } from "@/lib/features";
 
 const WHATSAPP_LINK = "https://wa.me/6287789179242?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20bertanya...";
 const ORDER_LINK = "https://wa.me/6287789179242?text=Halo%20Jadwal%20Masjid,%20saya%20ingin%20memesan%20Android%20TV%20Box%20Jadwal%20Masjid";
@@ -114,15 +115,17 @@ export function CTASection() {
                 tanpa setting ulang.
               </p>
               <div className="flex flex-col gap-4 justify-center items-center">
-                <Button
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold glow-primary text-base px-8 py-6 w-full sm:w-auto"
-                >
-                  <a href={ORDER_LINK} target="_blank" rel="noopener noreferrer">
-                    Pesan Sekarang
-                  </a>
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
+                {TOKO_AKTIF && (
+                  <Button
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold glow-primary text-base px-8 py-6 w-full sm:w-auto"
+                  >
+                    <a href={ORDER_LINK} target="_blank" rel="noopener noreferrer">
+                      Pesan Sekarang
+                    </a>
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                )}
                 <div className="flex gap-3 justify-center mt-2">
                   <Button
                     size="sm"

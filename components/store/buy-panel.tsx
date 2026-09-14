@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Minus, Plus, ShoppingCart, Zap } from "lucide-react";
 import { useCart } from "./cart-provider";
+import { TOKO_AKTIF } from "@/lib/features";
 
 export interface BuyPanelProduct {
   id: number;
@@ -20,6 +21,34 @@ export function BuyPanel({ product }: { product: BuyPanelProduct }) {
   const router = useRouter();
   const [qty, setQty] = useState(1);
   const disabled = product.stock <= 0;
+
+  // Toko belum dibuka (menunggu review Duitku): panel ini hanya menampilkan
+  // informasi produk — tanpa pemilih jumlah, tanpa tombol keranjang/beli.
+  if (!TOKO_AKTIF) {
+    return (
+      <div className="rounded-xl border border-border bg-card/50 p-4 text-sm">
+        <p className="font-semibold text-foreground mb-1">Pembelian belum dibuka</p>
+        <p className="text-muted-foreground">
+          Kami sedang menyelesaikan verifikasi penyedia pembayaran. Katalog dan
+          harga bisa dilihat, tapi pemesanan lewat situs belum aktif.
+        </p>
+        <dl className="mt-4 space-y-1">
+          <div className="flex items-center justify-between">
+            <dt className="text-muted-foreground">Stok</dt>
+            <dd className="text-foreground font-medium">
+              {product.stock > 0 ? `${product.stock} unit` : "Habis"}
+            </dd>
+          </div>
+          <div className="flex items-center justify-between">
+            <dt className="text-muted-foreground">Ongkos kirim</dt>
+            <dd className="text-foreground font-medium">
+              Rp {product.shippingFee.toLocaleString("id-ID")}
+            </dd>
+          </div>
+        </dl>
+      </div>
+    );
+  }
 
   function addToCart() {
     add({

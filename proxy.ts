@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { HALAMAN_DITUTUP, RUTE_DITUTUP, TOKO_AKTIF } from "@/lib/features";
 
 // Nama cookie sesi — harus sama dengan lib/session.ts.
 const SESSION_COOKIE = "jm_session";
@@ -14,6 +15,19 @@ const PROTECTED = ["/akun", "/checkout", "/admin", "/keranjang"];
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   if (pathname.startsWith("/_next") || pathname.startsWith("/favicon")) {
+    return NextResponse.next();
+  }
+
+  // Toko belum dibuka (menunggu review Duitku). Ditaruh SEBELUM pemeriksaan
+  // sesi supaya tidak ada satu pun jalan masuk: siapa pun yang mengetik URL
+  // /masuk, /keranjang, /checkout, /akun, atau /admin dialihkan ke penjelasan.
+  if (!TOKO_AKTIF) {
+    const ditutup = RUTE_DITUTUP.some(
+      (p) => pathname === p || pathname.startsWith(`${p}/`)
+    );
+    if (ditutup) {
+      return NextResponse.redirect(new URL(HALAMAN_DITUTUP, request.url));
+    }
     return NextResponse.next();
   }
 
